@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\c#\\MasterEvents\\Service\\Service.csproj": {}
+    "C:\\Users\\odeyasor\\Documents\\MasterEvents\\Service\\Service.csproj": {}
   },
   "projects": {
-    "D:\\c#\\MasterEvents\\Repository\\Repository.csproj": {
+    "C:\\Users\\odeyasor\\Documents\\MasterEvents\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\c#\\MasterEvents\\Repository\\Repository.csproj",
+        "projectUniqueName": "C:\\Users\\odeyasor\\Documents\\MasterEvents\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "D:\\c#\\MasterEvents\\Repository\\Repository.csproj",
-        "packagesPath": "C:\\Users\\תמר לוי\\.nuget\\packages\\",
-        "outputPath": "D:\\c#\\MasterEvents\\Repository\\obj\\",
+        "projectPath": "C:\\Users\\odeyasor\\Documents\\MasterEvents\\Repository\\Repository.csproj",
+        "packagesPath": "C:\\Users\\odeyasor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\odeyasor\\Documents\\MasterEvents\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\תמר לוי\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\odeyasor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -80,6 +79,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -89,21 +102,20 @@
         }
       }
     },
-    "D:\\c#\\MasterEvents\\Service\\Service.csproj": {
+    "C:\\Users\\odeyasor\\Documents\\MasterEvents\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\c#\\MasterEvents\\Service\\Service.csproj",
+        "projectUniqueName": "C:\\Users\\odeyasor\\Documents\\MasterEvents\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "D:\\c#\\MasterEvents\\Service\\Service.csproj",
-        "packagesPath": "C:\\Users\\תמר לוי\\.nuget\\packages\\",
-        "outputPath": "D:\\c#\\MasterEvents\\Service\\obj\\",
+        "projectPath": "C:\\Users\\odeyasor\\Documents\\MasterEvents\\Service\\Service.csproj",
+        "packagesPath": "C:\\Users\\odeyasor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\odeyasor\\Documents\\MasterEvents\\Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\תמר לוי\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\odeyasor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -119,8 +131,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\c#\\MasterEvents\\Repository\\Repository.csproj": {
-                "projectPath": "D:\\c#\\MasterEvents\\Repository\\Repository.csproj"
+              "C:\\Users\\odeyasor\\Documents\\MasterEvents\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\Users\\odeyasor\\Documents\\MasterEvents\\Repository\\Repository.csproj"
               }
             }
           }
@@ -173,6 +185,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
