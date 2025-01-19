@@ -98,3 +98,40 @@ C:\Users\odeyasor\Desktop\master-events-project\MasterEvents\MasterEvents\obj\De
 C:\Users\odeyasor\Desktop\master-events-project\MasterEvents\MasterEvents\obj\Debug\net6.0\MasterEvents.pdb
 C:\Users\odeyasor\Desktop\master-events-project\MasterEvents\MasterEvents\obj\Debug\net6.0\MasterEvents.genruntimeconfig.cache
 C:\Users\odeyasor\Desktop\master-events-project\MasterEvents\MasterEvents\obj\Debug\net6.0\ref\MasterEvents.dll
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\bin\Debug\net6.0\appsettings.json
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\bin\Debug\net6.0\MasterEvents.staticwebassets.endpoints.json
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\bin\Debug\net6.0\MasterEvents.exe
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\bin\Debug\net6.0\MasterEvents.deps.json
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\bin\Debug\net6.0\MasterEvents.runtimeconfig.json
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\bin\Debug\net6.0\MasterEvents.dll
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\bin\Debug\net6.0\MasterEvents.pdb
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\MasterEvents.csproj.AssemblyReference.cache
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\MasterEvents.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\MasterEvents.AssemblyInfoInputs.cache
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\MasterEvents.AssemblyInfo.cs
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\MasterEvents.csproj.CoreCompileInputs.cache
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\MasterEvents.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\MasterEvents.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\MasterEvents.sourcelink.json
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\scopedcss\bundle\MasterEvents.styles.css
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\staticwebassets.build.endpoints.json
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\staticwebassets\msbuild.MasterEvents.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\staticwebassets\msbuild.MasterEvents.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\staticwebassets\msbuild.build.MasterEvents.props
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.MasterEvents.props
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.MasterEvents.props
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\MasterEv.F5A44B5F.Up2Date
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\MasterEvents.dll
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\refint\MasterEvents.dll
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\MasterEvents.pdb
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\MasterEvents.genruntimeconfig.cache
+C:\Users\תמר לוי\OneDrive\שולחן העבודה\MasterEvents\MasterEvents\obj\Debug\net6.0\ref\MasterEvents.dll

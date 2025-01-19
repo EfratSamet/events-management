@@ -1,66 +1,138 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\",
+  "WorkspaceRootPath": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|c:\\users\\odeyasor\\desktop\\master-events-project\\masterevents\\service\\services\\extensionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|solutionrelative:service\\services\\extensionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\repository\\entity\\organizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\entity\\organizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\odeyasor\\desktop\\master-events-project\\masterevents\\repository\\repositories\\extensionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\repositories\\extensionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\repository\\entity\\guestinevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\entity\\guestinevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\odeyasor\\desktop\\master-events-project\\masterevents\\repository\\entity\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\entity\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\odeyasor\\desktop\\master-events-project\\masterevents\\repository\\repositories\\seatingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\repositories\\seatingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\odeyasor\\desktop\\master-events-project\\masterevents\\repository\\repositories\\photosfromeventrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\repositories\\photosfromeventrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\odeyasor\\desktop\\master-events-project\\masterevents\\repository\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\odeyasor\\desktop\\master-events-project\\masterevents\\repository\\entity\\seating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\repository\\entity\\seating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\entity\\seating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\odeyasor\\desktop\\master-events-project\\masterevents\\repository\\interfaces\\icontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\interfaces\\icontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\repository\\entity\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\entity\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\odeyasor\\desktop\\master-events-project\\masterevents\\repository\\repositories\\eventrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\service\\dtos\\seatingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|solutionrelative:service\\dtos\\seatingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\service\\dtos\\photosfromeventdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|solutionrelative:service\\dtos\\photosfromeventdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\repository\\entity\\photosfromevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\entity\\photosfromevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\repository\\entity\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\entity\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\repository\\entity\\guest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\entity\\guest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\repository\\repositories\\photosfromeventrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\repositories\\photosfromeventrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\repository\\repositories\\eventrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\repositories\\eventrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|c:\\users\\odeyasor\\desktop\\master-events-project\\masterevents\\service\\services\\organizerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|solutionrelative:service\\services\\organizerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\service\\services\\eventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|solutionrelative:service\\services\\eventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{714357B0-584C-48B3-9BFA-E2353F4080C0}|Mock\\Mock.csproj|c:\\users\\odeyasor\\desktop\\master-events-project\\masterevents\\mock\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\service\\dtos\\subguestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|solutionrelative:service\\dtos\\subguestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\repository\\entity\\subguest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\entity\\subguest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\service\\dtos\\organizerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|solutionrelative:service\\dtos\\organizerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\service\\dtos\\guestineventdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|solutionrelative:service\\dtos\\guestineventdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\service\\dtos\\groupdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|solutionrelative:service\\dtos\\groupdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\service\\dtos\\eventdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|solutionrelative:service\\dtos\\eventdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\repository\\repositories\\grouprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\repositories\\grouprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{714357B0-584C-48B3-9BFA-E2353F4080C0}|Mock\\Mock.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\mock\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{714357B0-584C-48B3-9BFA-E2353F4080C0}|Mock\\Mock.csproj|solutionrelative:mock\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\odeyasor\\desktop\\master-events-project\\masterevents\\repository\\repositories\\subguestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\service\\services\\extensionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|solutionrelative:service\\services\\extensionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\repository\\interfaces\\icontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\interfaces\\icontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{714357B0-584C-48B3-9BFA-E2353F4080C0}|Mock\\Mock.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\mock\\migrations\\databasemodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{714357B0-584C-48B3-9BFA-E2353F4080C0}|Mock\\Mock.csproj|solutionrelative:mock\\migrations\\databasemodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{714357B0-584C-48B3-9BFA-E2353F4080C0}|Mock\\Mock.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\mock\\migrations\\20250119192740_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{714357B0-584C-48B3-9BFA-E2353F4080C0}|Mock\\Mock.csproj|solutionrelative:mock\\migrations\\20250119192740_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{906699C7-CDB4-4F76-83AE-37C8709BE242}|MasterEvents\\MasterEvents.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\masterevents\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{906699C7-CDB4-4F76-83AE-37C8709BE242}|MasterEvents\\MasterEvents.csproj|solutionrelative:masterevents\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{906699C7-CDB4-4F76-83AE-37C8709BE242}|MasterEvents\\MasterEvents.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\masterevents\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{906699C7-CDB4-4F76-83AE-37C8709BE242}|MasterEvents\\MasterEvents.csproj|solutionrelative:masterevents\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\repository\\repositories\\extensionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\repositories\\extensionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\repository\\repositories\\seatingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\repositories\\seatingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\repository\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\service\\services\\organizerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|solutionrelative:service\\services\\organizerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\repository\\repositories\\subguestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\repositories\\subguestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|c:\\users\\odeyasor\\desktop\\master-events-project\\masterevents\\service\\services\\seatingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\service\\services\\seatingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|solutionrelative:service\\services\\seatingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|c:\\users\\odeyasor\\desktop\\master-events-project\\masterevents\\service\\services\\subguestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|c:\\users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\onedrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\masterevents\\service\\services\\subguestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|solutionrelative:service\\services\\subguestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|c:\\users\\odeyasor\\desktop\\master-events-project\\masterevents\\service\\dtos\\eventdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|solutionrelative:service\\dtos\\eventdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,188 +142,448 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 11,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Event.cs",
-              "DocumentMoniker": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Entity\\Event.cs",
-              "RelativeDocumentMoniker": "Repository\\Entity\\Event.cs",
-              "ToolTip": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Entity\\Event.cs",
-              "RelativeToolTip": "Repository\\Entity\\Event.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T14:04:39.993Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PhotosFromEventRepository.cs",
-              "DocumentMoniker": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Repositories\\PhotosFromEventRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\Repositories\\PhotosFromEventRepository.cs",
-              "ToolTip": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Repositories\\PhotosFromEventRepository.cs",
-              "RelativeToolTip": "Repository\\Repositories\\PhotosFromEventRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T14:03:31.388Z"
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SeatingRepository.cs",
-              "DocumentMoniker": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Repositories\\SeatingRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\Repositories\\SeatingRepository.cs",
-              "ToolTip": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Repositories\\SeatingRepository.cs",
-              "RelativeToolTip": "Repository\\Repositories\\SeatingRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T14:02:16.864Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Seating.cs",
-              "DocumentMoniker": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Entity\\Seating.cs",
-              "RelativeDocumentMoniker": "Repository\\Entity\\Seating.cs",
-              "ToolTip": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Entity\\Seating.cs",
-              "RelativeToolTip": "Repository\\Entity\\Seating.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "PhotosFromEvent.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Entity\\PhotosFromEvent.cs",
+              "RelativeDocumentMoniker": "Repository\\Entity\\PhotosFromEvent.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Entity\\PhotosFromEvent.cs",
+              "RelativeToolTip": "Repository\\Entity\\PhotosFromEvent.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAABMAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T14:02:13.871Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ExtensionRepository.cs",
-              "DocumentMoniker": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Repositories\\ExtensionRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\Repositories\\ExtensionRepository.cs",
-              "ToolTip": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Repositories\\ExtensionRepository.cs",
-              "RelativeToolTip": "Repository\\Repositories\\ExtensionRepository.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAcwBwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T13:55:46.91Z"
+              "WhenOpened": "2025-01-19T19:43:33.428Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "IContext.cs",
-              "DocumentMoniker": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Interfaces\\IContext.cs",
-              "RelativeDocumentMoniker": "Repository\\Interfaces\\IContext.cs",
-              "ToolTip": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Interfaces\\IContext.cs",
-              "RelativeToolTip": "Repository\\Interfaces\\IContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Title": "Group.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Entity\\Group.cs",
+              "RelativeDocumentMoniker": "Repository\\Entity\\Group.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Entity\\Group.cs",
+              "RelativeToolTip": "Repository\\Entity\\Group.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T13:53:09.053Z"
+              "WhenOpened": "2025-01-19T19:43:29.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PhotosFromEventDto.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Dtos\\PhotosFromEventDto.cs",
+              "RelativeDocumentMoniker": "Service\\Dtos\\PhotosFromEventDto.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Dtos\\PhotosFromEventDto.cs",
+              "RelativeToolTip": "Service\\Dtos\\PhotosFromEventDto.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAD4vxUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T19:47:07.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Guest.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Entity\\Guest.cs",
+              "RelativeDocumentMoniker": "Repository\\Entity\\Guest.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Entity\\Guest.cs",
+              "RelativeToolTip": "Repository\\Entity\\Guest.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAABYAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T19:54:59.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Seating.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Entity\\Seating.cs",
+              "RelativeDocumentMoniker": "Repository\\Entity\\Seating.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Entity\\Seating.cs",
+              "RelativeToolTip": "Repository\\Entity\\Seating.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T14:02:13.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SeatingDto.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Dtos\\SeatingDto.cs",
+              "RelativeDocumentMoniker": "Service\\Dtos\\SeatingDto.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Dtos\\SeatingDto.cs",
+              "RelativeToolTip": "Service\\Dtos\\SeatingDto.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAowBQAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T20:12:43.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Event.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Entity\\Event.cs",
+              "RelativeDocumentMoniker": "Repository\\Entity\\Event.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Entity\\Event.cs",
+              "RelativeToolTip": "Repository\\Entity\\Event.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAzwBcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T14:04:39.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GuestInEvent.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Entity\\GuestInEvent.cs",
+              "RelativeDocumentMoniker": "Repository\\Entity\\GuestInEvent.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Entity\\GuestInEvent.cs",
+              "RelativeToolTip": "Repository\\Entity\\GuestInEvent.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA0wBEAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T19:55:25.121Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Organizer.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Entity\\Organizer.cs",
+              "RelativeDocumentMoniker": "Repository\\Entity\\Organizer.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Entity\\Organizer.cs",
+              "RelativeToolTip": "Repository\\Entity\\Organizer.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T19:55:59.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PhotosFromEventRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Repositories\\PhotosFromEventRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\Repositories\\PhotosFromEventRepository.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Repositories\\PhotosFromEventRepository.cs",
+              "RelativeToolTip": "Repository\\Repositories\\PhotosFromEventRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T14:03:31.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "EventRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Repositories\\EventRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\Repositories\\EventRepository.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Repositories\\EventRepository.cs",
+              "RelativeToolTip": "Repository\\Repositories\\EventRepository.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAswC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T13:52:15.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EventService.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Services\\EventService.cs",
+              "RelativeDocumentMoniker": "Service\\Services\\EventService.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Services\\EventService.cs",
+              "RelativeToolTip": "Service\\Services\\EventService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T20:13:38.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SubGuestDto.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Dtos\\SubGuestDto.cs",
+              "RelativeDocumentMoniker": "Service\\Dtos\\SubGuestDto.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Dtos\\SubGuestDto.cs",
+              "RelativeToolTip": "Service\\Dtos\\SubGuestDto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAowBIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T20:13:17.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "OrganizerDto.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Dtos\\OrganizerDto.cs",
+              "RelativeDocumentMoniker": "Service\\Dtos\\OrganizerDto.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Dtos\\OrganizerDto.cs",
+              "RelativeToolTip": "Service\\Dtos\\OrganizerDto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T20:12:23.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "GuestInEventDto.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Dtos\\GuestInEventDto.cs",
+              "RelativeDocumentMoniker": "Service\\Dtos\\GuestInEventDto.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Dtos\\GuestInEventDto.cs",
+              "RelativeToolTip": "Service\\Dtos\\GuestInEventDto.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAowBQAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T20:11:58.304Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SubGuest.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Entity\\SubGuest.cs",
+              "RelativeDocumentMoniker": "Repository\\Entity\\SubGuest.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Entity\\SubGuest.cs",
+              "RelativeToolTip": "Repository\\Entity\\SubGuest.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T19:56:13.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "GroupDto.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Dtos\\GroupDto.cs",
+              "RelativeDocumentMoniker": "Service\\Dtos\\GroupDto.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Dtos\\GroupDto.cs",
+              "RelativeToolTip": "Service\\Dtos\\GroupDto.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T20:11:09.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "EventDto.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Dtos\\EventDto.cs",
+              "RelativeDocumentMoniker": "Service\\Dtos\\EventDto.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Dtos\\EventDto.cs",
+              "RelativeToolTip": "Service\\Dtos\\EventDto.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T13:40:10.532Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GroupRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Repositories\\GroupRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\Repositories\\GroupRepository.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Repositories\\GroupRepository.cs",
+              "RelativeToolTip": "Repository\\Repositories\\GroupRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T20:10:45.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "DataBaseModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Mock\\Migrations\\DataBaseModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Mock\\Migrations\\DataBaseModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Mock\\Migrations\\DataBaseModelSnapshot.cs",
+              "RelativeToolTip": "Mock\\Migrations\\DataBaseModelSnapshot.cs",
+              "ViewState": "AgIAAAsBAAAAAAAAAAAIwBoBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T19:28:15.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "20250119192740_init.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Mock\\Migrations\\20250119192740_init.cs",
+              "RelativeDocumentMoniker": "Mock\\Migrations\\20250119192740_init.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Mock\\Migrations\\20250119192740_init.cs",
+              "RelativeToolTip": "Mock\\Migrations\\20250119192740_init.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T19:27:41.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "EventController.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\MasterEvents\\Controllers\\EventController.cs",
+              "RelativeDocumentMoniker": "MasterEvents\\Controllers\\EventController.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\MasterEvents\\Controllers\\EventController.cs",
+              "RelativeToolTip": "MasterEvents\\Controllers\\EventController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T19:11:55.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\MasterEvents\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "MasterEvents\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\MasterEvents\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "MasterEvents\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T19:11:09.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "DataBase.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Mock\\DataBase.cs",
+              "RelativeDocumentMoniker": "Mock\\DataBase.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Mock\\DataBase.cs",
+              "RelativeToolTip": "Mock\\DataBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T13:44:12.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IContext.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Interfaces\\IContext.cs",
+              "RelativeDocumentMoniker": "Repository\\Interfaces\\IContext.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Interfaces\\IContext.cs",
+              "RelativeToolTip": "Repository\\Interfaces\\IContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T13:53:09.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "ExtensionService.cs",
-              "DocumentMoniker": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Service\\Services\\ExtensionService.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Services\\ExtensionService.cs",
               "RelativeDocumentMoniker": "Service\\Services\\ExtensionService.cs",
-              "ToolTip": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Service\\Services\\ExtensionService.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Services\\ExtensionService.cs",
               "RelativeToolTip": "Service\\Services\\ExtensionService.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAcwBkAAABTAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAcwBkAAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-19T12:59:39.041Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "EventRepository.cs",
-              "DocumentMoniker": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Repositories\\EventRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\Repositories\\EventRepository.cs",
-              "ToolTip": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Repositories\\EventRepository.cs",
-              "RelativeToolTip": "Repository\\Repositories\\EventRepository.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAswC8AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 27,
+              "Title": "SeatingRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Repositories\\SeatingRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\Repositories\\SeatingRepository.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Repositories\\SeatingRepository.cs",
+              "RelativeToolTip": "Repository\\Repositories\\SeatingRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T13:52:15.776Z"
+              "WhenOpened": "2025-01-19T14:02:16.864Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 26,
+              "Title": "ExtensionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Repositories\\ExtensionRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\Repositories\\ExtensionRepository.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Repositories\\ExtensionRepository.cs",
+              "RelativeToolTip": "Repository\\Repositories\\ExtensionRepository.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAcwBwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T13:55:46.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
               "Title": "IRepository.cs",
-              "DocumentMoniker": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Interfaces\\IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Interfaces\\IRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Interfaces\\IRepository.cs",
-              "ToolTip": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Interfaces\\IRepository.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Interfaces\\IRepository.cs",
               "RelativeToolTip": "Repository\\Interfaces\\IRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T13:51:01.661Z"
+              "WhenOpened": "2025-01-19T13:51:01.661Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 29,
               "Title": "OrganizerService.cs",
-              "DocumentMoniker": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Service\\Services\\OrganizerService.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Services\\OrganizerService.cs",
               "RelativeDocumentMoniker": "Service\\Services\\OrganizerService.cs",
-              "ToolTip": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Service\\Services\\OrganizerService.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Services\\OrganizerService.cs",
               "RelativeToolTip": "Service\\Services\\OrganizerService.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABAAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAABFwBAAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T13:47:31.276Z"
+              "WhenOpened": "2025-01-19T13:47:31.276Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DataBase.cs",
-              "DocumentMoniker": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Mock\\DataBase.cs",
-              "RelativeDocumentMoniker": "Mock\\DataBase.cs",
-              "ToolTip": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Mock\\DataBase.cs",
-              "RelativeToolTip": "Mock\\DataBase.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T13:44:12.1Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 31,
               "Title": "SeatingService.cs",
-              "DocumentMoniker": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Service\\Services\\SeatingService.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Services\\SeatingService.cs",
               "RelativeDocumentMoniker": "Service\\Services\\SeatingService.cs",
-              "ToolTip": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Service\\Services\\SeatingService.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Services\\SeatingService.cs",
               "RelativeToolTip": "Service\\Services\\SeatingService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T13:41:44.276Z"
+              "WhenOpened": "2025-01-19T13:41:44.276Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 30,
               "Title": "SubGuestRepository.cs",
-              "DocumentMoniker": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Repositories\\SubGuestRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Repositories\\SubGuestRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Repositories\\SubGuestRepository.cs",
-              "ToolTip": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Repositories\\SubGuestRepository.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Repository\\Repositories\\SubGuestRepository.cs",
               "RelativeToolTip": "Repository\\Repositories\\SubGuestRepository.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAC4AAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAABFwC4AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T13:42:00.629Z"
+              "WhenOpened": "2025-01-19T13:42:00.629Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 32,
               "Title": "SubGuestService.cs",
-              "DocumentMoniker": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Service\\Services\\SubGuestService.cs",
+              "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Services\\SubGuestService.cs",
               "RelativeDocumentMoniker": "Service\\Services\\SubGuestService.cs",
-              "ToolTip": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Service\\Services\\SubGuestService.cs",
+              "ToolTip": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\OneDrive\\\u05E9\u05D5\u05DC\u05D7\u05DF \u05D4\u05E2\u05D1\u05D5\u05D3\u05D4\\MasterEvents\\Service\\Services\\SubGuestService.cs",
               "RelativeToolTip": "Service\\Services\\SubGuestService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T13:41:33.6Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "EventDto.cs",
-              "DocumentMoniker": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Service\\Dtos\\EventDto.cs",
-              "RelativeDocumentMoniker": "Service\\Dtos\\EventDto.cs",
-              "ToolTip": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Service\\Dtos\\EventDto.cs",
-              "RelativeToolTip": "Service\\Dtos\\EventDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T13:40:10.532Z"
+              "WhenOpened": "2025-01-19T13:41:33.6Z",
+              "EditorCaption": ""
             }
           ]
         }

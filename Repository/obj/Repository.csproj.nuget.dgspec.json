@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Repository.csproj": {}
+    "C:\\Users\\תמר לוי\\OneDrive\\שולחן העבודה\\MasterEvents\\Repository\\Repository.csproj": {}
   },
   "projects": {
-    "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Repository.csproj": {
+    "C:\\Users\\תמר לוי\\OneDrive\\שולחן העבודה\\MasterEvents\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Repository.csproj",
+        "projectUniqueName": "C:\\Users\\תמר לוי\\OneDrive\\שולחן העבודה\\MasterEvents\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Repository.csproj",
-        "packagesPath": "C:\\Users\\odeyasor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\obj\\",
+        "projectPath": "C:\\Users\\תמר לוי\\OneDrive\\שולחן העבודה\\MasterEvents\\Repository\\Repository.csproj",
+        "packagesPath": "C:\\Users\\תמר לוי\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\תמר לוי\\OneDrive\\שולחן העבודה\\MasterEvents\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\odeyasor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\תמר לוי\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -79,20 +80,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.36, 6.0.36]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.36, 6.0.36]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.36, 6.0.36]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
