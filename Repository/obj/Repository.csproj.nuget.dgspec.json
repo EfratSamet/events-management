@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\odeyasor\\Documents\\MasterEvents\\Repository\\Repository.csproj": {}
+    "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Repository.csproj": {}
   },
   "projects": {
-    "C:\\Users\\odeyasor\\Documents\\MasterEvents\\Repository\\Repository.csproj": {
+    "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\odeyasor\\Documents\\MasterEvents\\Repository\\Repository.csproj",
+        "projectUniqueName": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Users\\odeyasor\\Documents\\MasterEvents\\Repository\\Repository.csproj",
+        "projectPath": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\Repository.csproj",
         "packagesPath": "C:\\Users\\odeyasor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\odeyasor\\Documents\\MasterEvents\\Repository\\obj\\",
+        "outputPath": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

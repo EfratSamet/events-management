@@ -19,7 +19,11 @@ namespace Service.Services
         {
             services.AddRepository();
             services.AddScoped<IService<EventDto>, EventService>();
+            services.AddScoped<IService<GroupDto>, GroupService>();
             services.AddScoped<IService<GuestDto>, GuestService>();
+            services.AddScoped<IService<GuestInEventDto>, GuestInEventService>();
+            services.AddScoped<IService<OrganizerDto>, OrganizerService>();
+            services.AddScoped<IService<PhotosFromEventDto>, PhotosFromEventService>();
             services.AddScoped<IService<SeatingDto>, SeatingService>();
             services.AddScoped<IService<SubGuestDto>, SubGuestService>();
             services.AddAutoMapper(typeof(MyMapper));

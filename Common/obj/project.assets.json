@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\odeyasor\\Documents\\MasterEvents\\Common\\Common.csproj",
+      "projectUniqueName": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Common\\Common.csproj",
       "projectName": "Common",
-      "projectPath": "C:\\Users\\odeyasor\\Documents\\MasterEvents\\Common\\Common.csproj",
+      "projectPath": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Common\\Common.csproj",
       "packagesPath": "C:\\Users\\odeyasor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\odeyasor\\Documents\\MasterEvents\\Common\\obj\\",
+      "outputPath": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0tXCIuXDb9Q=",
+  "dgSpecHash": "lKraNy0+F8o=",
   "success": true,
-  "projectFilePath": "C:\\Users\\odeyasor\\Documents\\MasterEvents\\Mock\\Mock.csproj",
+  "projectFilePath": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Mock\\Mock.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\odeyasor\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\odeyasor\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

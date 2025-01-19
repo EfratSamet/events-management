@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mock", "Mock\Mock.csproj", "{714357B0-584C-48B3-9BFA-E2353F4080C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{92F460CB-E27B-4D9D-BCD0-F175D43D5215}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{714357B0-584C-48B3-9BFA-E2353F4080C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{714357B0-584C-48B3-9BFA-E2353F4080C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{714357B0-584C-48B3-9BFA-E2353F4080C0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{92F460CB-E27B-4D9D-BCD0-F175D43D5215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{92F460CB-E27B-4D9D-BCD0-F175D43D5215}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{92F460CB-E27B-4D9D-BCD0-F175D43D5215}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{92F460CB-E27B-4D9D-BCD0-F175D43D5215}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

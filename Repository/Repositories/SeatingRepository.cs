@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Repositories
 {
-    public class SeatingRepository
+    public class SeatingRepository:IRepository<Seating>
     {
         private readonly IContext context;
         public SeatingRepository(IContext context)

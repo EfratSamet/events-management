@@ -14,18 +14,18 @@ namespace Service.Services
     public class OrganizerService:IService<OrganizerDto>
     {
 
-        private readonly IRepository<Event> _repository;
+        private readonly IRepository<Organizer> _repository;
         private readonly IMapper _mapper;
 
-        public EventService(IRepository<Event> repository, IMapper mapper)
+        public OrganizerService(IRepository<Organizer> repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
         }
 
-        public EventDto Add(EventDto item)
+        public OrganizerDto Add(OrganizerDto item)
         {
-            return _mapper.Map<EventDto>(_repository.Add(_mapper.Map<Event>(item)));
+            return _mapper.Map<OrganizerDto>(_repository.Add(_mapper.Map<Organizer>(item)));
         }
 
         public void Delete(string id)
@@ -33,19 +33,19 @@ namespace Service.Services
             _repository.Delete(id);
         }
 
-        public EventDto Get(string id)
+        public OrganizerDto Get(string id)
         {
-            return _mapper.Map<EventDto>(_repository.Get(id));
+            return _mapper.Map<OrganizerDto>(_repository.Get(id));
         }
 
-        public List<EventDto> GetAll()
+        public List<OrganizerDto> GetAll()
         {
-            return _mapper.Map<List<EventDto>>(_repository.GetAll());
+            return _mapper.Map<List<OrganizerDto>>(_repository.GetAll());
         }
 
-        public EventDto Update(string id, EventDto item)
+        public OrganizerDto Update(string id, OrganizerDto item)
         {
-            return _mapper.Map<EventDto>(_repository.Update(id, _mapper.Map<Event>(item)));
+            return _mapper.Map<OrganizerDto>(_repository.Update(id, _mapper.Map<Organizer>(item)));
         }
     }
 }

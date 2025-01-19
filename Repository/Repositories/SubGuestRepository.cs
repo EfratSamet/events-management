@@ -41,7 +41,10 @@ namespace Repository.Repositories
 
         public SubGuest Update(string id, SubGuest item)
         {
-            throw new NotImplementedException();
+            SubGuest x = Get(id);
+            x.guestId = item.guestId;
+            x.name = item.name;
+            return x;
         }
     }
 }
