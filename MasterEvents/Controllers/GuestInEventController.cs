@@ -11,6 +11,11 @@ namespace MasterEvents.Controllers
     public class GuestInEventController : ControllerBase
     {
         private readonly IService<GuestInEventDto> _guestInEventService;
+        public GuestInEventController(IService<GuestInEventDto> guestInEventService)
+        {
+            _guestInEventService = guestInEventService;
+        }
+
         // GET: api/<GuestInEventController>
         [HttpGet]
         public IEnumerable<GuestInEventDto> Get()

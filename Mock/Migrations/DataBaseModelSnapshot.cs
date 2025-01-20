@@ -10,7 +10,7 @@ using Mock;
 
 namespace Mock.Migrations
 {
-    [DbContext(typeof(DataBase))]
+    [DbContext(typeof(MyDataBase))]
     partial class DataBaseModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

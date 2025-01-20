@@ -11,9 +11,14 @@ namespace MasterEvents.Controllers
     public class OrganizerController : ControllerBase
     {
         private readonly IService<OrganizerDto> _organizerService;
+        public OrganizerController(IService<OrganizerDto> organizerService)
+        {
+            _organizerService = organizerService;
+        }
+
         // GET: api/<OrganizerController>
         [HttpGet]
-        public IEnumerable<OrganizerDto> Get()
+        public List<OrganizerDto> Get()
         {
             return _organizerService.GetAll();
         }

@@ -36,6 +36,25 @@
           }
         }
       },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.36": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.35.0"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/6.0.36": {
         "type": "package",
         "compile": {
@@ -1149,6 +1168,21 @@
         "automapper.extensions.microsoft.dependencyinjection.nuspec",
         "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll",
         "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.pdb"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.36": {
+      "sha512": "vGDqvZUehbtKdoUzVO32N0Lxon+1piGO6qFnA8FNXEzWhrLN5uum8ZyhWgrWYSA4b6JuCBJ/wAC7rV38wBvLew==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/6.0.36",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
+        "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
+        "microsoft.aspnetcore.authentication.jwtbearer.6.0.36.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/6.0.36": {
@@ -3379,28 +3413,32 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.36",
       "Service >= 1.0.0",
-      "Swashbuckle.AspNetCore >= 6.5.0"
+      "Swashbuckle.AspNetCore >= 6.5.0",
+      "System.IdentityModel.Tokens.Jwt >= 6.36.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\odeyasor\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\תמר לוי\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\MasterEvents\\MasterEvents.csproj",
+      "projectUniqueName": "C:\\Users\\תמר לוי\\OneDrive\\שולחן העבודה\\MasterEvents\\MasterEvents\\MasterEvents.csproj",
       "projectName": "MasterEvents",
-      "projectPath": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\MasterEvents\\MasterEvents.csproj",
-      "packagesPath": "C:\\Users\\odeyasor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\MasterEvents\\obj\\",
+      "projectPath": "C:\\Users\\תמר לוי\\OneDrive\\שולחן העבודה\\MasterEvents\\MasterEvents\\MasterEvents.csproj",
+      "packagesPath": "C:\\Users\\תמר לוי\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\תמר לוי\\OneDrive\\שולחן העבודה\\MasterEvents\\MasterEvents\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\odeyasor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\תמר לוי\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3416,8 +3454,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Service\\Service.csproj": {
-              "projectPath": "C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\Service\\Service.csproj"
+            "C:\\Users\\תמר לוי\\OneDrive\\שולחן העבודה\\MasterEvents\\Service\\Service.csproj": {
+              "projectPath": "C:\\Users\\תמר לוי\\OneDrive\\שולחן העבודה\\MasterEvents\\Service\\Service.csproj"
             }
           }
         }
@@ -3438,9 +3476,17 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": {
+            "target": "Package",
+            "version": "[6.0.36, )"
+          },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.5.0, )"
+          },
+          "System.IdentityModel.Tokens.Jwt": {
+            "target": "Package",
+            "version": "[6.36.0, )"
           }
         },
         "imports": [
@@ -3465,13 +3511,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\odeyasor\\Desktop\\master-events-project\\MasterEvents\\MasterEvents\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

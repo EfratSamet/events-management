@@ -11,9 +11,13 @@ namespace MasterEvents.Controllers
     public class SeatingController : ControllerBase
     {
         private readonly IService<SeatingDto> _seatingService;
+        public SeatingController(IService<SeatingDto> seatingService)
+        {
+            _seatingService = seatingService;
+        }
         // GET: api/<SeatingController>
         [HttpGet]
-        public IEnumerable<SeatingDto> Get()
+        public List<SeatingDto> Get()
         {
             return _seatingService.GetAll();
         }

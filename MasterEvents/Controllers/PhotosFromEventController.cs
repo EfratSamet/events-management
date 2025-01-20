@@ -10,10 +10,16 @@ namespace MasterEvents.Controllers
     [ApiController]
     public class PhotosFromEventController : ControllerBase
     {
+        public static string _directory = Environment.CurrentDirectory + "/images/";
         private readonly IService<PhotosFromEventDto> _photosFromEventService;
+        public PhotosFromEventController(IService<PhotosFromEventDto> photosFromEventService)
+        {
+            _photosFromEventService = photosFromEventService;
+        }
+
         // GET: api/<PhotosFromEventController>
         [HttpGet]
-        public IEnumerable<PhotosFromEventDto> Get()
+        public List<PhotosFromEventDto> Get()
         {
             return _photosFromEventService.GetAll();
         }
@@ -27,9 +33,16 @@ namespace MasterEvents.Controllers
 
         // POST api/<PhotosFromEventController>
         [HttpPost]
-        public void Post([FromBody] PhotosFromEventDto value)
+        public PhotosFromEventDto Post([FromBody] PhotosFromEventDto value)
         {
-            _photosFromEventService.Add(value);
+            var filePath = Path.Combine(Environment.CurrentDirectory, "Images/", value.File.FileName); //l:/...
+            using (FileStream fs = new FileStream(filePath, FileMode.Create))
+            {
+                value.File.CopyTo(fs);
+                fs.Close();
+            }
+            var res = _photosFromEventService.Add(value);
+            return res;
         }
 
         // PUT api/<PhotosFromEventController>/5

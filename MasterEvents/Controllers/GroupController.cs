@@ -12,9 +12,14 @@ namespace MasterEvents.Controllers
     public class GroupController : ControllerBase
     {
         private readonly IService<GroupDto> _groupService;
+        public GroupController(IService<GroupDto> groupService)
+        {
+            _groupService = groupService;
+        }
+
         // GET: api/<GroupController>
         [HttpGet]
-        public IEnumerable<GroupDto> Get()
+        public List<GroupDto> Get()
         {
             return _groupService.GetAll();
         }

@@ -892,7 +892,24 @@
         },
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PhotosFromEventDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PhotosFromEventDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PhotosFromEventDto"
+                }
+              }
+            }
           }
         }
       }
@@ -1382,6 +1399,9 @@
             "type": "string",
             "nullable": true
           },
+          "organizer": {
+            "$ref": "#/components/schemas/Organizer"
+          },
           "eventName": {
             "type": "string",
             "nullable": true
@@ -1432,6 +1452,9 @@
           "organizerId": {
             "type": "string",
             "nullable": true
+          },
+          "organizer": {
+            "$ref": "#/components/schemas/Organizer"
           },
           "eventName": {
             "type": "string",
@@ -1496,9 +1519,15 @@
             "type": "string",
             "nullable": true
           },
+          "organizer": {
+            "$ref": "#/components/schemas/Organizer"
+          },
           "guestId": {
             "type": "string",
             "nullable": true
+          },
+          "guest": {
+            "$ref": "#/components/schemas/Guest"
           }
         },
         "additionalProperties": false
@@ -1518,9 +1547,36 @@
             "type": "string",
             "nullable": true
           },
+          "organizer": {
+            "$ref": "#/components/schemas/Organizer"
+          },
           "guestId": {
             "type": "string",
             "nullable": true
+          },
+          "guest": {
+            "$ref": "#/components/schemas/Guest"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Guest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "mail": {
+            "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "$ref": "#/components/schemas/Gender"
           }
         },
         "additionalProperties": false
@@ -1557,9 +1613,15 @@
             "type": "string",
             "nullable": true
           },
+          "guest": {
+            "$ref": "#/components/schemas/Guest"
+          },
           "eventId": {
             "type": "string",
             "nullable": true
+          },
+          "event_": {
+            "$ref": "#/components/schemas/Event"
           },
           "ok": {
             "type": "boolean"
@@ -1581,15 +1643,57 @@
             "type": "string",
             "nullable": true
           },
+          "guest": {
+            "$ref": "#/components/schemas/Guest"
+          },
           "eventId": {
             "type": "string",
             "nullable": true
+          },
+          "event_": {
+            "$ref": "#/components/schemas/Event"
           },
           "ok": {
             "type": "boolean"
           },
           "category": {
             "$ref": "#/components/schemas/Category"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Organizer": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "mail": {
+            "type": "string",
+            "nullable": true
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Event"
+            },
+            "nullable": true
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Group"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1637,13 +1741,19 @@
             "type": "string",
             "nullable": true
           },
-          "idEvent": {
-            "type": "string",
-            "nullable": true
-          },
           "guestId": {
             "type": "string",
             "nullable": true
+          },
+          "guest": {
+            "$ref": "#/components/schemas/Guest"
+          },
+          "eventId": {
+            "type": "string",
+            "nullable": true
+          },
+          "event_": {
+            "$ref": "#/components/schemas/Event"
           },
           "imageUrl": {
             "type": "string",
@@ -1659,7 +1769,7 @@
       "PhotosFromEventDto": {
         "type": "object",
         "properties": {
-          "idEvent": {
+          "id": {
             "type": "string",
             "nullable": true
           },
@@ -1667,8 +1777,24 @@
             "type": "string",
             "nullable": true
           },
-          "imageUrl": {
+          "guest": {
+            "$ref": "#/components/schemas/Guest"
+          },
+          "eventId": {
             "type": "string",
+            "nullable": true
+          },
+          "event_": {
+            "$ref": "#/components/schemas/Event"
+          },
+          "image": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true
+          },
+          "file": {
+            "type": "string",
+            "format": "binary",
             "nullable": true
           },
           "blessing": {
@@ -1689,9 +1815,15 @@
             "type": "string",
             "nullable": true
           },
+          "event_": {
+            "$ref": "#/components/schemas/Event"
+          },
           "subGuestId": {
             "type": "string",
             "nullable": true
+          },
+          "subGuest": {
+            "$ref": "#/components/schemas/SubGuest"
           },
           "table": {
             "type": "integer",
@@ -1700,6 +1832,30 @@
           "seat": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SubGuest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "guestId": {
+            "type": "string",
+            "nullable": true
+          },
+          "guest": {
+            "$ref": "#/components/schemas/Guest"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "$ref": "#/components/schemas/Gender"
           }
         },
         "additionalProperties": false
@@ -1714,6 +1870,9 @@
           "guestId": {
             "type": "string",
             "nullable": true
+          },
+          "guest": {
+            "$ref": "#/components/schemas/Guest"
           },
           "name": {
             "type": "string",

@@ -18,7 +18,8 @@ namespace Service.Dtos
         public string eventId { get; set; }
         [ForeignKey("eventId")]
         public virtual Event event_ { get; set; }
-        public string imageUrl { get; set; }
+        public byte[]? Image { get; set; }
+        public IFormFile? File { get; set; }
         public string blessing { get; set; }
     }
 }

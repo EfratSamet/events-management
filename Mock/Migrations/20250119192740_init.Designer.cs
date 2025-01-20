@@ -11,7 +11,7 @@ using Mock;
 
 namespace Mock.Migrations
 {
-    [DbContext(typeof(DataBase))]
+    [DbContext(typeof(MyDataBase))]
     [Migration("20250119192740_init")]
     partial class init
     {
