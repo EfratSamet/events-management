@@ -17,6 +17,8 @@ namespace Repository.Entity
         [ForeignKey("eventId")]
         public virtual Event event_ { get; set; }
         public bool ok { get; set; }
-        public Category category { get; set; }
+        public string group { get; set; }
+        [ForeignKey("group")]
+        public virtual Group group_ { get; set; }
     }
 }

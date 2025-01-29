@@ -6,10 +6,6 @@ using System.Threading.Tasks;
 
 namespace Repository.Entity
 {
-    public enum Category
-    {
-
-    }
     public enum Gender
     {
         female,

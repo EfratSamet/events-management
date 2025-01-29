@@ -1,12 +1,11 @@
 {
   "Version": 1,
-  "Hash": "R1WN5AJwvdNgXbserxB93N8nGWzYYyl/WWug1AOJjp4=",
+  "Hash": "c7L0MhBeZvRaacYqb/07uNg7Gv/ffz+0jS29wzuSARg=",
   "Source": "MasterEvents",
   "BasePath": "_content/MasterEvents",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": []
 }

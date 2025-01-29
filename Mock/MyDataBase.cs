@@ -22,7 +22,7 @@ namespace Mock
         public DbSet<SubGuest> SubGuests { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=localhost;database=MasterEvents;trusted_connection=true");
+            optionsBuilder.UseSqlServer("server=sql;database=MasterEvents;trusted_connection=true");
         }
 
         public void save()
