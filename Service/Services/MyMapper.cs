@@ -13,8 +13,24 @@ namespace Service.Services
     {
         public MyMapper()
         {
-       // CreateMap<>
+            CreateMap<PhotosFromEvent, PhotosFromEventDto>()
 
+                           .ForMember(dest => dest.Image, src => src.MapFrom(s => convertToByte(Environment.CurrentDirectory + "/Images/" + s.imageUrl)));
+
+            CreateMap<PhotosFromEventDto, PhotosFromEvent>().ForMember(dest => dest.imageUrl, src => src.MapFrom(s =>
+            s.File.FileName));
+            CreateMap<Event, EventDto>().ReverseMap();
+            CreateMap<Group, GroupDto>().ReverseMap();
+            CreateMap<Guest, GuestDto>().ReverseMap();
+            CreateMap<GuestInEvent, GuestInEventDto>().ReverseMap();
+            CreateMap<Organizer, OrganizerDto>().ReverseMap();
+            CreateMap<Seating, SeatingDto>().ReverseMap();
+
+        }
+        public byte[] convertToByte(string image)
+        {
+            var res = System.IO.File.ReadAllBytes(image);
+            return res;
         }
  
     }

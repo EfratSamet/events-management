@@ -1,20 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\MasterEvents\\MasterEvents.csproj": {}
+    "C:\\MasterEvents\\MasterEvents\\MasterEvents.csproj": {}
   },
   "projects": {
-    "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\MasterEvents\\MasterEvents.csproj": {
+    "C:\\MasterEvents\\MasterEvents\\MasterEvents.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\MasterEvents\\MasterEvents.csproj",
+        "projectUniqueName": "C:\\MasterEvents\\MasterEvents\\MasterEvents.csproj",
         "projectName": "MasterEvents",
-        "projectPath": "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\MasterEvents\\MasterEvents.csproj",
-        "packagesPath": "C:\\Users\\s-sys\\.nuget\\packages\\",
-        "outputPath": "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\MasterEvents\\obj\\",
+        "projectPath": "C:\\MasterEvents\\MasterEvents\\MasterEvents.csproj",
+        "packagesPath": "C:\\Users\\תמר לוי\\.nuget\\packages\\",
+        "outputPath": "C:\\MasterEvents\\MasterEvents\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\s-sys\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\תמר לוי\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,20 +27,21 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Mock\\Mock.csproj": {
-                "projectPath": "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Mock\\Mock.csproj"
+              "C:\\MasterEvents\\Mock\\Mock.csproj": {
+                "projectPath": "C:\\MasterEvents\\Mock\\Mock.csproj"
               },
-              "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Repository\\Repository.csproj": {
-                "projectPath": "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Repository\\Repository.csproj"
+              "C:\\MasterEvents\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\MasterEvents\\Repository\\Repository.csproj"
               },
-              "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Service\\Service.csproj": {
-                "projectPath": "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Service\\Service.csproj"
+              "C:\\MasterEvents\\Service\\Service.csproj": {
+                "projectPath": "C:\\MasterEvents\\Service\\Service.csproj"
               }
             }
           }
@@ -44,7 +50,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -98,21 +110,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Mock\\Mock.csproj": {
+    "C:\\MasterEvents\\Mock\\Mock.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Mock\\Mock.csproj",
+        "projectUniqueName": "C:\\MasterEvents\\Mock\\Mock.csproj",
         "projectName": "Mock",
-        "projectPath": "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Mock\\Mock.csproj",
-        "packagesPath": "C:\\Users\\s-sys\\.nuget\\packages\\",
-        "outputPath": "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Mock\\obj\\",
+        "projectPath": "C:\\MasterEvents\\Mock\\Mock.csproj",
+        "packagesPath": "C:\\Users\\תמר לוי\\.nuget\\packages\\",
+        "outputPath": "C:\\MasterEvents\\Mock\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\s-sys\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\תמר לוי\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -120,17 +137,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Repository\\Repository.csproj": {
-                "projectPath": "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Repository\\Repository.csproj"
+              "C:\\MasterEvents\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\MasterEvents\\Repository\\Repository.csproj"
               },
-              "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Service\\Service.csproj": {
-                "projectPath": "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Service\\Service.csproj"
+              "C:\\MasterEvents\\Service\\Service.csproj": {
+                "projectPath": "C:\\MasterEvents\\Service\\Service.csproj"
               }
             }
           }
@@ -139,7 +157,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -178,21 +202,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Repository\\Repository.csproj": {
+    "C:\\MasterEvents\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Repository\\Repository.csproj",
+        "projectUniqueName": "C:\\MasterEvents\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Repository\\Repository.csproj",
-        "packagesPath": "C:\\Users\\s-sys\\.nuget\\packages\\",
-        "outputPath": "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Repository\\obj\\",
+        "projectPath": "C:\\MasterEvents\\Repository\\Repository.csproj",
+        "packagesPath": "C:\\Users\\תמר לוי\\.nuget\\packages\\",
+        "outputPath": "C:\\MasterEvents\\Repository\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\s-sys\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\תמר לוי\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -200,6 +229,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -212,7 +242,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -251,21 +287,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Service\\Service.csproj": {
+    "C:\\MasterEvents\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Service\\Service.csproj",
+        "projectUniqueName": "C:\\MasterEvents\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Service\\Service.csproj",
-        "packagesPath": "C:\\Users\\s-sys\\.nuget\\packages\\",
-        "outputPath": "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Service\\obj\\",
+        "projectPath": "C:\\MasterEvents\\Service\\Service.csproj",
+        "packagesPath": "C:\\Users\\תמר לוי\\.nuget\\packages\\",
+        "outputPath": "C:\\MasterEvents\\Service\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\s-sys\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\תמר לוי\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -273,14 +314,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Repository\\Repository.csproj": {
-                "projectPath": "L:\\שנה ב\\Ai\\אפרת סמט\\MasterEvents\\Repository\\Repository.csproj"
+              "C:\\MasterEvents\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\MasterEvents\\Repository\\Repository.csproj"
               }
             }
           }
@@ -289,7 +331,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -340,7 +388,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

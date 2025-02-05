@@ -41,7 +41,26 @@ namespace Repository.Repositories
 
         public Group Update(string id, Group item)
         {
-            throw new NotImplementedException();
+            var existingGroup = context.Groups.FirstOrDefault(x => x.id == id);
+
+            existingGroup.name = item.name;
+            existingGroup.organizerId = item.organizerId;
+            existingGroup.guestId = item.guestId;
+
+            if (item.organizer != null)
+            {
+                existingGroup.organizer = item.organizer;
+            }
+
+            if (item.guest != null)
+            {
+                existingGroup.guest = item.guest;
+            }
+
+            context.save();
+
+            return existingGroup;
         }
+
     }
 }

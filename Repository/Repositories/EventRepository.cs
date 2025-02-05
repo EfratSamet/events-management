@@ -41,7 +41,20 @@ namespace Repository.Repositories
 
         public Event Update(string id, Event item)
         {
-            throw new NotImplementedException();
+            Event existingEvent = context.Events.FirstOrDefault(x => x.id == id);
+            existingEvent.eventName = item.eventName;
+            existingEvent.organizerId = item.organizerId;
+            if(item.organizerId != null) 
+                  existingEvent.organizer = item.organizer;
+            existingEvent.eventDate = item.eventDate;
+            existingEvent.address = item.address;
+            existingEvent.details = item.details;
+            existingEvent.seperation = item.seperation;
+            existingEvent.invitation = item.invitation;
+            existingEvent.photos = item.photos;
+            existingEvent.guests = item.guests;
+            context.save();
+            return existingEvent; 
         }
     }
 }

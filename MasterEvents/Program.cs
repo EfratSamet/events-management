@@ -1,40 +1,82 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.IdentityModel.Tokens;
 using Repository.Interfaces;
 using System.Text;
+using Service.Dtos;
+using Service.Interfaces;
+using Service.Services;
+using Repository.Entity;
+using Repository.Repositories;
+using AutoMapper;
+using Mock;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// טעינת appsettings.json
+builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
+// בדיקה שהערכים של JWT לא ריקים
+var jwtIssuer = builder.Configuration["Jwt:Issuer"] ?? throw new ArgumentNullException("Jwt:Issuer is missing in configuration.");
+var jwtAudience = builder.Configuration["Jwt:Audience"] ?? throw new ArgumentNullException("Jwt:Audience is missing in configuration.");
+var jwtKey = builder.Configuration["Jwt:Key"] ?? throw new ArgumentNullException("Jwt:Key is missing in configuration.");
+
+// הוספת שירותי אימות עם JWT
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters()
+        {
+            ValidateAudience = true,
+            ValidateIssuer = true,
+            ValidateLifetime = true,
+            ValidIssuer = jwtIssuer,
+            ValidAudience = jwtAudience,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
+        };
+    });
+
+builder.Services.AddScoped<IRepository<Event>, EventRepository>();
+builder.Services.AddScoped<IService<EventDto>, EventService>();
+
+builder.Services.AddScoped<IRepository<Group>, GroupRepository>();
+builder.Services.AddScoped<IService<GroupDto>, GroupService>();
+
+builder.Services.AddScoped<IRepository<Guest>, GuestRepository>();
+builder.Services.AddScoped<IService<GuestDto>, GuestService>();
+
+builder.Services.AddScoped<IRepository<Guest>, GuestRepository>();
+builder.Services.AddScoped<IService<GuestDto>, GuestService>();
+
+builder.Services.AddScoped<IRepository<GuestInEvent>, GuestInEventRepository>();
+builder.Services.AddScoped<IService<GuestInEventDto>, GuestInEventService>();
+
+builder.Services.AddScoped<IRepository<Organizer>, OrganizerRepository>();
+builder.Services.AddScoped<IService<OrganizerDto>, OrganizerService>();
+
+builder.Services.AddScoped<IRepository<PhotosFromEvent>, PhotosFromEventRepository>();
+builder.Services.AddScoped<IService<PhotosFromEventDto>, PhotosFromEventService>();
+
+builder.Services.AddScoped<IRepository<Seating>, SeatingRepository>();
+builder.Services.AddScoped<IService<SeatingDto>, SeatingService>();
+
+builder.Services.AddScoped<IRepository<SubGuest>, SubGuestRepository>();
+builder.Services.AddScoped<IService<SubGuestDto>, SubGuestService>();
+
+builder.Services.AddScoped<IContext, MyDataBase>();
+builder.Services.AddAutoMapper(typeof(MyMapper));
+
+// הוספת שירותי Authorization
+builder.Services.AddAuthorization();
+
+// הוספת תמיכה ב-Controllers
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+// הוספת Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-//di -database
-//builder.Services.AddDbContext<IContext, MyDatabase>();
 
-//di
-//builder.Services.AddServiceExtension();
-
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(option =>
-    option.TokenValidationParameters = new TokenValidationParameters()
-    {
-
-        ValidateAudience = true,
-        ValidateIssuer = true,
-        ValidateLifetime = true,
-        ValidIssuer = builder.Configuration["Jwt:Issuer"],
-        ValidAudience = builder.Configuration["Jwt:Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
-
-    }
-    );
-// enable cors
+// הגדרת CORS
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins,
@@ -43,11 +85,10 @@ builder.Services.AddCors(options =>
                           policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
                       });
 });
-// enable cors
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// הפעלת Swagger (בפיתוח בלבד)
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -55,15 +96,15 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-//הרשאות
+
+// הפעלת אימות והרשאות
 app.UseAuthentication();
-//אימות
 app.UseAuthorization();
 
-// enable cors
+// הפעלת CORS
 app.UseCors(MyAllowSpecificOrigins);
-// enable cors
 
+// מיפוי כל ה-Controllers
 app.MapControllers();
 
 app.Run();

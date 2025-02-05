@@ -41,7 +41,16 @@ namespace Repository.Repositories
 
         public Guest Update(string id, Guest item)
         {
-            throw new NotImplementedException();
+            var existingGuest = context.Guests.FirstOrDefault(x => x.id == id);
+
+            existingGuest.name = item.name;
+            existingGuest.mail = item.mail;
+            existingGuest.gender = item.gender;
+
+            context.save();
+
+            return existingGuest;
         }
+
     }
 }

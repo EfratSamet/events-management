@@ -1384,10 +1384,6 @@
   },
   "components": {
     "schemas": {
-      "Category": {
-        "type": "integer",
-        "format": "int32"
-      },
       "Event": {
         "type": "object",
         "properties": {
@@ -1626,8 +1622,12 @@
           "ok": {
             "type": "boolean"
           },
-          "category": {
-            "$ref": "#/components/schemas/Category"
+          "group": {
+            "type": "string",
+            "nullable": true
+          },
+          "group_": {
+            "$ref": "#/components/schemas/Group"
           }
         },
         "additionalProperties": false
@@ -1656,8 +1656,12 @@
           "ok": {
             "type": "boolean"
           },
-          "category": {
-            "$ref": "#/components/schemas/Category"
+          "group": {
+            "type": "string",
+            "nullable": true
+          },
+          "group_": {
+            "$ref": "#/components/schemas/Group"
           }
         },
         "additionalProperties": false

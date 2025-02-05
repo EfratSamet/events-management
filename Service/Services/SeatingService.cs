@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Service.Services
 {
-    internal class SeatingService:IService<SeatingDto>
+    public class SeatingService:IService<SeatingDto>
     {
         private readonly IRepository<Seating> _repository;
         private readonly IMapper _mapper;
