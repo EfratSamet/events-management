@@ -41,8 +41,15 @@ namespace Repository.Repositories
 
         public PhotosFromEvent Update(string id, PhotosFromEvent item)
         {
-            throw new NotImplementedException();
+            PhotosFromEvent p = Get(id);
+            p.eventId = item.eventId;
+            p.guestId = item.guestId;
+            p.blessing = item.blessing;
+            p.imageUrl = item.imageUrl;
+            context.save();
+            return p;
         }
+
     }
 }
 

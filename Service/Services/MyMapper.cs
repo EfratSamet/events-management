@@ -25,7 +25,7 @@ namespace Service.Services
             CreateMap<GuestInEvent, GuestInEventDto>().ReverseMap();
             CreateMap<Organizer, OrganizerDto>().ReverseMap();
             CreateMap<Seating, SeatingDto>().ReverseMap();
-
+            CreateMap<SubGuest, SubGuestDto>().ReverseMap();
         }
         public byte[] convertToByte(string image)
         {

@@ -41,7 +41,12 @@ namespace Repository.Repositories
 
         public Seating Update(string id, Seating item)
         {
-            throw new NotImplementedException();
+            Seating s = Get(id);
+            s.seat = item.seat;
+            s.subGuestId = item.subGuestId;
+            s.table = item.table;
+            context.save();
+            return s;
         }
     }
 }

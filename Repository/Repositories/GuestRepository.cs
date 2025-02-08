@@ -1,10 +1,12 @@
-﻿using Repository.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using Repository.Entity;
 using Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Repository.Repositories
 {
@@ -51,6 +53,26 @@ namespace Repository.Repositories
 
             return existingGuest;
         }
-
+       //חיפוש אורחים לפי חלק מהשם
+        public List<Guest> GetGuestsByName(string guestName)
+        {
+            return context.Guests
+                .Where(g => g.name.Contains(guestName))  // מסנן לפי שם (חלקי)
+                .ToList();
+        }
+        //חיפוש אורחים לפי מייל
+        public List<Guest> GetGuestsByMail(string mail)
+        {
+            return context.Guests
+                .Where(g => g.mail.Contains(mail))  // מסנן לפי מייל (חלקי)
+                .ToList();
+        }
+        //חיפוש אורחים לפי מין
+        public List<Guest> GetGuestsByGender(Gender gender)
+        {
+            return context.Guests
+                .Where(g => g.gender == gender)  // מסנן לפי מין
+                .ToList();
+        }
     }
 }

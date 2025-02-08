@@ -64,7 +64,7 @@ namespace MasterEvents.Controllers
             var token = new JwtSecurityToken(
                 config["Jwt:Issuer"], config["Jwt:Audience"]
                 , claims,
-          expires: DateTime.Now.AddMinutes(15),
+          expires: DateTime.Now.AddMinutes(45),
               signingCredentials: carditional);
             return new JwtSecurityTokenHandler().WriteToken(token);
         }

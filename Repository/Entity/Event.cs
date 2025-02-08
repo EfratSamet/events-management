@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace Repository.Entity
     public class Event
     {
         public string id { get; set; }
+        [Required]
         public string organizerId { get; set; }
         [ForeignKey("organizerId")]
         public virtual Organizer organizer { get; set; }

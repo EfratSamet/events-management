@@ -417,3 +417,4 @@ C:\MasterEvents\MasterEvents\obj\Debug\net6.0\refint\MasterEvents.dll
 C:\MasterEvents\MasterEvents\obj\Debug\net6.0\MasterEvents.pdb
 C:\MasterEvents\MasterEvents\obj\Debug\net6.0\MasterEvents.genruntimeconfig.cache
 C:\MasterEvents\MasterEvents\obj\Debug\net6.0\ref\MasterEvents.dll
+C:\MasterEvents\MasterEvents\bin\Debug\net6.0\BouncyCastle.Crypto.dll

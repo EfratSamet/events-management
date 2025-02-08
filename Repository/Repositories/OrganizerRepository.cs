@@ -1,4 +1,5 @@
-﻿using Repository.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using Repository.Entity;
 using Repository.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -41,7 +42,22 @@ namespace Repository.Repositories
 
         public Organizer Update(string id, Organizer item)
         {
-            throw new NotImplementedException();
+            Organizer o = Get(id);
+            o.name = item.name;
+            o.mail = item.mail;
+            o.password = item.password;
+            context.save();
+            return o;
+        }
+        // שאילתת חיפוש - חיפוש קבוצות לפי מארגן
+        public List<Group> GetGroupsByOrganizerId(string organizerId)
+        {
+            return context.Groups.Where(g => g.organizerId == organizerId).ToList();
+        }
+        // שאילתת חיפוש - חיפוש אירועים לפי מארגן
+        public List<Event> GetEventsByOrganizerId(string organizerId)
+        {
+            return context.Events.Where(e => e.organizerId == organizerId).ToList();
         }
     }
 }

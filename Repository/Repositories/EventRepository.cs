@@ -1,4 +1,5 @@
-﻿using Repository.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using Repository.Entity;
 using Repository.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -41,7 +42,7 @@ namespace Repository.Repositories
 
         public Event Update(string id, Event item)
         {
-            Event existingEvent = context.Events.FirstOrDefault(x => x.id == id);
+            Event existingEvent = Get(id);
             existingEvent.eventName = item.eventName;
             existingEvent.organizerId = item.organizerId;
             if(item.organizerId != null) 
@@ -55,6 +56,38 @@ namespace Repository.Repositories
             existingEvent.guests = item.guests;
             context.save();
             return existingEvent; 
+        }
+        //חיפוש אירועים לפי מארגן
+        public List<Event> GetEventsByOrganizerId(string organizerId)
+        {
+            return context.Events.Where(e => e.organizerId == organizerId).ToList();
+        }
+        //חיפוש אירועים לפי טווח תאריכים (תאריך התחלה וסיום)
+        public List<Event> GetEventsByDateRange(DateTime startDate, DateTime endDate)
+        {
+            return context.Events.Where(e => e.eventDate >= startDate && e.eventDate <= endDate).ToList();
+        }
+        //חיפוש אירועים לפי מיקום
+        public List<Event> GetEventsByAddress(string address)
+        {
+            return context.Events
+                .Where(e => e.address.Contains(address))
+                .ToList();
+        }
+        //חיפוש אירועים עתידיים
+        public List<Event> GetUpcomingEvents()
+        {
+            return context.Events
+                .Where(e => e.eventDate > DateTime.Now)
+                .OrderBy(e => e.eventDate)
+                .ToList();
+        }
+        //חיפוש אירועים לפי מילת מפתח בכתובת
+        public List<Event> GetEventsByAddressKeyword(string keyword)
+        {
+            return context.Events
+                .Where(e => e.address.Contains(keyword))
+                .ToList();
         }
     }
 }

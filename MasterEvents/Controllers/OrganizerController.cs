@@ -50,5 +50,6 @@ namespace MasterEvents.Controllers
         {
             _organizerService.Delete(id);
         }
+
     }
 }

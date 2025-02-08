@@ -1,4 +1,5 @@
-﻿using Repository.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using Repository.Entity;
 using Repository.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,7 @@ namespace Repository.Repositories
 
         public List<SubGuest> GetAll()
         {
-            return context.SubGuests.ToList();
+            return context.SubGuests.Include(x=>x.guest).ToList();
         }
 
         public SubGuest Update(string id, SubGuest item)
@@ -44,7 +45,16 @@ namespace Repository.Repositories
             SubGuest x = Get(id);
             x.guestId = item.guestId;
             x.name = item.name;
+            x.gender = item.gender;
+            context.save();
             return x;
+        }
+        //חיפוש לפי חלק מהשם
+        public List<SubGuest> GetSubGuestsByName(string subGuestName)
+        {
+            return context.SubGuests
+                .Where(sg => sg.name.Contains(subGuestName))  // מסנן לפי שם (חלקי)
+                .ToList();
         }
     }
 }
