@@ -1,4 +1,5 @@
-﻿using Repository.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using Repository.Entity;
 using Repository.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -48,5 +49,25 @@ namespace Repository.Repositories
             context.save();
             return s;
         }
+       
+        // חיפוש לפי מזהה אורח
+        public List<SubGuest> GetSubGuestsByGuestId(string guestId)
+        {
+            return context.SubGuests.Where(sg => sg.guestId == guestId).ToList();
+        }
+
+        // חיפוש לפי שם (כולל חיפוש חלקי)
+        public List<SubGuest> GetSubGuestsByName(string name)
+        {
+            return context.SubGuests.Where(sg => sg.name.Contains(name)).ToList();
+        }
+
+        // חיפוש לפי מגדר
+        public List<SubGuest> GetSubGuestsByGender(Gender gender)
+        {
+            return context.SubGuests.Where(sg => sg.gender == gender).ToList();
+        }
+     
     }
 }
+

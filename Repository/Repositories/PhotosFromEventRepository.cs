@@ -1,4 +1,5 @@
-﻿using Repository.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using Repository.Entity;
 using Repository.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -49,7 +50,73 @@ namespace Repository.Repositories
             context.save();
             return p;
         }
+        // חיפוש תמונות לפי מזהה אורח (guestId)
+        public List<PhotosFromEvent> GetPhotosByGuestId(string guestId)
+        {
+            return context.PhotosFromEvents.Where(p => p.guestId == guestId).ToList();
+        }
 
+        // חיפוש תמונות לפי מזהה אירוע (eventId)
+        public List<PhotosFromEvent> GetPhotosByEventId(string eventId)
+        {
+            return context.PhotosFromEvents.Where(p => p.eventId == eventId).ToList();
+        }
+
+        // חיפוש תמונות של אורח ספציפי מתוך אירוע מסוים
+        public List<PhotosFromEvent> GetPhotosByGuestAndEvent(string guestId, string eventId)
+        {
+            return context.PhotosFromEvents
+                           .Where(p => p.guestId == guestId && p.eventId == eventId)
+                           .ToList();
+        }
+
+        // חיפוש תמונות עם טעינת נתוני האורח והאירוע
+        public List<PhotosFromEvent> GetPhotosWithGuestAndEvent()
+        {
+            return context.PhotosFromEvents
+                           .Include(p => p.guest)
+                           .Include(p => p.event_)
+                           .ToList();
+        }
+
+        // חיפוש תמונות עם ברכה מסוימת (תומך בחיפוש חלקי)
+        public List<PhotosFromEvent> GetPhotosByBlessing(string blessingText)
+        {
+            return context.PhotosFromEvents
+                           .Where(p => p.blessing.Contains(blessingText))
+                           .ToList();
+        }
+
+        // חיפוש תמונות עם סינון לפי אירוע ומיון לפי שם האורח
+        public List<PhotosFromEvent> GetPhotosByEventSortedByGuestName(string eventId)
+        {
+            return context.PhotosFromEvents
+                           .Where(p => p.eventId == eventId)
+                           .Include(p => p.guest)
+                           .OrderBy(p => p.guest.name)
+                           .ToList();
+        }
+
+        // חיפוש תמונות עם מיון יורד לפי תאריך הוספה (אם נוסיף תכונה של תאריך בעתיד)
+        public List<PhotosFromEvent> GetPhotosSortedByNewest()
+        {
+            return context.PhotosFromEvents
+                           .OrderByDescending(p => p.id) // אם נוסיף תאריך יצירה, נחליף ב- p.CreatedAt
+                           .ToList();
+        }
+
+        // חיפוש עם דילוג והגבלה (Pagination)
+        public List<PhotosFromEvent> GetPhotosPaged(int skip, int take)
+        {
+            return context.PhotosFromEvents.Skip(skip).Take(take).ToList();
+        }
+
+        // בדיקה אם קיימות תמונות מאירוע מסוים
+        public bool AreTherePhotosFromEvent(string eventId)
+        {
+            return context.PhotosFromEvents.Any(p => p.eventId == eventId);
+
+
+        }
     }
-}
 
