@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Repositories
 {
-    public class PhotosFromEventRepository:IRepository<PhotosFromEvent>
+    public class PhotosFromEventRepository : IRepository<PhotosFromEvent>
     {
         private readonly IContext context;
         public PhotosFromEventRepository(IContext context)
@@ -119,4 +119,5 @@ namespace Repository.Repositories
 
         }
     }
+}
 
