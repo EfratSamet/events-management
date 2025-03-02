@@ -846,6 +846,58 @@
     ]
   },
   {
+    "ContainingType": "MasterEvents.Controllers.OrganizerController",
+    "Method": "GetEventsByOrganizerId",
+    "RelativePath": "api/Organizer/{id}/events",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Service.Dtos.EventDto, Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MasterEvents.Controllers.OrganizerController",
+    "Method": "GetGroupsByOrganizerId",
+    "RelativePath": "api/Organizer/{id}/groups",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Service.Dtos.GroupDto, Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "MasterEvents.Controllers.PhotosFromEventController",
     "Method": "Get",
     "RelativePath": "api/PhotosFromEvent",

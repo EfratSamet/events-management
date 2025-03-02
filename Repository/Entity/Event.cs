@@ -11,7 +11,6 @@ namespace Repository.Entity
     public class Event
     {
         public string id { get; set; }
-        [Required]
         public string organizerId { get; set; }
         [ForeignKey("organizerId")]
         public virtual Organizer organizer { get; set; }

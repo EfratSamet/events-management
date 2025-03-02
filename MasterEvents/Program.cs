@@ -50,8 +50,10 @@ builder.Services.AddScoped<IService<GuestDto>, GuestService>();
 builder.Services.AddScoped<IRepository<GuestInEvent>, GuestInEventRepository>();
 builder.Services.AddScoped<IService<GuestInEventDto>, GuestInEventService>();
 
-builder.Services.AddScoped<IRepository<Organizer>, OrganizerRepository>();
-builder.Services.AddScoped<IService<OrganizerDto>, OrganizerService>();
+builder.Services.AddScoped<IOrganizerRepository, OrganizerRepository>();
+builder.Services.AddScoped<IOrganizerService, OrganizerService>();
+builder.Services.AddScoped<IRepository<Organizer>, OrganizerRepository>(); // אם ה-Repository יורש גם מ-IRepository
+builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddScoped<IRepository<PhotosFromEvent>, PhotosFromEventRepository>();
 builder.Services.AddScoped<IService<PhotosFromEventDto>, PhotosFromEventService>();

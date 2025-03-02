@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Repositories
 {
-    public class OrganizerRepository:IRepository<Organizer>
+    public class OrganizerRepository: IOrganizerRepository
     {
         private readonly IContext context;
         public OrganizerRepository(IContext context)

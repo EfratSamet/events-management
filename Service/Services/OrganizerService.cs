@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Repository.Entity;
 using Repository.Interfaces;
+using Repository.Repositories;
 using Service.Dtos;
 using Service.Interfaces;
 using System;
@@ -11,13 +12,13 @@ using System.Threading.Tasks;
 
 namespace Service.Services
 {
-    public class OrganizerService:IService<OrganizerDto>
+    public class OrganizerService: IOrganizerService
     {
 
-        private readonly IRepository<Organizer> _repository;
+        private readonly IOrganizerRepository _repository;
         private readonly IMapper _mapper;
 
-        public OrganizerService(IRepository<Organizer> repository, IMapper mapper)
+        public OrganizerService(IOrganizerRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
@@ -46,6 +47,17 @@ namespace Service.Services
         public OrganizerDto Update(string id, OrganizerDto item)
         {
             return _mapper.Map<OrganizerDto>(_repository.Update(id, _mapper.Map<Organizer>(item)));
+        }
+        public List<EventDto> GetEventsByOrganizerId(string id)
+        {
+            var events = _repository.GetEventsByOrganizerId(id);
+            return _mapper.Map<List<EventDto>>(events);
+        }
+
+        public List<GroupDto> GetGroupsByOrganizerId(string id)
+        {
+            var groups = _repository.GetGroupsByOrganizerId(id);
+            return _mapper.Map<List<GroupDto>>(groups);
         }
     }
 }
