@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Repositories
 {
-    public class OrganizerRepository: IOrganizerRepository
+    public class OrganizerRepository: IRepository<Organizer>
     {
         private readonly IContext context;
         public OrganizerRepository(IContext context)
@@ -50,14 +50,18 @@ namespace Repository.Repositories
             return o;
         }
         // שאילתת חיפוש - חיפוש קבוצות לפי מארגן
-        public List<Group> GetGroupsByOrganizerId(string organizerId)
+        public List<Group> GetGroupsByName(string name)
         {
-            return context.Groups.Where(g => g.organizerId == organizerId).ToList();
+            return context.Groups.Where(g => g.name== name).ToList();
         }
         // שאילתת חיפוש - חיפוש אירועים לפי מארגן
         public List<Event> GetEventsByOrganizerId(string organizerId)
         {
             return context.Events.Where(e => e.organizerId == organizerId).ToList();
+        }
+        public Organizer GetOrganizerByMail(string mail)
+        {
+            return context.Organizers.FirstOrDefault(x => x.mail == mail);
         }
     }
 }

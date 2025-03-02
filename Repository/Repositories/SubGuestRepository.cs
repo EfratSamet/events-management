@@ -56,5 +56,31 @@ namespace Repository.Repositories
                 .Where(sg => sg.name.Contains(subGuestName))  // מסנן לפי שם (חלקי)
                 .ToList();
         }
+        // מציאת כל התת-אורחים שיש להם אותו מזהה אורח
+        public List<SubGuest> GetSubGuestsByGuestId(string guestId)
+        {
+            return context.SubGuests.Where(sg => sg.guestId == guestId).ToList();
+        }
+
+        // מציאת תת-אורחים לפי מזהה אורח ומגדר
+        public List<SubGuest> GetSubGuestsByGuestIdAndGender(string guestId, Gender gender)
+        {
+            return context.SubGuests.Where(sg => sg.guestId == guestId && sg.gender == gender).ToList();
+        }
+
+        // מציאת כל התת-אורחים לפי מין
+        public List<SubGuest> GetSubGuestsByGender(Gender gender)
+        {
+            return context.SubGuests.Where(sg => sg.gender == gender).ToList();
+        }
+
+        // מציאת כל התת-אורחים השייכים לאורח עם שם מסוים
+        public List<SubGuest> GetSubGuestsByGuestName(string guestName)
+        {
+            return context.SubGuests
+                .Where(sg => sg.guest != null && sg.guest.name.Contains(guestName))
+                .ToList();
+        }
+
     }
 }
