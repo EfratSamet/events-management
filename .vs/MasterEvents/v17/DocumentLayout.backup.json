@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\MasterEvents\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\masterevents\\repository\\repositories\\organizerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\repositories\\organizerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\masterevents\\repository\\repositories\\guestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\repositories\\guestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|c:\\masterevents\\service\\services\\eventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|solutionrelative:service\\services\\eventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -41,10 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\masterevents\\repository\\entity\\guestinevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\entity\\guestinevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\masterevents\\repository\\repositories\\organizerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\repositories\\organizerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D1785297-E258-4943-B9B1-C64DF22121FF}|Service\\Service.csproj|c:\\masterevents\\service\\dtos\\organizerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -165,10 +169,6 @@
       "RelativeMoniker": "D:0:0:{906699C7-CDB4-4F76-83AE-37C8709BE242}|MasterEvents\\MasterEvents.csproj|solutionrelative:masterevents\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\masterevents\\repository\\repositories\\guestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\repositories\\guestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|c:\\masterevents\\repository\\repositories\\grouprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2BBB7C7D-CB63-480D-9DC7-D1ECAC3A446B}|Repository\\Repository.csproj|solutionrelative:repository\\repositories\\grouprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -195,34 +195,90 @@
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "EventDto.cs",
-              "DocumentMoniker": "C:\\MasterEvents\\Service\\Dtos\\EventDto.cs",
-              "RelativeDocumentMoniker": "Service\\Dtos\\EventDto.cs",
-              "ToolTip": "C:\\MasterEvents\\Service\\Dtos\\EventDto.cs",
-              "RelativeToolTip": "Service\\Dtos\\EventDto.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T16:08:12.543Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OrganizerService.cs",
-              "DocumentMoniker": "C:\\MasterEvents\\Service\\Services\\OrganizerService.cs",
-              "RelativeDocumentMoniker": "Service\\Services\\OrganizerService.cs",
-              "ToolTip": "C:\\MasterEvents\\Service\\Services\\OrganizerService.cs",
-              "RelativeToolTip": "Service\\Services\\OrganizerService.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAnwCsAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Group.cs",
+              "DocumentMoniker": "C:\\MasterEvents\\Repository\\Entity\\Group.cs",
+              "RelativeDocumentMoniker": "Repository\\Entity\\Group.cs",
+              "ToolTip": "C:\\MasterEvents\\Repository\\Entity\\Group.cs",
+              "RelativeToolTip": "Repository\\Entity\\Group.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T14:14:17.54Z",
+              "WhenOpened": "2025-02-07T14:40:58.4Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
+              "Title": "GuestInEvent.cs",
+              "DocumentMoniker": "C:\\MasterEvents\\Repository\\Entity\\GuestInEvent.cs",
+              "RelativeDocumentMoniker": "Repository\\Entity\\GuestInEvent.cs",
+              "ToolTip": "C:\\MasterEvents\\Repository\\Entity\\GuestInEvent.cs",
+              "RelativeToolTip": "Repository\\Entity\\GuestInEvent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T14:55:04.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Guest.cs",
+              "DocumentMoniker": "C:\\MasterEvents\\Repository\\Entity\\Guest.cs",
+              "RelativeDocumentMoniker": "Repository\\Entity\\Guest.cs",
+              "ToolTip": "C:\\MasterEvents\\Repository\\Entity\\Guest.cs",
+              "RelativeToolTip": "Repository\\Entity\\Guest.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T14:41:02.89Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EventService.cs",
+              "DocumentMoniker": "C:\\MasterEvents\\Service\\Services\\EventService.cs",
+              "RelativeDocumentMoniker": "Service\\Services\\EventService.cs",
+              "ToolTip": "C:\\MasterEvents\\Service\\Services\\EventService.cs",
+              "RelativeToolTip": "Service\\Services\\EventService.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAnwCkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T15:06:17.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GuestRepository.cs",
+              "DocumentMoniker": "C:\\MasterEvents\\Repository\\Repositories\\GuestRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\Repositories\\GuestRepository.cs",
+              "ToolTip": "C:\\MasterEvents\\Repository\\Repositories\\GuestRepository.cs",
+              "RelativeToolTip": "Repository\\Repositories\\GuestRepository.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAywEgAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T14:49:42.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrganizerRepository.cs",
+              "DocumentMoniker": "C:\\MasterEvents\\Repository\\Repositories\\OrganizerRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\Repositories\\OrganizerRepository.cs",
+              "ToolTip": "C:\\MasterEvents\\Repository\\Repositories\\OrganizerRepository.cs",
+              "RelativeToolTip": "Repository\\Repositories\\OrganizerRepository.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAwD4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T14:34:26.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "OrganizerDto.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Service\\Dtos\\OrganizerDto.cs",
               "RelativeDocumentMoniker": "Service\\Dtos\\OrganizerDto.cs",
@@ -236,62 +292,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Group.cs",
-              "DocumentMoniker": "C:\\MasterEvents\\Repository\\Entity\\Group.cs",
-              "RelativeDocumentMoniker": "Repository\\Entity\\Group.cs",
-              "ToolTip": "C:\\MasterEvents\\Repository\\Entity\\Group.cs",
-              "RelativeToolTip": "Repository\\Entity\\Group.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Title": "OrganizerService.cs",
+              "DocumentMoniker": "C:\\MasterEvents\\Service\\Services\\OrganizerService.cs",
+              "RelativeDocumentMoniker": "Service\\Services\\OrganizerService.cs",
+              "ToolTip": "C:\\MasterEvents\\Service\\Services\\OrganizerService.cs",
+              "RelativeToolTip": "Service\\Services\\OrganizerService.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAnwCsAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T14:40:58.4Z",
+              "WhenOpened": "2025-02-21T14:14:17.54Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "GuestInEvent.cs",
-              "DocumentMoniker": "C:\\MasterEvents\\Repository\\Entity\\GuestInEvent.cs",
-              "RelativeDocumentMoniker": "Repository\\Entity\\GuestInEvent.cs",
-              "ToolTip": "C:\\MasterEvents\\Repository\\Entity\\GuestInEvent.cs",
-              "RelativeToolTip": "Repository\\Entity\\GuestInEvent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "EventDto.cs",
+              "DocumentMoniker": "C:\\MasterEvents\\Service\\Dtos\\EventDto.cs",
+              "RelativeDocumentMoniker": "Service\\Dtos\\EventDto.cs",
+              "ToolTip": "C:\\MasterEvents\\Service\\Dtos\\EventDto.cs",
+              "RelativeToolTip": "Service\\Dtos\\EventDto.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T14:55:04.767Z",
+              "WhenOpened": "2025-02-25T16:08:12.543Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Guest.cs",
-              "DocumentMoniker": "C:\\MasterEvents\\Repository\\Entity\\Guest.cs",
-              "RelativeDocumentMoniker": "Repository\\Entity\\Guest.cs",
-              "ToolTip": "C:\\MasterEvents\\Repository\\Entity\\Guest.cs",
-              "RelativeToolTip": "Repository\\Entity\\Guest.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T14:41:02.89Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EventService.cs",
-              "DocumentMoniker": "C:\\MasterEvents\\Service\\Services\\EventService.cs",
-              "RelativeDocumentMoniker": "Service\\Services\\EventService.cs",
-              "ToolTip": "C:\\MasterEvents\\Service\\Services\\EventService.cs",
-              "RelativeToolTip": "Service\\Services\\EventService.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAnwCkAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T15:06:17.578Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "GroupDto.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Service\\Dtos\\GroupDto.cs",
               "RelativeDocumentMoniker": "Service\\Dtos\\GroupDto.cs",
@@ -304,7 +330,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "GroupService.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Service\\Services\\GroupService.cs",
               "RelativeDocumentMoniker": "Service\\Services\\GroupService.cs",
@@ -317,7 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "MyMapper.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Service\\Services\\MyMapper.cs",
               "RelativeDocumentMoniker": "Service\\Services\\MyMapper.cs",
@@ -330,7 +356,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Event.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Repository\\Entity\\Event.cs",
               "RelativeDocumentMoniker": "Repository\\Entity\\Event.cs",
@@ -343,7 +369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\MasterEvents\\MasterEvents\\Program.cs",
               "RelativeDocumentMoniker": "MasterEvents\\Program.cs",
@@ -356,7 +382,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "OrganizerController.cs",
               "DocumentMoniker": "C:\\MasterEvents\\MasterEvents\\Controllers\\OrganizerController.cs",
               "RelativeDocumentMoniker": "MasterEvents\\Controllers\\OrganizerController.cs",
@@ -369,20 +395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "OrganizerRepository.cs",
-              "DocumentMoniker": "C:\\MasterEvents\\Repository\\Repositories\\OrganizerRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\Repositories\\OrganizerRepository.cs",
-              "ToolTip": "C:\\MasterEvents\\Repository\\Repositories\\OrganizerRepository.cs",
-              "RelativeToolTip": "Repository\\Repositories\\OrganizerRepository.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAwDsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T14:34:26.001Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "IService.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Service\\Interfaces\\IService.cs",
               "RelativeDocumentMoniker": "Service\\Interfaces\\IService.cs",
@@ -395,7 +408,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "IOrganizerService.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Service\\Interfaces\\IOrganizerService.cs",
               "RelativeDocumentMoniker": "Service\\Interfaces\\IOrganizerService.cs",
@@ -408,7 +421,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "IOrganizerRepository.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Repository\\Interfaces\\IOrganizerRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Interfaces\\IOrganizerRepository.cs",
@@ -421,7 +434,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "EventRepository.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Repository\\Repositories\\EventRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Repositories\\EventRepository.cs",
@@ -434,7 +447,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "SubGuestRepository.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Repository\\Repositories\\SubGuestRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Repositories\\SubGuestRepository.cs",
@@ -447,7 +460,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "SeatingRepository.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Repository\\Repositories\\SeatingRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Repositories\\SeatingRepository.cs",
@@ -460,7 +473,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "ExtensionService.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Service\\Services\\ExtensionService.cs",
               "RelativeDocumentMoniker": "Service\\Services\\ExtensionService.cs",
@@ -473,7 +486,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "PhotosFromEventRepository.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Repository\\Repositories\\PhotosFromEventRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Repositories\\PhotosFromEventRepository.cs",
@@ -486,7 +499,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "GuestInEventService.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Service\\Services\\GuestInEventService.cs",
               "RelativeDocumentMoniker": "Service\\Services\\GuestInEventService.cs",
@@ -499,7 +512,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "OrganizerController.cs",
               "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\AppData\\Local\\SourceServer\\8e96271b578c8e6706537a343fafdbab77160eaf3281fb43df6fe4325e121c30\\MasterEvents\\Controllers\\OrganizerController.cs",
               "RelativeDocumentMoniker": "..\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\AppData\\Local\\SourceServer\\8e96271b578c8e6706537a343fafdbab77160eaf3281fb43df6fe4325e121c30\\MasterEvents\\Controllers\\OrganizerController.cs",
@@ -512,7 +525,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\AppData\\Local\\SourceServer\\6d5c86b5336f01fe56aac75212cc4cb461a197534def16ce0709592cf34ffd09\\MasterEvents\\Program.cs",
               "RelativeDocumentMoniker": "..\\Users\\\u05EA\u05DE\u05E8 \u05DC\u05D5\u05D9\\AppData\\Local\\SourceServer\\6d5c86b5336f01fe56aac75212cc4cb461a197534def16ce0709592cf34ffd09\\MasterEvents\\Program.cs",
@@ -525,7 +538,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "Seating.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Repository\\Entity\\Seating.cs",
               "RelativeDocumentMoniker": "Repository\\Entity\\Seating.cs",
@@ -538,7 +551,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "SubGuest.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Repository\\Entity\\SubGuest.cs",
               "RelativeDocumentMoniker": "Repository\\Entity\\SubGuest.cs",
@@ -551,7 +564,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "Organizer.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Repository\\Entity\\Organizer.cs",
               "RelativeDocumentMoniker": "Repository\\Entity\\Organizer.cs",
@@ -564,7 +577,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "PhotosFromEvent.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Repository\\Entity\\PhotosFromEvent.cs",
               "RelativeDocumentMoniker": "Repository\\Entity\\PhotosFromEvent.cs",
@@ -577,7 +590,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "20250221043413_perfect.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Mock\\Migrations\\20250221043413_perfect.cs",
               "RelativeDocumentMoniker": "Mock\\Migrations\\20250221043413_perfect.cs",
@@ -590,7 +603,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "IContext.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Repository\\Interfaces\\IContext.cs",
               "RelativeDocumentMoniker": "Repository\\Interfaces\\IContext.cs",
@@ -603,7 +616,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "SubGuestController.cs",
               "DocumentMoniker": "C:\\MasterEvents\\MasterEvents\\Controllers\\SubGuestController.cs",
               "RelativeDocumentMoniker": "MasterEvents\\Controllers\\SubGuestController.cs",
@@ -616,7 +629,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "EventController.cs",
               "DocumentMoniker": "C:\\MasterEvents\\MasterEvents\\Controllers\\EventController.cs",
               "RelativeDocumentMoniker": "MasterEvents\\Controllers\\EventController.cs",
@@ -629,7 +642,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\MasterEvents\\MasterEvents\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "MasterEvents\\Controllers\\LoginController.cs",
@@ -642,7 +655,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "20250208213419_init.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Mock\\Migrations\\20250208213419_init.cs",
               "RelativeDocumentMoniker": "Mock\\Migrations\\20250208213419_init.cs",
@@ -653,7 +666,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "20250208212659_init.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Mock\\Migrations\\20250208212659_init.cs",
               "RelativeDocumentMoniker": "Mock\\Migrations\\20250208212659_init.cs",
@@ -664,7 +677,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "20250208212938_init.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Mock\\Migrations\\20250208212938_init.cs",
               "RelativeDocumentMoniker": "Mock\\Migrations\\20250208212938_init.cs",
@@ -675,7 +688,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "20250208213237_init.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Mock\\Migrations\\20250208213237_init.cs",
               "RelativeDocumentMoniker": "Mock\\Migrations\\20250208213237_init.cs",
@@ -686,7 +699,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\MasterEvents\\MasterEvents\\appsettings.json",
               "RelativeDocumentMoniker": "MasterEvents\\appsettings.json",
@@ -699,7 +712,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "SubGuestService.cs",
               "DocumentMoniker": "C:\\MasterEvents\\Service\\Services\\SubGuestService.cs",
               "RelativeDocumentMoniker": "Service\\Services\\SubGuestService.cs",
@@ -712,7 +725,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "GuestInEventController.cs",
               "DocumentMoniker": "C:\\MasterEvents\\MasterEvents\\Controllers\\GuestInEventController.cs",
               "RelativeDocumentMoniker": "MasterEvents\\Controllers\\GuestInEventController.cs",
@@ -734,19 +747,6 @@
               "ViewState": "AgIAAFAAAAAAAAAAAAAywFoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-07T14:52:59.746Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "GuestRepository.cs",
-              "DocumentMoniker": "C:\\MasterEvents\\Repository\\Repositories\\GuestRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\Repositories\\GuestRepository.cs",
-              "ToolTip": "C:\\MasterEvents\\Repository\\Repositories\\GuestRepository.cs",
-              "RelativeToolTip": "Repository\\Repositories\\GuestRepository.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAywEgAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T14:49:42.968Z",
               "EditorCaption": ""
             }
           ]
