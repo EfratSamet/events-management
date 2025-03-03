@@ -3,14 +3,13 @@ using Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Repository.Repositories
 {
-    public class GuestInEventRepository:IRepository<GuestInEvent>
+    public class GuestInEventRepository : IGuestInEventRepository
     {
         private readonly IContext context;
+
         public GuestInEventRepository(IContext context)
         {
             this.context = context;
@@ -68,5 +67,31 @@ namespace Repository.Repositories
             return existingGuestInEvent;
         }
 
+        public Dictionary<string, int> GetOKCountByGroups(string eventId)
+        {
+            return context.GuestInEvents
+                .Where(x => x.eventId == eventId && x.ok)
+                .GroupBy(ge => ge.group)
+                .ToDictionary(g => g.Key, g => g.Count());
+        }
+
+        public List<GuestInEvent> GuestCountOK(string eventId)
+        {
+            return context.GuestInEvents
+                .Where(x => x.eventId == eventId && x.ok)
+                .ToList();
+        }
+
+        public int CountOK(string eventId)
+        {
+            return context.GuestInEvents
+                .Count(x => x.eventId == eventId && x.ok);
+        }
+
+        public int CountOKByGroup(string eventId, string groupName)
+        {
+            return context.GuestInEvents
+                .Count(x => x.eventId == eventId && x.group == groupName && x.ok);
+        }
     }
 }

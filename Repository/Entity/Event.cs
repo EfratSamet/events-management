@@ -20,7 +20,7 @@ namespace Repository.Entity
         public string details { get; set; }
         public bool seperation { get; set; }
         public string invitation { get; set; }
-        public ICollection<PhotosFromEvent> photos { get; set; }
-        public ICollection<GuestInEvent> guests { get; set; }
+        public ICollection<PhotosFromEvent>? photos { get; set; }
+        public ICollection<GuestInEvent>? guests { get; set; }
     }
 }

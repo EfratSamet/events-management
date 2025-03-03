@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Repository.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,4 +15,6 @@ namespace Repository.Interfaces
         T Update(string id, T item);
         void Delete(string id);
     }
+
+
 }

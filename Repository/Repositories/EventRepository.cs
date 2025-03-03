@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Repositories
 {
-    public class EventRepository : IRepository<Event>
+    public class EventRepository : IEventRepository
     {
         private readonly IContext context;
         public EventRepository(IContext context)

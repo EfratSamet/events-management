@@ -67,7 +67,34 @@ namespace Repository.Repositories
         {
             return context.SubGuests.Where(sg => sg.gender == gender).ToList();
         }
-     
+        // חיפוש כל האורחים לפי מספר שולחן
+        public List<SubGuest> GetSubGuestsByTable(int tableNumber)
+        {
+            return context.Seatings
+                .Where(s => s.table == tableNumber)
+                .Select(s => s.subGuest)
+                .ToList();
+        }
+
+        // חיפוש אורח יחיד לפי מספר שולחן ומספר כיסא
+        public SubGuest GetSubGuestByTableAndSeat(int tableNumber, int seatNumber)
+        {
+            return context.Seatings
+                .Where(s => s.table == tableNumber && s.seat == seatNumber)
+                .Select(s => s.subGuest)
+                .FirstOrDefault();
+        }
+
+        // חיפוש מספר שולחן לפי מזהה אורח
+        public int? GetTableByGuestId(string guestId)
+        {
+            return context.Seatings
+                .Where(s => s.subGuest.guestId == guestId)
+                .Select(s => (int?)s.table)
+                .FirstOrDefault();
+        }
+
+
     }
 }
 

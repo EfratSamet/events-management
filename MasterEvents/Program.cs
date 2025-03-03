@@ -35,7 +35,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-builder.Services.AddScoped<IRepository<Event>, EventRepository>();
+
+
+builder.Services.AddScoped<IEventRepository, EventRepository>();
 builder.Services.AddScoped<IService<EventDto>, EventService>();
 
 builder.Services.AddScoped<IRepository<Group>, GroupRepository>();
@@ -47,8 +49,10 @@ builder.Services.AddScoped<IService<GuestDto>, GuestService>();
 builder.Services.AddScoped<IRepository<Guest>, GuestRepository>();
 builder.Services.AddScoped<IService<GuestDto>, GuestService>();
 
-builder.Services.AddScoped<IRepository<GuestInEvent>, GuestInEventRepository>();
+//builder.Services.AddScoped<IRepository<GuestInEvent>, GuestInEventRepository>();
 builder.Services.AddScoped<IService<GuestInEventDto>, GuestInEventService>();
+builder.Services.AddScoped<IGuestInEventRepository, GuestInEventRepository>();
+
 
 builder.Services.AddScoped<IOrganizerRepository, OrganizerRepository>();
 builder.Services.AddScoped<IOrganizerService, OrganizerService>();

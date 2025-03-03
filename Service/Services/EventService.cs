@@ -13,10 +13,10 @@ namespace Service.Services
 {
     public class EventService:IService<EventDto>
     {
-        private readonly IRepository<Event> _repository;
+        private readonly IEventRepository _repository;
         private readonly IMapper _mapper;
 
-        public EventService(IRepository<Event> repository, IMapper mapper)
+        public EventService(IEventRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;

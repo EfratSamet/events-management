@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Repository.Entity;
 using Repository.Interfaces;
+using Repository.Repositories;
 using Service.Dtos;
 using Service.Interfaces;
 using System;
@@ -13,11 +14,10 @@ namespace Service.Services
 {
     public class GuestInEventService : IService<GuestInEventDto>
     {
-
-        private readonly IRepository<GuestInEvent> _repository;
+        private readonly IGuestInEventRepository _repository;
         private readonly IMapper _mapper;
 
-        public GuestInEventService(IRepository<GuestInEvent> repository, IMapper mapper)
+        public GuestInEventService(IGuestInEventRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
@@ -46,6 +46,48 @@ namespace Service.Services
         public GuestInEventDto Update(string id, GuestInEventDto item)
         {
             return _mapper.Map<GuestInEventDto>(_repository.Update(id, _mapper.Map<GuestInEvent>(item)));
+        }
+
+        // פונקציה שמקבלת את מספר האירוע ומספר המושבים בשולחן ומחזירה מיפוי של אורחים לשולחנות
+        public Dictionary<int, List<GuestInEventDto>> AssignGuestsToTables(string eventId, int seatsPerTable)
+        {
+            // שליפת האורחים לפי אישורי הגעה ולפי הקטגוריה
+            var guestsByGroup = _repository.GetOKCountByGroups(eventId);
+
+            Dictionary<int, List<GuestInEventDto>> tables = new Dictionary<int, List<GuestInEventDto>>();
+            int tableNumber = 1;
+            List<GuestInEventDto> currentTable = new List<GuestInEventDto>();
+
+            // סידור האורחים בשולחנות
+            foreach (var group in guestsByGroup)
+            {
+                var groupGuests = _repository.GetAll()
+                    .Where(g => g.eventId == eventId && g.ok == true && g.group == group.Key) // סינון לפי קבוצת האורחים
+                    .ToList();
+
+                foreach (var guest in groupGuests)
+                {
+                    if (currentTable.Count < seatsPerTable)
+                    {
+                        currentTable.Add(_mapper.Map<GuestInEventDto>(guest));
+                    }
+                    else
+                    {
+                        tables[tableNumber] = new List<GuestInEventDto>(currentTable);
+                        tableNumber++;
+                        currentTable.Clear();
+                        currentTable.Add(_mapper.Map<GuestInEventDto>(guest));
+                    }
+                }
+            }
+
+            // אם נשארו אורחים בשולחן אחרון שלא הוזנו
+            if (currentTable.Any())
+            {
+                tables[tableNumber] = currentTable;
+            }
+
+            return tables;
         }
     }
 }

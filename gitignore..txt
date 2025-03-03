@@ -1,0 +1,37 @@
+# קובץ .gitignore עבור פרויקטים ב-C# / Visual Studio
+
+## קבצים ותיקיות אישיים של Visual Studio
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## תוצאות בנייה ותיקיות ביניים
+[Bb]in/
+[Oo]bj/
+
+## תיקיית הגדרות של Visual Studio 2015 ומעלה
+.vs/
+
+## קבצים שנוצרו אוטומטית ע"י Visual Studio
+*.VC.db
+*.VC.VC.opendb
+
+## חבילות NuGet
+*.nupkg
+# תיקיית packages יכולה להיות מתווספת לעיתים, מכיוון שהחבילות משוחזרות באמצעות Package Restore
+packages/
+
+## קבצים הרצתיים וספריות ריצה
+*.exe
+*.dll
+*.pdb
+*.cache
+*.config
+
+## קבצי לוגים וקבצים זמניים
+*.log
+*.tmp
+
+## תיקיות פרסום (Publish)
+publish/
