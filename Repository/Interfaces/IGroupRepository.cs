@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Interfaces
 {
-    internal interface IGroupRepository : IRepository<Group>
+    public interface IGroupRepository : IRepository<Group>
     {
         List<Group> GetGroupsByOrganizerId(string organizerId);
         List<Group> GetGroupsByGuestId(string guestId);

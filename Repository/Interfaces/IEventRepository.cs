@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Interfaces
 {
-    internal interface IEventRepository : IRepository<Event>
+    public interface IEventRepository : IRepository<Event>
     {
         List<Event> GetEventsByOrganizerId(string organizerId);
         List<Event> GetEventsByDateRange(DateTime startDate, DateTime endDate);

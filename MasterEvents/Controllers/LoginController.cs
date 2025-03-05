@@ -1,13 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
-using Repository.Entity;
 using Service.Dtos;
 using Service.Interfaces;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace MasterEvents.Controllers
 {
@@ -15,77 +8,29 @@ namespace MasterEvents.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        private readonly IService<OrganizerDto> service;
-        private readonly IConfiguration config;
-        public LoginController(IService<OrganizerDto> service, IConfiguration config)
+        private readonly ILoginService _loginService;
+
+        public LoginController(ILoginService loginService)
         {
-            this.service = service;
-            this.config = config;
-        }
-        // GET: api/<LoginController>
-        [HttpGet]
-        public List<OrganizerDto> Get()
-        {
-            return service.GetAll();
+            _loginService = loginService;
         }
 
-        // GET api/<LoginController>/5
-        [HttpGet("{id}")]
-        public OrganizerDto Get(string id)
-        {
-            return service.Get(id);
-        }
-
-        // POST api/<LoginController>
         [HttpPost]
-        public IActionResult Post([FromBody] string mail, [FromQuery] string pass)
+        public IActionResult Post([FromBody] LoginDto loginDto)
         {
-            var user = Authenticate(mail, pass);
+            if (loginDto == null || string.IsNullOrWhiteSpace(loginDto.mail) || string.IsNullOrWhiteSpace(loginDto.pass))
+            {
+                return BadRequest("Mail and password are required.");
+            }
+
+            var user = _loginService.Authenticate(loginDto.mail, loginDto.pass);
             if (user != null)
             {
-                var token = Generate(user);
+                var token = _loginService.GenerateToken(user);
                 return Ok(token);
             }
-            return BadRequest("user does not exist");
-        }
-        private string Generate(OrganizerDto organizer)
-        {
-            //הקוד להצפנה במערך של ביטים 
-            var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Jwt:Key"]));
-            //אלגוריתם להצפנה
-            var carditional = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
-            var claims = new[]
-            {
-                new Claim(ClaimTypes.Name,organizer.name),
-                new Claim(ClaimTypes.NameIdentifier,organizer.id.ToString()),
-                new Claim(ClaimTypes.Email,organizer.mail),
-            };
-
-            var token = new JwtSecurityToken(
-                config["Jwt:Issuer"], config["Jwt:Audience"]
-                , claims,
-          expires: DateTime.Now.AddMinutes(45),
-              signingCredentials: carditional);
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            return BadRequest("User does not exist or invalid credentials");
         }
 
-        private OrganizerDto Authenticate(string mail, string pass)
-        {
-            var user = service.GetAll().FirstOrDefault(x => x.mail == mail && x.password == pass);
-            return user;
-        }
-        // PUT api/<LoginController>/5
-        [HttpPut("{id}")]
-        public void Put(string id, [FromBody] OrganizerDto value)
-        {
-            service.Update(id,value);
-        }
-
-        // DELETE api/<LoginController>/5
-        [HttpDelete("{id}")]
-        public void Delete(string id)
-        {
-            service.Delete(id);
-        }
     }
 }

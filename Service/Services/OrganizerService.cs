@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Service.Services
 {
-    public class OrganizerService: IOrganizerService
+    public class OrganizerService: IService<OrganizerDto>
     {
 
         private readonly IOrganizerRepository _repository;

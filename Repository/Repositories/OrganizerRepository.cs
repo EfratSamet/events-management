@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Repositories
 {
-    public class OrganizerRepository: IRepository<Organizer>
+    public class OrganizerRepository: IOrganizerRepository
     {
         private readonly IContext context;
         public OrganizerRepository(IContext context)
@@ -62,6 +62,11 @@ namespace Repository.Repositories
         public Organizer GetOrganizerByMail(string mail)
         {
             return context.Organizers.FirstOrDefault(x => x.mail == mail);
+        }
+
+        public List<Group> GetGroupsByOrganizerId(string organizerId)
+        {
+            throw new NotImplementedException();
         }
     }
 }
