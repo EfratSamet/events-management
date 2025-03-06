@@ -621,14 +621,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "mail",
-        "Type": "System.String",
+        "Name": "loginDto",
+        "Type": "Service.Dtos.LoginDto",
         "IsRequired": true
-      },
-      {
-        "Name": "pass",
-        "Type": "System.String",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
