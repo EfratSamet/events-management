@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Repository.Entity;
 using Repository.Interfaces;
 using Repository.Repositories;
@@ -26,6 +27,10 @@ namespace Service.Services
 
         public OrganizerDto Add(OrganizerDto item)
         {
+            if (_repository.ExistsByEmail(item.mail))
+            {
+                throw new ArgumentException("Email already exists."); // במקום חריגה כללית
+            }
             return _mapper.Map<OrganizerDto>(_repository.Add(_mapper.Map<Organizer>(item)));
 
         }

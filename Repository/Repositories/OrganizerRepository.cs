@@ -69,5 +69,9 @@ namespace Repository.Repositories
         {
             throw new NotImplementedException();
         }
+        public bool ExistsByEmail(string email)
+        {
+            return context.Organizers.Any(x=>x.mail == email);
+        }
     }
 }

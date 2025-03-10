@@ -11,6 +11,6 @@ namespace Repository.Interfaces
     {
         List<Event> GetEventsByOrganizerId(int organizerId);
         List<Group> GetGroupsByOrganizerId(int organizerId);
-
+        bool ExistsByEmail(string email);
     }
 }
