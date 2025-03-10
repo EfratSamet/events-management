@@ -25,13 +25,13 @@ namespace Repository.Repositories
             return item;
         }
 
-        public void Delete(string id)
+        public void Delete(int id)
         {
             context.Guests.Remove(Get(id));
             context.save();
         }
 
-        public Guest Get(string id)
+        public Guest Get(int id)
         {
             return context.Guests.FirstOrDefault(x => x.id == id);
         }
@@ -41,7 +41,7 @@ namespace Repository.Repositories
             return context.Guests.ToList();
         }
 
-        public Guest Update(string id, Guest item)
+        public Guest Update(int id, Guest item)
         {
             var existingGuest = context.Guests.FirstOrDefault(x => x.id == id);
 

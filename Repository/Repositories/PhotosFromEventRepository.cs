@@ -24,13 +24,13 @@ namespace Repository.Repositories
             return item;
         }
 
-        public void Delete(string id)
+        public void Delete(int id)
         {
             context.PhotosFromEvents.Remove(Get(id));
             context.save();
         }
 
-        public PhotosFromEvent Get(string id)
+        public PhotosFromEvent Get(int id)
         {
             return context.PhotosFromEvents.FirstOrDefault(x => x.id == id);
         }
@@ -40,7 +40,7 @@ namespace Repository.Repositories
             return context.PhotosFromEvents.ToList();
         }
 
-        public PhotosFromEvent Update(string id, PhotosFromEvent item)
+        public PhotosFromEvent Update(int id, PhotosFromEvent item)
         {
             PhotosFromEvent p = Get(id);
             p.eventId = item.eventId;
@@ -51,19 +51,19 @@ namespace Repository.Repositories
             return p;
         }
         // חיפוש תמונות לפי מזהה אורח (guestId)
-        public List<PhotosFromEvent> GetPhotosByGuestId(string guestId)
+        public List<PhotosFromEvent> GetPhotosByGuestId(int guestId)
         {
             return context.PhotosFromEvents.Where(p => p.guestId == guestId).ToList();
         }
 
         // חיפוש תמונות לפי מזהה אירוע (eventId)
-        public List<PhotosFromEvent> GetPhotosByEventId(string eventId)
+        public List<PhotosFromEvent> GetPhotosByEventId(int eventId)
         {
             return context.PhotosFromEvents.Where(p => p.eventId == eventId).ToList();
         }
 
         // חיפוש תמונות של אורח ספציפי מתוך אירוע מסוים
-        public List<PhotosFromEvent> GetPhotosByGuestAndEvent(string guestId, string eventId)
+        public List<PhotosFromEvent> GetPhotosByGuestAndEvent(int guestId, int eventId)
         {
             return context.PhotosFromEvents
                            .Where(p => p.guestId == guestId && p.eventId == eventId)
@@ -88,7 +88,7 @@ namespace Repository.Repositories
         }
 
         // חיפוש תמונות עם סינון לפי אירוע ומיון לפי שם האורח
-        public List<PhotosFromEvent> GetPhotosByEventSortedByGuestName(string eventId)
+        public List<PhotosFromEvent> GetPhotosByEventSortedByGuestName(int eventId)
         {
             return context.PhotosFromEvents
                            .Where(p => p.eventId == eventId)
@@ -112,7 +112,7 @@ namespace Repository.Repositories
         }
 
         // בדיקה אם קיימות תמונות מאירוע מסוים
-        public bool AreTherePhotosFromEvent(string eventId)
+        public bool AreTherePhotosFromEvent(int eventId)
         {
             return context.PhotosFromEvents.Any(p => p.eventId == eventId);
 

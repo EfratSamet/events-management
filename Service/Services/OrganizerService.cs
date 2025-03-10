@@ -27,14 +27,15 @@ namespace Service.Services
         public OrganizerDto Add(OrganizerDto item)
         {
             return _mapper.Map<OrganizerDto>(_repository.Add(_mapper.Map<Organizer>(item)));
+
         }
 
-        public void Delete(string id)
+        public void Delete(int id)
         {
             _repository.Delete(id);
         }
 
-        public OrganizerDto Get(string id)
+        public OrganizerDto Get(int id)
         {
             return _mapper.Map<OrganizerDto>(_repository.Get(id));
         }
@@ -44,17 +45,17 @@ namespace Service.Services
             return _mapper.Map<List<OrganizerDto>>(_repository.GetAll());
         }
 
-        public OrganizerDto Update(string id, OrganizerDto item)
+        public OrganizerDto Update(int id, OrganizerDto item)
         {
             return _mapper.Map<OrganizerDto>(_repository.Update(id, _mapper.Map<Organizer>(item)));
         }
-        public List<EventDto> GetEventsByOrganizerId(string id)
+        public List<EventDto> GetEventsByOrganizerId(int id)
         {
             var events = _repository.GetEventsByOrganizerId(id);
             return _mapper.Map<List<EventDto>>(events);
         }
 
-        public List<GroupDto> GetGroupsByOrganizerId(string id)
+        public List<GroupDto> GetGroupsByOrganizerId(int id)
         {
             var groups = _repository.GetGroupsByOrganizerId(id);
             return _mapper.Map<List<GroupDto>>(groups);

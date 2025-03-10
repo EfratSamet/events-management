@@ -27,12 +27,12 @@ namespace Service.Services
             return _mapper .Map<EventDto>(_repository.Add(_mapper.Map<Event>(item)));
         }
 
-        public void Delete(string id)
+        public void Delete(int id)
         {
             _repository.Delete(id);
         }
 
-        public EventDto Get(string id)
+        public EventDto Get(int id)
         {
             return _mapper.Map<EventDto>(_repository.Get(id));
         }
@@ -42,7 +42,7 @@ namespace Service.Services
             return _mapper.Map<List<EventDto>>(_repository.GetAll());
         }
 
-        public EventDto Update(string id, EventDto item)
+        public EventDto Update(int id, EventDto item)
         {
             return _mapper.Map<EventDto>(_repository.Update(id, _mapper.Map<Event>(item)));
         }

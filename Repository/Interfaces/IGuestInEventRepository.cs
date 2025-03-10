@@ -9,9 +9,9 @@ namespace Repository.Interfaces
 {
     public interface IGuestInEventRepository : IRepository<GuestInEvent>
     {
-        Dictionary<string, int> GetOKCountByGroups(string eventId);
-        List<GuestInEvent> GuestCountOK(string eventId);
-        int CountOK(string eventId);
-        int CountOKByGroup(string eventId, string groupName);
+        Dictionary<string, int> GetOKCountByGroups(int eventId);
+        List<GuestInEvent> GuestCountOK(int eventId);
+        int CountOK(int eventId);
+        int CountOKByGroup(int eventId, string groupName);
     }
 }

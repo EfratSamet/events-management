@@ -24,13 +24,13 @@ namespace Repository.Repositories
             return item;
         }
 
-        public void Delete(string id)
+        public void Delete(int id)
         {
             context.Seatings.Remove(Get(id));
             context.save();
         }
 
-        public Seating Get(string id)
+        public Seating Get(int id)
         {
             return context.Seatings.FirstOrDefault(x => x.id == id);
         }
@@ -40,7 +40,7 @@ namespace Repository.Repositories
             return context.Seatings.ToList();
         }
 
-        public Seating Update(string id, Seating item)
+        public Seating Update(int id, Seating item)
         {
             Seating s = Get(id);
             s.seat = item.seat;
@@ -51,7 +51,7 @@ namespace Repository.Repositories
         }
        
         // חיפוש לפי מזהה אורח
-        public List<SubGuest> GetSubGuestsByGuestId(string guestId)
+        public List<SubGuest> GetSubGuestsByGuestId(int guestId)
         {
             return context.SubGuests.Where(sg => sg.guestId == guestId).ToList();
         }
@@ -86,7 +86,7 @@ namespace Repository.Repositories
         }
 
         // חיפוש מספר שולחן לפי מזהה אורח
-        public int? GetTableByGuestId(string guestId)
+        public int? GetTableByGuestId(int guestId)
         {
             return context.Seatings
                 .Where(s => s.subGuest.guestId == guestId)

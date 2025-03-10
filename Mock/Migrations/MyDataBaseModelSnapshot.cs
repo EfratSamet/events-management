@@ -24,8 +24,11 @@ namespace Mock.Migrations
 
             modelBuilder.Entity("Repository.Entity.Event", b =>
                 {
-                    b.Property<string>("id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<string>("address")
                         .IsRequired()
@@ -46,9 +49,8 @@ namespace Mock.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("organizerId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("organizerId")
+                        .HasColumnType("int");
 
                     b.Property<bool>("seperation")
                         .HasColumnType("bit");
@@ -62,20 +64,21 @@ namespace Mock.Migrations
 
             modelBuilder.Entity("Repository.Entity.Group", b =>
                 {
-                    b.Property<string>("id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.Property<string>("guestId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<int>("guestId")
+                        .HasColumnType("int");
 
                     b.Property<string>("name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("organizerId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("organizerId")
+                        .HasColumnType("int");
 
                     b.HasKey("id");
 
@@ -88,8 +91,11 @@ namespace Mock.Migrations
 
             modelBuilder.Entity("Repository.Entity.Guest", b =>
                 {
-                    b.Property<string>("id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<int>("gender")
                         .HasColumnType("int");
@@ -109,20 +115,23 @@ namespace Mock.Migrations
 
             modelBuilder.Entity("Repository.Entity.GuestInEvent", b =>
                 {
-                    b.Property<string>("id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.Property<string>("eventId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
-                    b.Property<string>("group")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("eventId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("guestId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("group")
+                        .HasColumnType("int");
+
+                    b.Property<int>("groupId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("guestId")
+                        .HasColumnType("int");
 
                     b.Property<bool>("ok")
                         .HasColumnType("bit");
@@ -131,7 +140,7 @@ namespace Mock.Migrations
 
                     b.HasIndex("eventId");
 
-                    b.HasIndex("group");
+                    b.HasIndex("groupId");
 
                     b.HasIndex("guestId");
 
@@ -140,8 +149,11 @@ namespace Mock.Migrations
 
             modelBuilder.Entity("Repository.Entity.Organizer", b =>
                 {
-                    b.Property<string>("id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int?>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("id"), 1L, 1);
 
                     b.Property<string>("mail")
                         .IsRequired()
@@ -162,20 +174,21 @@ namespace Mock.Migrations
 
             modelBuilder.Entity("Repository.Entity.PhotosFromEvent", b =>
                 {
-                    b.Property<string>("id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<string>("blessing")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("eventId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("eventId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("guestId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("guestId")
+                        .HasColumnType("int");
 
                     b.Property<string>("imageUrl")
                         .IsRequired()
@@ -192,19 +205,20 @@ namespace Mock.Migrations
 
             modelBuilder.Entity("Repository.Entity.Seating", b =>
                 {
-                    b.Property<string>("id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.Property<string>("eventId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<int>("eventId")
+                        .HasColumnType("int");
 
                     b.Property<int>("seat")
                         .HasColumnType("int");
 
-                    b.Property<string>("subGuestId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("subGuestId")
+                        .HasColumnType("int");
 
                     b.Property<int>("table")
                         .HasColumnType("int");
@@ -220,15 +234,17 @@ namespace Mock.Migrations
 
             modelBuilder.Entity("Repository.Entity.SubGuest", b =>
                 {
-                    b.Property<string>("id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<int>("gender")
                         .HasColumnType("int");
 
-                    b.Property<string>("guestId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("guestId")
+                        .HasColumnType("int");
 
                     b.Property<string>("name")
                         .IsRequired()
@@ -276,19 +292,19 @@ namespace Mock.Migrations
                     b.HasOne("Repository.Entity.Event", "event_")
                         .WithMany("guests")
                         .HasForeignKey("eventId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Repository.Entity.Group", "group_")
                         .WithMany()
-                        .HasForeignKey("group")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasForeignKey("groupId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Repository.Entity.Guest", "guest")
                         .WithMany()
                         .HasForeignKey("guestId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("event_");

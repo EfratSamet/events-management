@@ -25,7 +25,7 @@ namespace MasterEvents.Controllers
 
         // GET api/<SubGuestController>/5
         [HttpGet("{id}")]
-        public SubGuestDto Get(string id)
+        public SubGuestDto Get(int id)
         {
             return _subGuestService.Get(id);
         }
@@ -39,14 +39,14 @@ namespace MasterEvents.Controllers
 
         // PUT api/<SubGuestController>/5
         [HttpPut("{id}")]
-        public void Put(string id, [FromBody] SubGuestDto value)
+        public void Put(int id, [FromBody] SubGuestDto value)
         {
             _subGuestService.Update(id, value);
         }
 
         // DELETE api/<SubGuestController>/5
         [HttpDelete("{id}")]
-        public void Delete(string id)
+        public void Delete(int id)
         {
             _subGuestService.Delete(id);
         }

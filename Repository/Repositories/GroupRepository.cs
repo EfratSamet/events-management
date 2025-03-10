@@ -23,13 +23,13 @@ namespace Repository.Repositories
             return item;
         }
 
-        public void Delete(string id)
+        public void Delete(int id)
         {
             context.Groups.Remove(Get(id));
             context.save();
         }
 
-        public Group Get(string id)
+        public Group Get(int id)
         {
             return context.Groups.FirstOrDefault(x => x.id == id);
         }
@@ -39,7 +39,7 @@ namespace Repository.Repositories
             return context.Groups.ToList();
         }
 
-        public Group Update(string id, Group item)
+        public Group Update(int id, Group item)
         {
             var existingGroup = context.Groups.FirstOrDefault(x => x.id == id);
 
@@ -62,7 +62,7 @@ namespace Repository.Repositories
             return existingGroup;
         }
         //חיפוש קבוצות לפי מזהה מארגן(organizerId)
-        public List<Group> GetGroupsByOrganizerId(string organizerId)
+        public List<Group> GetGroupsByOrganizerId(int organizerId)
         {
             return context.Groups
                 .Where(g => g.organizerId == organizerId)  // מסנן לפי מזהה המארגן
@@ -76,7 +76,7 @@ namespace Repository.Repositories
                 .ToList();
         }
         //חיפוש קבוצות לפי מזהה אורח(guestId)
-        public List<Group> GetGroupsByGuestId(string guestId)
+        public List<Group> GetGroupsByGuestId(int guestId)
         {
             return context.Groups
                 .Where(g => g.guestId == guestId)  // מסנן לפי מזהה האורח

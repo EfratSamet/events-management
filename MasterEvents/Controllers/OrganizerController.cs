@@ -25,7 +25,7 @@ namespace MasterEvents.Controllers
 
         // GET api/<OrganizerController>/5
         [HttpGet("{id}")]
-        public OrganizerDto Get(string id)
+        public OrganizerDto Get(int id)
         {
             return _organizerService.Get(id);
         }
@@ -48,14 +48,14 @@ namespace MasterEvents.Controllers
 
         // PUT api/<OrganizerController>/5
         [HttpPut("{id}")]
-        public void Put(string id, [FromBody] OrganizerDto value)
+        public void Put(int id, [FromBody] OrganizerDto value)
         {
             _organizerService.Update(id, value);    
         }
 
         // DELETE api/<OrganizerController>/5
         [HttpDelete("{id}")]
-        public void Delete(string id)
+        public void Delete(int id)
         {
             _organizerService.Delete(id);
         }

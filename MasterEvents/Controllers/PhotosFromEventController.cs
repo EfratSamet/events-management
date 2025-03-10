@@ -26,7 +26,7 @@ namespace MasterEvents.Controllers
 
         // GET api/<PhotosFromEventController>/5
         [HttpGet("{id}")]
-        public PhotosFromEventDto Get(string id)
+        public PhotosFromEventDto Get(int id)
         {
             return _photosFromEventService.Get(id);
         }
@@ -47,14 +47,14 @@ namespace MasterEvents.Controllers
 
         // PUT api/<PhotosFromEventController>/5
         [HttpPut("{id}")]
-        public void Put(string id, [FromBody] PhotosFromEventDto value)
+        public void Put(int id, [FromBody] PhotosFromEventDto value)
         {
             _photosFromEventService.Update(id, value);
         }
 
         // DELETE api/<PhotosFromEventController>/5
         [HttpDelete("{id}")]
-        public void Delete(string id)
+        public void Delete(int id)
         {
             _photosFromEventService.Delete(id);
         }

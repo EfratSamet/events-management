@@ -9,11 +9,11 @@ namespace Repository.Entity
 {
     public class PhotosFromEvent
     {
-        public string id { get; set; }
-        public string guestId { get; set; }
+        public int id { get; set; }
+        public int guestId { get; set; }
         [ForeignKey("guestId")]
         public virtual Guest guest { get; set; }
-        public string eventId { get; set; }
+        public int eventId { get; set; }
         [ForeignKey("eventId")]
         public virtual Event event_ { get; set; }
         public string imageUrl { get; set; }

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Mock.Migrations
 {
-    public partial class master_event : Migration
+    public partial class FixCascadeDelete : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,8 @@ namespace Mock.Migrations
                 name: "Guests",
                 columns: table => new
                 {
-                    id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     mail = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     gender = table.Column<int>(type: "int", nullable: false)
@@ -27,7 +28,8 @@ namespace Mock.Migrations
                 name: "Organizers",
                 columns: table => new
                 {
-                    id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     password = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     mail = table.Column<string>(type: "nvarchar(max)", nullable: false)
@@ -41,8 +43,9 @@ namespace Mock.Migrations
                 name: "SubGuests",
                 columns: table => new
                 {
-                    id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    guestId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    guestId = table.Column<int>(type: "int", nullable: false),
                     name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     gender = table.Column<int>(type: "int", nullable: false)
                 },
@@ -61,14 +64,15 @@ namespace Mock.Migrations
                 name: "Events",
                 columns: table => new
                 {
-                    id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    organizerId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    organizerId = table.Column<int>(type: "int", nullable: false),
                     eventName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     eventDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     address = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     details = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     seperation = table.Column<bool>(type: "bit", nullable: false),
-                    invitation = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    invitation = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -85,10 +89,11 @@ namespace Mock.Migrations
                 name: "Groups",
                 columns: table => new
                 {
-                    id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    organizerId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    guestId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    organizerId = table.Column<int>(type: "int", nullable: false),
+                    guestId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -111,9 +116,10 @@ namespace Mock.Migrations
                 name: "PhotosFromEvents",
                 columns: table => new
                 {
-                    id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    guestId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    eventId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    guestId = table.Column<int>(type: "int", nullable: false),
+                    eventId = table.Column<int>(type: "int", nullable: false),
                     imageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     blessing = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
@@ -138,9 +144,10 @@ namespace Mock.Migrations
                 name: "Seatings",
                 columns: table => new
                 {
-                    id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    eventId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    subGuestId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    eventId = table.Column<int>(type: "int", nullable: false),
+                    subGuestId = table.Column<int>(type: "int", nullable: false),
                     table = table.Column<int>(type: "int", nullable: false),
                     seat = table.Column<int>(type: "int", nullable: false)
                 },
@@ -165,11 +172,13 @@ namespace Mock.Migrations
                 name: "GuestInEvents",
                 columns: table => new
                 {
-                    id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    guestId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    eventId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    guestId = table.Column<int>(type: "int", nullable: false),
+                    eventId = table.Column<int>(type: "int", nullable: false),
                     ok = table.Column<bool>(type: "bit", nullable: false),
-                    group = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    groupId = table.Column<int>(type: "int", nullable: false),
+                    group = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -179,10 +188,10 @@ namespace Mock.Migrations
                         column: x => x.eventId,
                         principalTable: "Events",
                         principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_GuestInEvents_Groups_group",
-                        column: x => x.group,
+                        name: "FK_GuestInEvents_Groups_groupId",
+                        column: x => x.groupId,
                         principalTable: "Groups",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
@@ -191,7 +200,7 @@ namespace Mock.Migrations
                         column: x => x.guestId,
                         principalTable: "Guests",
                         principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -215,9 +224,9 @@ namespace Mock.Migrations
                 column: "eventId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_GuestInEvents_group",
+                name: "IX_GuestInEvents_groupId",
                 table: "GuestInEvents",
-                column: "group");
+                column: "groupId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_GuestInEvents_guestId",

@@ -22,13 +22,13 @@ namespace Repository.Repositories
             return item;
         }
 
-        public void Delete(string id)
+        public void Delete(int id)
         {
             context.GuestInEvents.Remove(Get(id));
             context.save();
         }
 
-        public GuestInEvent Get(string id)
+        public GuestInEvent Get(int id)
         {
             return context.GuestInEvents.FirstOrDefault(x => x.id == id);
         }
@@ -38,13 +38,13 @@ namespace Repository.Repositories
             return context.GuestInEvents.ToList();
         }
 
-        public GuestInEvent Update(string id, GuestInEvent item)
+        public GuestInEvent Update(int id, GuestInEvent item)
         {
             var existingGuestInEvent = context.GuestInEvents.FirstOrDefault(x => x.id == id);
 
             existingGuestInEvent.guestId = item.guestId;
             existingGuestInEvent.eventId = item.eventId;
-            existingGuestInEvent.group = item.group;
+            existingGuestInEvent.group_ = item.group_;
             existingGuestInEvent.ok = item.ok;
 
             if (item.guest != null)
@@ -67,31 +67,33 @@ namespace Repository.Repositories
             return existingGuestInEvent;
         }
 
-        public Dictionary<string, int> GetOKCountByGroups(string eventId)
+        public Dictionary<string, int> GetOKCountByGroups(int eventId)
         {
             return context.GuestInEvents
                 .Where(x => x.eventId == eventId && x.ok)
-                .GroupBy(ge => ge.group)
+                .GroupBy(x=>x.group_.name)
                 .ToDictionary(g => g.Key, g => g.Count());
         }
 
-        public List<GuestInEvent> GuestCountOK(string eventId)
+        public List<GuestInEvent> GuestCountOK(int eventId)
         {
             return context.GuestInEvents
                 .Where(x => x.eventId == eventId && x.ok)
                 .ToList();
         }
 
-        public int CountOK(string eventId)
+        public int CountOK(int eventId)
         {
             return context.GuestInEvents
                 .Count(x => x.eventId == eventId && x.ok);
         }
 
-        public int CountOKByGroup(string eventId, string groupName)
+        public int CountOKByGroup(int eventId, string groupName)
         {
             return context.GuestInEvents
-                .Count(x => x.eventId == eventId && x.group == groupName && x.ok);
+                .Count(x => x.eventId == eventId && x.group_.name == groupName && x.ok);
         }
+
+
     }
 }

@@ -28,12 +28,12 @@ namespace Service.Services
             return _mapper.Map<GuestInEventDto>(_repository.Add(_mapper.Map<GuestInEvent>(item)));
         }
 
-        public void Delete(string id)
+        public void Delete(int id)
         {
             _repository.Delete(id);
         }
 
-        public GuestInEventDto Get(string id)
+        public GuestInEventDto Get(int id)
         {
             return _mapper.Map<GuestInEventDto>(_repository.Get(id));
         }
@@ -43,13 +43,13 @@ namespace Service.Services
             return _mapper.Map<List<GuestInEventDto>>(_repository.GetAll());
         }
 
-        public GuestInEventDto Update(string id, GuestInEventDto item)
+        public GuestInEventDto Update(int id, GuestInEventDto item)
         {
             return _mapper.Map<GuestInEventDto>(_repository.Update(id, _mapper.Map<GuestInEvent>(item)));
         }
 
         // פונקציה שמקבלת את מספר האירוע ומספר המושבים בשולחן ומחזירה מיפוי של אורחים לשולחנות
-        public Dictionary<int, List<GuestInEventDto>> AssignGuestsToTables(string eventId, int seatsPerTable)
+        public Dictionary<int, List<GuestInEventDto>> AssignGuestsToTables(int eventId, int seatsPerTable)
         {
             // שליפת האורחים לפי אישורי הגעה ולפי הקטגוריה
             var guestsByGroup = _repository.GetOKCountByGroups(eventId);
@@ -62,7 +62,7 @@ namespace Service.Services
             foreach (var group in guestsByGroup)
             {
                 var groupGuests = _repository.GetAll()
-                    .Where(g => g.eventId == eventId && g.ok == true && g.group == group.Key) // סינון לפי קבוצת האורחים
+                    .Where(g => g.eventId == eventId && g.ok == true && g.groupId == group.Value) // סינון לפי קבוצת האורחים
                     .ToList();
 
                 foreach (var guest in groupGuests)

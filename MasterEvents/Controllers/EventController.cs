@@ -25,7 +25,7 @@ namespace MasterEvents.Controllers
 
         // GET api/<EventController>/5
         [HttpGet("{id}")]
-        public EventDto Get(string id)
+        public EventDto Get(int id)
         {
             return _eventService.Get(id);
         }
@@ -39,7 +39,7 @@ namespace MasterEvents.Controllers
 
         // PUT api/<EventController>/5
         [HttpPut("{id}")]
-        public void Put(string id, [FromBody] EventDto value)
+        public void Put(int id, [FromBody] EventDto value)
         {
             _eventService.Update(id, value);
 
@@ -47,7 +47,7 @@ namespace MasterEvents.Controllers
 
         // DELETE api/<EventController>/5
         [HttpDelete("{id}")]
-        public void Delete(string id)
+        public void Delete(int id)
         {
             _eventService.Delete(id);
         }

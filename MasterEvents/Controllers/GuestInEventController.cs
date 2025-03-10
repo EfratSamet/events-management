@@ -25,7 +25,7 @@ namespace MasterEvents.Controllers
 
         // GET api/<GuestInEventController>/5
         [HttpGet("{id}")]
-        public GuestInEventDto Get(string id)
+        public GuestInEventDto Get(int id)
         {
             return _guestInEventService.Get(id);
         }
@@ -39,38 +39,38 @@ namespace MasterEvents.Controllers
 
         // PUT api/<GuestInEventController>/5
         [HttpPut("{id}")]
-        public void Put(string id, [FromBody] GuestInEventDto value)
+        public void Put(int id, [FromBody] GuestInEventDto value)
         {
             _guestInEventService.Update(id, value);
         }
 
         // DELETE api/<GuestInEventController>/5
         [HttpDelete("{id}")]
-        public void Delete(string id)
+        public void Delete(int id)
         {
             _guestInEventService.Delete(id);
         }
         //חיפוש כל האורחים באירוע מסוים
         [HttpGet("byEvent/{eventId}")]
-        public IEnumerable<GuestInEventDto> GetGuestsByEvent(string eventId)
+        public IEnumerable<GuestInEventDto> GetGuestsByEvent(int eventId)
         {
             return _guestInEventService.GetAll().Where(g => g.eventId == eventId);
         }
         //חיפוש אורח לפי שם באירוע מסוים
         [HttpGet("byEvent/{eventId}/byName/{name}")]
-        public IEnumerable<GuestInEventDto> GetGuestsByName(string eventId, string name)
+        public IEnumerable<GuestInEventDto> GetGuestsByName(int eventId, string name)
         {
             return _guestInEventService.GetAll().Where(g => g.eventId == eventId && g.guest.name.Contains(name));
         }
         //חיפוש אורחים לפי מגדר
         [HttpGet("byEvent/{eventId}/byGender/{gender}")]
-        public IEnumerable<GuestInEventDto> GetGuestsByGender(string eventId, int gender)
+        public IEnumerable<GuestInEventDto> GetGuestsByGender(int eventId, int gender)
         {
             return _guestInEventService.GetAll().Where(g => g.eventId == eventId && (int)g.guest.gender == gender);
         }
         //חיפוש אורחים שאישרו הגעב
         [HttpGet("byEvent/{eventId}/confirmed")]
-        public IEnumerable<GuestInEventDto> GetConfirmedGuests(string eventId)
+        public IEnumerable<GuestInEventDto> GetConfirmedGuests(int eventId)
         {
             return _guestInEventService.GetAll().Where(g => g.eventId == eventId && g.ok);
         }

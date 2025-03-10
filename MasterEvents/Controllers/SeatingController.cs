@@ -24,7 +24,7 @@ namespace MasterEvents.Controllers
 
         // GET api/<SeatingController>/5
         [HttpGet("{id}")]
-        public SeatingDto Get(string id)
+        public SeatingDto Get(int id)
         {
             return _seatingService.Get(id);
         }
@@ -38,14 +38,14 @@ namespace MasterEvents.Controllers
 
         // PUT api/<SeatingController>/5
         [HttpPut("{id}")]
-        public void Put(string id, [FromBody] SeatingDto value)
+        public void Put(int id, [FromBody] SeatingDto value)
         {
             _seatingService.Update(id, value);
         }
 
         // DELETE api/<SeatingController>/5
         [HttpDelete("{id}")]
-        public void Delete(string id)
+        public void Delete(int id)
         {
             _seatingService.Delete(id); 
         }

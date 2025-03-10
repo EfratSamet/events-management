@@ -24,13 +24,13 @@ namespace Repository.Repositories
             return item;
         }
 
-        public void Delete(string id)
+        public void Delete(int id)
         {
             context.Events.Remove(Get(id));
             context.save();
         }
 
-        public Event Get(string id)
+        public Event Get(int id)
         {
             return context.Events.FirstOrDefault(x => x.id == id);
         }
@@ -40,7 +40,7 @@ namespace Repository.Repositories
             return context.Events.ToList();
         }
 
-        public Event Update(string id, Event item)
+        public Event Update(int id, Event item)
         {
             Event existingEvent = Get(id);
             existingEvent.eventName = item.eventName;
@@ -58,7 +58,7 @@ namespace Repository.Repositories
             return existingEvent; 
         }
         //חיפוש אירועים לפי מארגן
-        public List<Event> GetEventsByOrganizerId(string organizerId)
+        public List<Event> GetEventsByOrganizerId(int organizerId)
         {
             return context.Events.Where(e => e.organizerId == organizerId).ToList();
         }

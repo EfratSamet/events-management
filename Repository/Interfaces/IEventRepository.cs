@@ -9,7 +9,7 @@ namespace Repository.Interfaces
 {
     public interface IEventRepository : IRepository<Event>
     {
-        List<Event> GetEventsByOrganizerId(string organizerId);
+        List<Event> GetEventsByOrganizerId(int organizerId);
         List<Event> GetEventsByDateRange(DateTime startDate, DateTime endDate);
         List<Event> GetEventsByAddress(string address);
         List<Event> GetUpcomingEvents();

@@ -21,16 +21,17 @@ namespace Repository.Repositories
         {
             context.Organizers.Add(item);
             context.save();
+
             return item;
         }
 
-        public void Delete(string id)
+        public void Delete(int id)
         {
             context.Organizers.Remove(Get(id));
             context.save();
         }
 
-        public Organizer Get(string id)
+        public Organizer Get(int id)
         {
             return context.Organizers.FirstOrDefault(x => x.id == id);
         }
@@ -40,7 +41,7 @@ namespace Repository.Repositories
             return context.Organizers.ToList();
         }
 
-        public Organizer Update(string id, Organizer item)
+        public Organizer Update(int id, Organizer item)
         {
             Organizer o = Get(id);
             o.name = item.name;
@@ -55,7 +56,7 @@ namespace Repository.Repositories
             return context.Groups.Where(g => g.name== name).ToList();
         }
         // שאילתת חיפוש - חיפוש אירועים לפי מארגן
-        public List<Event> GetEventsByOrganizerId(string organizerId)
+        public List<Event> GetEventsByOrganizerId(int organizerId)
         {
             return context.Events.Where(e => e.organizerId == organizerId).ToList();
         }
@@ -64,7 +65,7 @@ namespace Repository.Repositories
             return context.Organizers.FirstOrDefault(x => x.mail == mail);
         }
 
-        public List<Group> GetGroupsByOrganizerId(string organizerId)
+        public List<Group> GetGroupsByOrganizerId(int organizerId)
         {
             throw new NotImplementedException();
         }

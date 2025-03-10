@@ -28,12 +28,12 @@ namespace Service.Services
             return _mapper.Map<GroupDto>(_repository.Add(_mapper.Map<Group>(item)));
         }
 
-        public void Delete(string id)
+        public void Delete(int id)
         {
             _repository.Delete(id);
         }
 
-        public GroupDto Get(string id)
+        public GroupDto Get(int id)
         {
             return _mapper.Map<GroupDto>(_repository.Get(id));
         }
@@ -43,7 +43,7 @@ namespace Service.Services
             return _mapper.Map<List<GroupDto>>(_repository.GetAll());
         }
 
-        public GroupDto Update(string id, GroupDto item)
+        public GroupDto Update(int id, GroupDto item)
         {
             return _mapper.Map<GroupDto>(_repository.Update(id, _mapper.Map<Group>(item)));
         }

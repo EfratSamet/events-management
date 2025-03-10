@@ -26,7 +26,7 @@ namespace MasterEvents.Controllers
 
         // GET api/<GroupController>/5
         [HttpGet("{id}")]
-        public GroupDto Get(string id)
+        public GroupDto Get(int id)
         {
             return _groupService.Get(id);
         }
@@ -40,14 +40,14 @@ namespace MasterEvents.Controllers
 
         // PUT api/<GroupController>/5
         [HttpPut("{id}")]
-        public void Put(string id, [FromBody] GroupDto value)
+        public void Put(int id, [FromBody] GroupDto value)
         {
             _groupService.Update(id, value);
         }
 
         // DELETE api/<GroupController>/5
         [HttpDelete("{id}")]
-        public void Delete(string id)
+        public void Delete(int id)
         {
             _groupService.Delete(id);
         }

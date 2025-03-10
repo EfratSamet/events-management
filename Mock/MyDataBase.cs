@@ -29,5 +29,28 @@ namespace Mock
         {
             SaveChanges();
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<GuestInEvent>()
+                .HasOne(g => g.event_)
+                .WithMany(e => e.guests)
+                .HasForeignKey(g => g.eventId)
+                .OnDelete(DeleteBehavior.Restrict); // במקום Cascade
+
+            modelBuilder.Entity<GuestInEvent>()
+                .HasOne(g => g.group_)
+                .WithMany()
+                .HasForeignKey(g => g.groupId)
+                .OnDelete(DeleteBehavior.Restrict); // במקום Cascade
+
+            modelBuilder.Entity<GuestInEvent>()
+                .HasOne(g => g.guest)
+                .WithMany()
+                .HasForeignKey(g => g.guestId)
+                .OnDelete(DeleteBehavior.Restrict); // במקום Cascade
+
+            base.OnModelCreating(modelBuilder);
+        }
+
     }
 }

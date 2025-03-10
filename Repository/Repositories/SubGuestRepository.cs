@@ -24,13 +24,13 @@ namespace Repository.Repositories
             return item;
         }
 
-        public void Delete(string id)
+        public void Delete(int id)
         {
             context.SubGuests.Remove(Get(id));
             context.save();
         }
 
-        public SubGuest Get(string id)
+        public SubGuest Get(int id)
         {
             return context.SubGuests.FirstOrDefault(x => x.id == id);
         }
@@ -40,7 +40,7 @@ namespace Repository.Repositories
             return context.SubGuests.Include(x=>x.guest).ToList();
         }
 
-        public SubGuest Update(string id, SubGuest item)
+        public SubGuest Update(int id, SubGuest item)
         {
             SubGuest x = Get(id);
             x.guestId = item.guestId;
@@ -57,13 +57,13 @@ namespace Repository.Repositories
                 .ToList();
         }
         // מציאת כל התת-אורחים שיש להם אותו מזהה אורח
-        public List<SubGuest> GetSubGuestsByGuestId(string guestId)
+        public List<SubGuest> GetSubGuestsByGuestId(int guestId)
         {
             return context.SubGuests.Where(sg => sg.guestId == guestId).ToList();
         }
 
         // מציאת תת-אורחים לפי מזהה אורח ומגדר
-        public List<SubGuest> GetSubGuestsByGuestIdAndGender(string guestId, Gender gender)
+        public List<SubGuest> GetSubGuestsByGuestIdAndGender(int guestId, Gender gender)
         {
             return context.SubGuests.Where(sg => sg.guestId == guestId && sg.gender == gender).ToList();
         }

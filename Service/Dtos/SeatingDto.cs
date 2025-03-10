@@ -10,11 +10,11 @@ namespace Service.Dtos
 {
     public class SeatingDto
     {
-        public string id { get; set; }
-        public string eventId { get; set; }
+        public int id { get; set; }
+        public int eventId { get; set; }
         [ForeignKey("eventId")]
         public virtual Event event_ { get; set; }
-        public string subGuestId { get; set; }
+        public int subGuestId { get; set; }
         [ForeignKey("subGuestId")]
         public virtual SubGuest subGuest { get; set; }
         public int table { get; set; }

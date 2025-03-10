@@ -9,12 +9,12 @@ namespace Repository.Entity
 {
     public class Group
     {
-        public string id { get; set; }
+        public int id { get; set; }
         public string name { get; set; }
-        public string organizerId { get; set; }
+        public int organizerId { get; set; }
         [ForeignKey("organizerId")]
         public virtual Organizer organizer { get; set; }
-        public string guestId { get; set; }
+        public int guestId { get; set; }
         [ForeignKey("guestId")]
         public virtual Guest guest { get; set; }
 
