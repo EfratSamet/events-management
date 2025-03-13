@@ -12,7 +12,6 @@ namespace Service.Dtos
     {
         public int id { get; set; }
         public int guestId { get; set; }
-        [ForeignKey("guestId")]
         public virtual Guest guest { get; set; }
         public string name { get; set; }
         public Gender gender { get; set; }

@@ -173,6 +173,78 @@
         }
       }
     },
+    "/api/Event/organizer/{organizerId}": {
+      "get": {
+        "tags": [
+          "Event"
+        ],
+        "parameters": [
+          {
+            "name": "organizerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EventDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EventDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EventDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Event/guests/{eventId}": {
+      "get": {
+        "tags": [
+          "Event"
+        ],
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/Group": {
       "get": {
         "tags": [
@@ -1773,9 +1845,6 @@
             "type": "integer",
             "format": "int32"
           },
-          "organizer": {
-            "$ref": "#/components/schemas/Organizer"
-          },
           "eventName": {
             "type": "string",
             "nullable": true
@@ -1842,12 +1911,12 @@
           "organizer": {
             "$ref": "#/components/schemas/Organizer"
           },
-          "guestId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "guest": {
-            "$ref": "#/components/schemas/Guest"
+          "guests": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Guest"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1867,15 +1936,12 @@
             "type": "integer",
             "format": "int32"
           },
-          "organizer": {
-            "$ref": "#/components/schemas/Organizer"
-          },
-          "guestId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "guest": {
-            "$ref": "#/components/schemas/Guest"
+          "guests": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Guest"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1967,15 +2033,9 @@
             "type": "integer",
             "format": "int32"
           },
-          "guest": {
-            "$ref": "#/components/schemas/Guest"
-          },
           "eventId": {
             "type": "integer",
             "format": "int32"
-          },
-          "event_": {
-            "$ref": "#/components/schemas/Event"
           },
           "ok": {
             "type": "boolean"
@@ -1983,9 +2043,6 @@
           "groupId": {
             "type": "integer",
             "format": "int32"
-          },
-          "group_": {
-            "$ref": "#/components/schemas/Group"
           }
         },
         "additionalProperties": false

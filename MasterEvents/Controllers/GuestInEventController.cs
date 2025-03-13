@@ -60,25 +60,29 @@ namespace MasterEvents.Controllers
         [HttpGet("byEvent/{eventId}/byName/{name}")]
         public IEnumerable<GuestInEventDto> GetGuestsByName(int eventId, string name)
         {
-            return _guestInEventService.GetAll().Where(g => g.eventId == eventId && g.guest.name.Contains(name));
+            return _guestInEventService.GetAll();
+            //.Where(g => g.eventId == eventId && g.guest.name.Contains(name));
         }
         //חיפוש אורחים לפי מגדר
         [HttpGet("byEvent/{eventId}/byGender/{gender}")]
         public IEnumerable<GuestInEventDto> GetGuestsByGender(int eventId, int gender)
         {
-            return _guestInEventService.GetAll().Where(g => g.eventId == eventId && (int)g.guest.gender == gender);
+            return _guestInEventService.GetAll();
+            //.Where(g => g.eventId == eventId && (int)g.guest.gender == gender);
         }
         //חיפוש אורחים שאישרו הגעב
         [HttpGet("byEvent/{eventId}/confirmed")]
         public IEnumerable<GuestInEventDto> GetConfirmedGuests(int eventId)
         {
-            return _guestInEventService.GetAll().Where(g => g.eventId == eventId && g.ok);
+            return _guestInEventService.GetAll();
+            //.Where(g => g.eventId == eventId && g.ok);
         }
         //חיפוש אורחים באירועים בין התאריכים
         [HttpGet("byDateRange")]
         public IEnumerable<GuestInEventDto> GetGuestsByDateRange([FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
         {
-            return _guestInEventService.GetAll().Where(g => g.event_.eventDate >= startDate && g.event_.eventDate <= endDate);
+            return _guestInEventService.GetAll();
+                //.Where(g => g.event_.eventDate >= startDate && g.event_.eventDate <= endDate);
         }
     }
 }

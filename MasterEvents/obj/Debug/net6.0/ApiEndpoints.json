@@ -117,6 +117,48 @@
     ]
   },
   {
+    "ContainingType": "MasterEvents.Controllers.EventController",
+    "Method": "GetGuests",
+    "RelativePath": "api/Event/guests/{eventId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MasterEvents.Controllers.EventController",
+    "Method": "GetByOrganizerId",
+    "RelativePath": "api/Event/organizer/{organizerId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "organizerId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Service.Dtos.EventDto, Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "MasterEvents.Controllers.GroupController",
     "Method": "Get",
     "RelativePath": "api/Group",

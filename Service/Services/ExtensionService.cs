@@ -18,7 +18,7 @@ namespace Service.Services
         public static IServiceCollection AddServiceExtension(this IServiceCollection services)
         {
             services.AddRepository();
-            services.AddScoped<IService<EventDto>, EventService>();
+            services.AddScoped<IEventService, EventService>();
             services.AddScoped<IService<GroupDto>, GroupService>();
             services.AddScoped<IService<GuestDto>, GuestService>();
             services.AddScoped<IService<GuestInEventDto>, GuestInEventService>();

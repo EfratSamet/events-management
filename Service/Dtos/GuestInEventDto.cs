@@ -12,14 +12,9 @@ namespace Service.Dtos
     {
         public int id { get; set; }
         public int guestId { get; set; }
-        [ForeignKey("guestId")]
-        public virtual Guest guest { get; set; }
         public int eventId { get; set; }
-        [ForeignKey("eventId")]
-        public virtual Event event_ { get; set; }
         public bool ok { get; set; }
         public int groupId { get; set; }
-        [ForeignKey("group")]
-        public virtual Group group_ { get; set; }
+
     }
 }

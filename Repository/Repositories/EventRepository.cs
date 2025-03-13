@@ -32,31 +32,62 @@ namespace Repository.Repositories
 
         public Event Get(int id)
         {
-            return context.Events.FirstOrDefault(x => x.id == id);
+            return context.Events
+                .FirstOrDefault(x => x.id == id);
         }
 
         public List<Event> GetAll()
         {
-            return context.Events.ToList();
+            return context.Events.Include(g=>g.guests).ThenInclude(g => g.guest) // טוען גם את פרטי האורח עצמו
+.ToList();
         }
 
         public Event Update(int id, Event item)
         {
             Event existingEvent = Get(id);
+
+            if (existingEvent == null)
+                throw new Exception($"Event with id {id} not found.");
+
             existingEvent.eventName = item.eventName;
             existingEvent.organizerId = item.organizerId;
-            if(item.organizerId != null) 
-                  existingEvent.organizer = item.organizer;
             existingEvent.eventDate = item.eventDate;
             existingEvent.address = item.address;
             existingEvent.details = item.details;
             existingEvent.seperation = item.seperation;
             existingEvent.invitation = item.invitation;
-            existingEvent.photos = item.photos;
-            existingEvent.guests = item.guests;
+
+            // לוודא שהרשימה קיימת
+            existingEvent.guests ??= new List<GuestInEvent>();
+            // מחיקת אורחים קיימים והוספת החדשים
+            existingEvent.guests.Clear();
+            foreach (var guest in item.guests ?? new List<GuestInEvent>())
+            {
+                existingEvent.guests.Add(new GuestInEvent
+                {
+                    guestId = guest.guestId,
+                    eventId = guest.eventId,
+                    ok = guest.ok,
+                    groupId = guest.groupId
+                });
+            }
             context.save();
-            return existingEvent; 
+            return existingEvent;
         }
+
+        public List<GuestInEvent> GetGuestsByEventId(int eventId)
+        {
+            var eventEntity = context.Events
+                .Include(e => e.guests)  // טוען את האורחים של האירוע
+                .FirstOrDefault(e => e.id == eventId);
+
+            if (eventEntity == null)
+                throw new Exception($"Event with id {eventId} not found.");
+
+            return eventEntity.guests.ToList();  // מחזיר את רשימת האורחים של האירוע
+        }
+
+
         //חיפוש אירועים לפי מארגן
         public List<Event> GetEventsByOrganizerId(int organizerId)
         {

@@ -45,18 +45,12 @@ namespace Repository.Repositories
 
             existingGroup.name = item.name;
             existingGroup.organizerId = item.organizerId;
-            existingGroup.guestId = item.guestId;
-
             if (item.organizer != null)
             {
                 existingGroup.organizer = item.organizer;
             }
 
-            if (item.guest != null)
-            {
-                existingGroup.guest = item.guest;
-            }
-
+            existingGroup.guests = item.guests;
             context.save();
 
             return existingGroup;
@@ -78,9 +72,9 @@ namespace Repository.Repositories
         //חיפוש קבוצות לפי מזהה אורח(guestId)
         public List<Group> GetGroupsByGuestId(int guestId)
         {
-            return context.Groups
-                .Where(g => g.guestId == guestId)  // מסנן לפי מזהה האורח
-                .ToList();
+            return context.Groups.ToList();
+                //.Where(g => g.guestId == guestId)  // מסנן לפי מזהה האורח
+                //.ToList();
         }
         // חיפוש קבוצות לפי מספר מוגבל של קבוצות (לדוגמה 5 קבוצות ראשונות)
         public List<Group> GetTopGroups(int count)

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Service.Services
 {
-    public class EventService:IService<EventDto>
+    public class EventService:IEventService
     {
         private readonly IEventRepository _repository;
         private readonly IMapper _mapper;
@@ -45,6 +45,11 @@ namespace Service.Services
         public EventDto Update(int id, EventDto item)
         {
             return _mapper.Map<EventDto>(_repository.Update(id, _mapper.Map<Event>(item)));
+        }
+        public List<GuestInEventDto> GetGuestsByEventId(int eventId)
+        {
+            var guests = _repository.GetGuestsByEventId(eventId);  // קריאה ל-Repository
+            return _mapper.Map<List<GuestInEventDto>>(guests);  // המרת אורחים ל-Dto
         }
     }
 }

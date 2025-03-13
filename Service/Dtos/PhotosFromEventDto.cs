@@ -13,10 +13,8 @@ namespace Service.Dtos
     {
         public int id { get; set; }
         public int guestId { get; set; }
-        [ForeignKey("guestId")]
         public virtual Guest guest { get; set; }
         public int eventId { get; set; }
-        [ForeignKey("eventId")]
         public virtual Event event_ { get; set; }
         public byte[]? Image { get; set; }
         public IFormFile? File { get; set; }

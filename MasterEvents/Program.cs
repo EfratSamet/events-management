@@ -39,7 +39,7 @@ builder.Services.AddScoped<ILoginService, LoginService>();
 
 
 builder.Services.AddScoped<IEventRepository, EventRepository>();
-builder.Services.AddScoped<IService<EventDto>, EventService>();
+builder.Services.AddScoped<IEventService, EventService>();
 
 builder.Services.AddScoped<IRepository<Group>, GroupRepository>();
 builder.Services.AddScoped<IService<GroupDto>, GroupService>();
@@ -79,6 +79,11 @@ builder.Services.AddControllers();
 // הוספת Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+});
+
 
 // הגדרת CORS
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";

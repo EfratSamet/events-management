@@ -14,10 +14,6 @@ namespace Repository.Entity
         public int organizerId { get; set; }
         [ForeignKey("organizerId")]
         public virtual Organizer organizer { get; set; }
-        public int guestId { get; set; }
-        [ForeignKey("guestId")]
-        public virtual Guest guest { get; set; }
-
-
+        public ICollection<Guest> guests { get; set; }
     }
 }

@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Service.Dtos;
 using Service.Interfaces;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using System.Collections.Generic;
 
 namespace MasterEvents.Controllers
 {
@@ -10,46 +9,76 @@ namespace MasterEvents.Controllers
     [ApiController]
     public class EventController : ControllerBase
     {
-        private readonly IService<EventDto> _eventService;  
-        public EventController(IService<EventDto> eventService)
+        private readonly IEventService _eventService;
+
+        public EventController(IEventService eventService)
         {
             _eventService = eventService;
         }
 
-        // GET: api/<EventController>
+        // GET: api/Event
         [HttpGet]
         public List<EventDto> Get()
         {
             return _eventService.GetAll();
         }
 
-        // GET api/<EventController>/5
+        // GET api/Event/5
         [HttpGet("{id}")]
         public EventDto Get(int id)
         {
             return _eventService.Get(id);
         }
 
-        // POST api/<EventController>
+        [HttpGet("organizer/{organizerId}")]
+        public ActionResult<List<EventDto>> GetByOrganizerId(int organizerId)
+        {
+            var events = _eventService.GetAll().FindAll(e => e.organizerId == organizerId);
+            return Ok(events); 
+        }
+
+
+        // POST api/Event
         [HttpPost]
         public void Post([FromBody] EventDto value)
         {
             _eventService.Add(value);
         }
 
-        // PUT api/<EventController>/5
+        // PUT api/Event/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] EventDto value)
         {
             _eventService.Update(id, value);
-
         }
 
-        // DELETE api/<EventController>/5
+        // DELETE api/Event/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
             _eventService.Delete(id);
         }
+        [HttpGet("guests/{eventId}")]
+
+        public IActionResult GetGuests(int eventId)
+        {
+            try
+            {
+                var guests = _eventService.GetGuestsByEventId(eventId);
+                if (guests == null || !guests.Any())
+                {
+                    return NotFound("No guests found for this event.");
+                }
+
+                return Ok(guests);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
+
+
     }
 }

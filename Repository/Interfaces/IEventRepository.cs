@@ -14,6 +14,8 @@ namespace Repository.Interfaces
         List<Event> GetEventsByAddress(string address);
         List<Event> GetUpcomingEvents();
         List<Event> GetEventsByAddressKeyword(string keyword);
+        List<GuestInEvent> GetGuestsByEventId(int eventId);
+
     }
 
 }

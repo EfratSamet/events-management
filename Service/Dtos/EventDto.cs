@@ -12,8 +12,6 @@ namespace Service.Dtos
     {
         public int id { get; set; }
         public int organizerId { get; set; }
-        [ForeignKey("organizerId")]
-        public virtual Organizer organizer { get; set; }
         public string eventName { get; set; }
         public DateTime eventDate { get; set; }
         public string address { get; set; }
