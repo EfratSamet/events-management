@@ -1,5 +1,4 @@
-﻿using Repository.Entity;
-using Service.Dtos;
+﻿using Service.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Service.Interfaces
 {
-    public interface IEventService:IService<EventDto>
+    public interface IGroupService:IService<GroupDto>
     {
-        List<GuestDto> GetGuestsByEventId(int eventId);
+        List<GroupDto> GetGroupsByOrganizerId(int organizerId);
     }
 }

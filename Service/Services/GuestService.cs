@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Repository.Entity;
 using Repository.Interfaces;
+using Repository.Repositories;
 using Service.Dtos;
 using Service.Interfaces;
 using System;
@@ -11,12 +12,12 @@ using System.Threading.Tasks;
 
 namespace Service.Services
 {
-    public class GuestService:IService<GuestDto>
+    public class GuestService:IGuestService
     {
-        private readonly IRepository<Guest> _repository;
+        private readonly IGuestRepository _repository;
         private readonly IMapper _mapper;
 
-        public GuestService(IRepository<Guest> repository, IMapper mapper)
+        public GuestService(IGuestRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
@@ -45,6 +46,24 @@ namespace Service.Services
         public GuestDto Update(int id, GuestDto item)
         {
             return _mapper.Map<GuestDto>(_repository.Update(id, _mapper.Map<Guest>(item)));
+        }
+        public void SendEmails(int eventId, string subject, string body)
+        {
+            _repository.SendEmails(eventId, subject, body);
+
+        }
+        public List<GuestDto> GetGuestsByGroup(int groupId)
+        {
+            return _mapper.Map<List<GuestDto>>(_repository.GetGuestsByGroup(groupId));
+        }
+        public List<GuestDto> GetGuestsByEventId(int eventId)
+        {
+            return _mapper.Map<List<GuestDto>>(_repository.GetGuestsByEventId(eventId));
+        }
+        public List<GuestDto> GetGuestsByOrganizerId(int organizerId)
+        {
+            var guests = _repository.GetGuestsByOrganizerId(organizerId);
+            return _mapper.Map<List<GuestDto>>(guests);
         }
     }
 }

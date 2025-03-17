@@ -47,8 +47,7 @@ namespace Service.Services
         {
             return _mapper.Map<GuestInEventDto>(_repository.Update(id, _mapper.Map<GuestInEvent>(item)));
         }
-
-        // פונקציה שמקבלת את מספר האירוע ומספר המושבים בשולחן ומחזירה מיפוי של אורחים לשולחנות
+             // פונקציה שמקבלת את מספר האירוע ומספר המושבים בשולחן ומחזירה מיפוי של אורחים לשולחנות
         public Dictionary<int, List<GuestInEventDto>> AssignGuestsToTables(int eventId, int seatsPerTable)
         {
             // שליפת האורחים לפי אישורי הגעה ולפי הקטגוריה

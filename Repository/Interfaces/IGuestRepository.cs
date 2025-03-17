@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 
 namespace Repository.Interfaces
 {
-    internal interface IGuestRepository: IRepository<Guest>
+    public interface IGuestRepository: IRepository<Guest>
     {
+        void SendEmails(int eventId, string subject, string body);
+        List<Guest> GetGuestsByGroup(int groupId);
+        List<Guest?> GetGuestsByEventId(int eventId);
+        List<Guest> GetGuestsByOrganizerId(int organizerId);
         List<Guest> GetGuestsByName(string guestName);
         List<Guest> GetGuestsByMail(string mail);
         List<Guest> GetGuestsByGender(Gender gender);

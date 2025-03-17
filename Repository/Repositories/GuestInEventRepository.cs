@@ -67,6 +67,7 @@ namespace Repository.Repositories
             return existingGuestInEvent;
         }
 
+
         public Dictionary<string, int> GetOKCountByGroups(int eventId)
         {
             return context.GuestInEvents

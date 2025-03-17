@@ -11,13 +11,13 @@ using System.Threading.Tasks;
 
 namespace Service.Services
 {
-    public class GroupService:IService<GroupDto>
+    public class GroupService:IGroupService
     {
 
-        private readonly IRepository<Group> _repository;
+        private readonly IGroupRepository _repository;
         private readonly IMapper _mapper;
 
-        public GroupService(IRepository<Group> repository, IMapper mapper)
+        public GroupService(IGroupRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
@@ -46,6 +46,10 @@ namespace Service.Services
         public GroupDto Update(int id, GroupDto item)
         {
             return _mapper.Map<GroupDto>(_repository.Update(id, _mapper.Map<Group>(item)));
+        }
+        public List<GroupDto> GetGroupsByOrganizerId(int organizerId)
+        {
+            return _mapper.Map<List<GroupDto>>(_repository.GetGroupsByOrganizerId(organizerId));
         }
     }
 }

@@ -50,6 +50,7 @@ namespace Repository.Repositories
             context.save();
             return o;
         }
+
         // שאילתת חיפוש - חיפוש קבוצות לפי מארגן
         public List<Group> GetGroupsByName(string name)
         {

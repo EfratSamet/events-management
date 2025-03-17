@@ -75,17 +75,22 @@ namespace Repository.Repositories
             return existingEvent;
         }
 
-        public List<GuestInEvent> GetGuestsByEventId(int eventId)
+        public List<Guest> GetGuestsByEventId(int eventId)
         {
-            var eventEntity = context.Events
-                .Include(e => e.guests)  // טוען את האורחים של האירוע
-                .FirstOrDefault(e => e.id == eventId);
+            // קריאת הנתונים מתוך מסד הנתונים והקרנה למבנה של אורחים בלבד
+            var result = context.GuestInEvents
+                .Where(ge => ge.eventId == eventId)
+                .Select(ge => ge.guest) // בוחר את האורח בלבד
+                .ToList(); // מבצע את השאילתה ומעביר את התוצאות לזיכרון
 
-            if (eventEntity == null)
+            if (result == null || result.Count == 0)
                 throw new Exception($"Event with id {eventId} not found.");
 
-            return eventEntity.guests.ToList();  // מחזיר את רשימת האורחים של האירוע
+            return result;
         }
+
+
+
 
 
         //חיפוש אירועים לפי מארגן

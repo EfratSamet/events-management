@@ -9,10 +9,10 @@ namespace Repository.Interfaces
 {
     public interface IGroupRepository : IRepository<Group>
     {
-        List<Group> GetGroupsByOrganizerId(string organizerId);
-        List<Group> GetGroupsByGuestId(string guestId);
-        List<Group> GetGroupsByDateRange(DateTime startDate, DateTime endDate);
-        List<Group> GetGroupsByAddress(string address);
-        List<Group> GetGroupsByAddressKeyword(string keyword);
+        List<Group> GetGroupsByOrganizerId(int organizerId);
+        //List<Group> GetGroupsByGuestId(string guestId);
+        //List<Group> GetGroupsByDateRange(DateTime startDate, DateTime endDate);
+        //List<Group> GetGroupsByAddress(string address);
+        //List<Group> GetGroupsByAddressKeyword(string keyword);
     }
 }

@@ -14,10 +14,10 @@ namespace Service.Services
 {
     public class LoginService : ILoginService
     {
-        private readonly IService<OrganizerDto> _service;
+        private readonly IOrganizerService _service;
         private readonly IConfiguration _config;
 
-        public LoginService(IService<OrganizerDto> service, IConfiguration config)
+        public LoginService(IOrganizerService service, IConfiguration config)
         {
             _service = service;
             _config = config;

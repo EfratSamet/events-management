@@ -41,20 +41,20 @@ builder.Services.AddScoped<ILoginService, LoginService>();
 builder.Services.AddScoped<IEventRepository, EventRepository>();
 builder.Services.AddScoped<IEventService, EventService>();
 
-builder.Services.AddScoped<IRepository<Group>, GroupRepository>();
-builder.Services.AddScoped<IService<GroupDto>, GroupService>();
+builder.Services.AddScoped<IGroupRepository, GroupRepository>();
+builder.Services.AddScoped<IGroupService, GroupService>();
 
 builder.Services.AddScoped<IRepository<Guest>, GuestRepository>();
 builder.Services.AddScoped<IService<GuestDto>, GuestService>();
 
-builder.Services.AddScoped<IRepository<Guest>, GuestRepository>();
-builder.Services.AddScoped<IService<GuestDto>, GuestService>();
+builder.Services.AddScoped<IGuestRepository, GuestRepository>();
+builder.Services.AddScoped<IGuestService, GuestService>();
 
 //builder.Services.AddScoped<IRepository<GuestInEvent>, GuestInEventRepository>();
 builder.Services.AddScoped<IService<GuestInEventDto>, GuestInEventService>();
 builder.Services.AddScoped<IGuestInEventRepository, GuestInEventRepository>();
 
-builder.Services.AddScoped<IService<OrganizerDto>, OrganizerService>();
+builder.Services.AddScoped<IOrganizerService, OrganizerService>();
 builder.Services.AddScoped<IOrganizerRepository, OrganizerRepository>();
 builder.Services.AddAutoMapper(typeof(Program));
 

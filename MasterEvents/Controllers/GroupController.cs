@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Repository.Entity;
 using Service.Dtos;
 using Service.Interfaces;
 
@@ -11,8 +12,8 @@ namespace MasterEvents.Controllers
     [ApiController]
     public class GroupController : ControllerBase
     {
-        private readonly IService<GroupDto> _groupService;
-        public GroupController(IService<GroupDto> groupService)
+        private readonly IGroupService _groupService;
+        public GroupController(IGroupService groupService)
         {
             _groupService = groupService;
         }
@@ -50,6 +51,16 @@ namespace MasterEvents.Controllers
         public void Delete(int id)
         {
             _groupService.Delete(id);
+        }
+        [HttpGet("organizer/{organizerId}")]
+        public IActionResult GetGroupsByOrganizerId(int organizerId)
+        {
+            var groups =_groupService.GetGroupsByOrganizerId(organizerId);
+            if (groups == null || !groups.Any())
+            {
+                return NotFound("No guests found for this event.");
+            }
+            return Ok(groups);
         }
     }
 }

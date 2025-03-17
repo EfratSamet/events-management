@@ -276,6 +276,22 @@
     ]
   },
   {
+    "ContainingType": "MasterEvents.Controllers.GroupController",
+    "Method": "GetGroupsByOrganizerId",
+    "RelativePath": "api/Group/organizer/{organizerId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "organizerId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MasterEvents.Controllers.GuestController",
     "Method": "Get",
     "RelativePath": "api/Guest",
@@ -391,6 +407,80 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "MasterEvents.Controllers.GuestController",
+    "Method": "GetGuestsByEvent",
+    "RelativePath": "api/Guest/event/{eventId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MasterEvents.Controllers.GuestController",
+    "Method": "GetGuestsByGroup",
+    "RelativePath": "api/Guest/group/{groupId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "groupId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MasterEvents.Controllers.GuestController",
+    "Method": "GetGuestsByOrganizer",
+    "RelativePath": "api/Guest/organizer/{organizerId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "organizerId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MasterEvents.Controllers.GuestController",
+    "Method": "SendEmails",
+    "RelativePath": "api/Guest/sendemails",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "subject",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "body",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "MasterEvents.Controllers.GuestInEventController",

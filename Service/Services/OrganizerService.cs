@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Service.Services
 {
-    public class OrganizerService: IService<OrganizerDto>
+    public class OrganizerService: IOrganizerService
     {
 
         private readonly IOrganizerRepository _repository;
@@ -58,12 +58,6 @@ namespace Service.Services
         {
             var events = _repository.GetEventsByOrganizerId(id);
             return _mapper.Map<List<EventDto>>(events);
-        }
-
-        public List<GroupDto> GetGroupsByOrganizerId(int id)
-        {
-            var groups = _repository.GetGroupsByOrganizerId(id);
-            return _mapper.Map<List<GroupDto>>(groups);
         }
     }
 }

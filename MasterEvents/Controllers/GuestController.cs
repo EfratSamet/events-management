@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Service.Dtos;
 using Service.Interfaces;
+using Service.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,8 +11,8 @@ namespace MasterEvents.Controllers
     [ApiController]
     public class GuestController : ControllerBase
     {
-        private readonly IService<GuestDto> _guestService;
-        public GuestController(IService<GuestDto> guestService)
+        private readonly IGuestService _guestService;
+        public GuestController(IGuestService guestService)
         {
             _guestService = guestService;
         }
@@ -48,7 +49,52 @@ namespace MasterEvents.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _guestService.Delete(id);   
+            _guestService.Delete(id);
         }
+        [HttpGet("organizer/{organizerId}")]
+        public IActionResult GetGuestsByOrganizer(int organizerId)
+        {
+            var guests = _guestService.GetGuestsByOrganizerId(organizerId);
+            if (guests == null || !guests.Any())
+            {
+                return NotFound("No guests found for this organizer.");
+            }
+            return Ok(guests);
+        }
+        [HttpGet("event/{eventId}")]
+        public IActionResult GetGuestsByEvent(int eventId)
+        {
+            var guests = _guestService.GetGuestsByEventId(eventId);
+            if (guests == null || !guests.Any())
+            {
+                return NotFound("No guests found for this event.");
+            }
+            return Ok(guests);
+        }
+        [HttpGet("group/{groupId}")]
+        public IActionResult GetGuestsByGroup(int groupId)
+        {
+            var guests = _guestService.GetGuestsByGroup(groupId);
+            if (guests == null || !guests.Any())
+            {
+                return NotFound("No guests found for this event.");
+            }
+            return Ok(guests);
+        }
+        [HttpPost("sendemails")]
+        public IActionResult SendEmails([FromQuery] int eventId, [FromQuery] string subject, [FromQuery] string body)
+        {
+            try
+            {
+                // קריאה לפונקציה של שליחת המיילים מתוך ה-Service
+                _guestService.SendEmails(eventId, subject, body);
+                return Ok("Emails sent successfully!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error: {ex.Message}");
+            }
+        }
+
     }
 }

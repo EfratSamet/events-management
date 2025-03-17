@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Service.Interfaces;
 using Service.Dtos;
+using Service.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,8 +11,8 @@ namespace MasterEvents.Controllers
     [ApiController]
     public class OrganizerController : ControllerBase
     {
-        private readonly IService<OrganizerDto> _organizerService;
-        public OrganizerController(IService<OrganizerDto> organizerService)
+        private readonly IOrganizerService _organizerService;
+        public OrganizerController(IOrganizerService organizerService)
         {
             _organizerService = organizerService;
         }
@@ -59,6 +60,7 @@ namespace MasterEvents.Controllers
         {
             _organizerService.Delete(id);
         }
+
         // GET api/Organizer/{id}/events - קבלת רשימת האירועים של המארגן
         //[HttpGet("{id}/events")]
         //public ActionResult<List<EventDto>> GetEventsByOrganizerId(string id)

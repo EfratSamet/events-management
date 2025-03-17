@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Repositories
 {
-    public class GroupRepository:IRepository<Group>
+    public class GroupRepository:IGroupRepository
     {
         private readonly IContext context;
         public GroupRepository(IContext context)
