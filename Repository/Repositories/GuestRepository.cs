@@ -108,9 +108,10 @@ namespace Repository.Repositories
         public List<Guest> GetGuestsByGroup(int groupId)
         {
             return context.Guests
-                .Where(g => context.GuestInEvents.Any(e => e.groupId == groupId))
+                .Where(g => g.groupId == groupId)    
                 .ToList();
         }
+
         public List<Guest> GetGuestsByOrganizerId(int organizerId)
         {
             return context.Guests

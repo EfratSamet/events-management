@@ -2091,6 +2091,10 @@
           },
           "gender": {
             "$ref": "#/components/schemas/Gender"
+          },
+          "groupId": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -2112,6 +2116,10 @@
           },
           "gender": {
             "$ref": "#/components/schemas/Gender"
+          },
+          "groupId": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

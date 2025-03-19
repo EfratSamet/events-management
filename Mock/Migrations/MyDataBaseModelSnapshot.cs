@@ -92,10 +92,10 @@ namespace Mock.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
-                    b.Property<int?>("Groupid")
+                    b.Property<int>("gender")
                         .HasColumnType("int");
 
-                    b.Property<int>("gender")
+                    b.Property<int>("groupId")
                         .HasColumnType("int");
 
                     b.Property<string>("mail")
@@ -108,7 +108,7 @@ namespace Mock.Migrations
 
                     b.HasKey("id");
 
-                    b.HasIndex("Groupid");
+                    b.HasIndex("groupId");
 
                     b.ToTable("Guests");
                 });
@@ -283,7 +283,9 @@ namespace Mock.Migrations
                 {
                     b.HasOne("Repository.Entity.Group", null)
                         .WithMany("guests")
-                        .HasForeignKey("Groupid");
+                        .HasForeignKey("groupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Repository.Entity.GuestInEvent", b =>
