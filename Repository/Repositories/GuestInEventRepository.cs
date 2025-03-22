@@ -69,7 +69,7 @@ namespace Repository.Repositories
         public List<GuestInEvent> GuestCountOK(int eventId)
         {
             return context.GuestInEvents
-                .Where(x => x.eventId == eventId&& x.ok)
+                .Where(x => x.eventId == eventId && x.ok)
                 .ToList();
         }
 
@@ -91,13 +91,13 @@ namespace Repository.Repositories
         public List<GuestInEvent> GetGuestsByEventId(int eventId)
         {
             return context.GuestInEvents
-                .Where(x => x.eventId == eventId )
+                .Where(x => x.eventId == eventId)
                 .ToList();
         }
         public List<GuestInEvent> GetGuestsByEventIdOK(int eventId)
         {
             return context.GuestInEvents
-                .Where(x => x.eventId == eventId)
+                .Where(x => x.eventId == eventId && x.ok)
                 .ToList();
         }
     }
