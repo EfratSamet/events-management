@@ -17,8 +17,8 @@ namespace Repository.Entity
         [ForeignKey("eventId")]
         public virtual Event ?event_ { get; set; }
         public bool ok { get; set; }
-        //public int groupId { get; set; }
-        //[ForeignKey("groupId")]
-        //public virtual Group ?group_ { get; set; }
+        public int groupId { get; set; }
+        [ForeignKey("groupId")]
+        public virtual Group ?group_ { get; set; }
     }
 }

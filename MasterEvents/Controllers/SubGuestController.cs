@@ -10,8 +10,8 @@ namespace MasterEvents.Controllers
     [ApiController]
     public class SubGuestController : ControllerBase
     {
-        private readonly IService<SubGuestDto> _subGuestService;
-        public SubGuestController(IService<SubGuestDto> subGuestService)
+        private readonly ISubGuestService _subGuestService;
+        public SubGuestController(ISubGuestService subGuestService)
         {
             _subGuestService = subGuestService;
         }

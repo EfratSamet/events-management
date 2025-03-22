@@ -1,37 +1,26 @@
-# קובץ .gitignore עבור פרויקטים ב-C# / Visual Studio
-
-## קבצים ותיקיות אישיים של Visual Studio
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-
-## תוצאות בנייה ותיקיות ביניים
-[Bb]in/
-[Oo]bj/
-
-## תיקיית הגדרות של Visual Studio 2015 ומעלה
+# Ignore Visual Studio files
 .vs/
+.vscode/
+.idea/
 
-## קבצים שנוצרו אוטומטית ע"י Visual Studio
-*.VC.db
-*.VC.VC.opendb
+# Ignore node_modules (התקנת חבילות npm)
+node_modules/
 
-## חבילות NuGet
-*.nupkg
-# תיקיית packages יכולה להיות מתווספת לעיתים, מכיוון שהחבילות משוחזרות באמצעות Package Restore
-packages/
+# Ignore build outputs
+build/
+dist/
 
-## קבצים הרצתיים וספריות ריצה
-*.exe
-*.dll
-*.pdb
-*.cache
-*.config
-
-## קבצי לוגים וקבצים זמניים
+# Ignore temporary and backup files
 *.log
 *.tmp
+*.bak
 
-## תיקיות פרסום (Publish)
-publish/
+# Ignore system-specific files
+.DS_Store  # עבור macOS
+Thumbs.db  # עבור Windows
+
+# Ignore npm debug log
+npm-debug.log*
+
+# Ignore environment files (כמו .env)
+.env

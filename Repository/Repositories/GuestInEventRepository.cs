@@ -24,8 +24,12 @@ namespace Repository.Repositories
 
         public void Delete(int id)
         {
-            context.GuestInEvents.Remove(Get(id));
-            context.save();
+            var guest = Get(id);
+            if (guest != null)
+            {
+                context.GuestInEvents.Remove(guest);
+                context.save();
+            }
         }
 
         public GuestInEvent Get(int id)
@@ -41,6 +45,8 @@ namespace Repository.Repositories
         public GuestInEvent Update(int id, GuestInEvent item)
         {
             var existingGuestInEvent = context.GuestInEvents.FirstOrDefault(x => x.id == id);
+            if (existingGuestInEvent == null)
+                return null;
 
             existingGuestInEvent.guestId = item.guestId;
             existingGuestInEvent.eventId = item.eventId;
@@ -55,10 +61,7 @@ namespace Repository.Repositories
             {
                 existingGuestInEvent.event_ = item.event_;
             }
-
-
             context.save();
-
             return existingGuestInEvent;
         }
 
@@ -66,18 +69,36 @@ namespace Repository.Repositories
         public List<GuestInEvent> GuestCountOK(int eventId)
         {
             return context.GuestInEvents
-                .Where(x => x.eventId == eventId && x.ok)
+                .Where(x => x.eventId == eventId&& x.ok)
                 .ToList();
         }
 
         public int CountOK(int eventId)
         {
-            return context.GuestInEvents
-                .Count(x => x.eventId == eventId && x.ok);
+            return context.GuestInEvents.Count(x => x.eventId == eventId && x.ok);
         }
 
-
-
-
+        public int CountOKByGroup(int groupId)
+        {
+            return context.GuestInEvents.Count(x => x.groupId == groupId && x.ok);
+        }
+        public List<GuestInEvent> GetGuestsByEventAndGroupId(int eventId, int groupId)
+        {
+            return context.GuestInEvents
+                .Where(x => x.eventId == eventId && x.groupId == groupId && x.ok)
+                .ToList();
+        }
+        public List<GuestInEvent> GetGuestsByEventId(int eventId)
+        {
+            return context.GuestInEvents
+                .Where(x => x.eventId == eventId )
+                .ToList();
+        }
+        public List<GuestInEvent> GetGuestsByEventIdOK(int eventId)
+        {
+            return context.GuestInEvents
+                .Where(x => x.eventId == eventId)
+                .ToList();
+        }
     }
 }

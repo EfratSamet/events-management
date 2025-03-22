@@ -14,7 +14,7 @@ namespace Service.Dtos
         public int guestId { get; set; }
         public int eventId { get; set; }
         public bool ok { get; set; }
-        //public int groupId { get; set; }
+        public int groupId { get; set; }
 
     }
 }

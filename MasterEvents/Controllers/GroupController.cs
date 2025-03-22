@@ -3,11 +3,8 @@ using Repository.Entity;
 using Service.Dtos;
 using Service.Interfaces;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace MasterEvents.Controllers
 {
-    
     [Route("api/[controller]")]
     [ApiController]
     public class GroupController : ControllerBase
@@ -36,7 +33,7 @@ namespace MasterEvents.Controllers
         [HttpPost]
         public void Post([FromBody] GroupDto value)
         {
-            _groupService.Add(value);   
+            _groupService.Add(value);
         }
 
         // PUT api/<GroupController>/5
@@ -52,15 +49,37 @@ namespace MasterEvents.Controllers
         {
             _groupService.Delete(id);
         }
+
+        // GET api/group/organizer/{organizerId}
         [HttpGet("organizer/{organizerId}")]
         public IActionResult GetGroupsByOrganizerId(int organizerId)
         {
-            var groups =_groupService.GetGroupsByOrganizerId(organizerId);
+            var groups = _groupService.GetGroupsByOrganizerId(organizerId);
             if (groups == null || !groups.Any())
             {
-                return NotFound("No guests found for this event.");
+                return NotFound("No groups found for this organizer.");
             }
             return Ok(groups);
         }
+
+        // GET api/group/organizer/{organizerId}/name/{name}
+        [HttpGet("organizer/{organizerId}/name/{name}")]
+        public IActionResult GetGroupByName(int organizerId, string name)
+
+        {
+            // שליפת כל הקבוצות לפי מזהה המארגן
+            var groups = _groupService.GetGroupsByOrganizerId(organizerId);
+
+            // חיפוש קבוצה לפי שם
+            var group = groups.FirstOrDefault(g => g.name.Equals(name, StringComparison.OrdinalIgnoreCase));
+
+            if (group != null)
+            {
+                return Ok(group.id); // מחזירים רק את המזהה של הקבוצה
+            }
+
+            return NotFound($"לא נמצא מזהה עבור קבוצה בשם {name} עם מזהה מארגן {organizerId}");
+        }
+
     }
 }
