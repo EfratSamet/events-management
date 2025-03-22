@@ -64,20 +64,13 @@ public class GuestInEventService : IGuestInEventService
             .OrderByDescending(g => g.Count())  // מיון קבוצות מהגדולה לקטנה
             .ToList();
 
-
         Dictionary<int, List<GuestInEventDto>> tables = new Dictionary<int, List<GuestInEventDto>>();
         int tableNumber = 1;
         List<GuestInEventDto> currentTable = new List<GuestInEventDto>();
 
         foreach (var group in guestsByGroup)
         {
-
             List<GuestInEventDto> groupGuestsWithSubGuests = new List<GuestInEventDto>();
-
-            var groupGuests = _repository.GetAll()
-                .Where(g => g.eventId == eventId && g.ok == true)
-                .ToList();
-
 
             foreach (var guest in group)
             {
@@ -86,8 +79,19 @@ public class GuestInEventService : IGuestInEventService
 
                 // מחכים לתתי האורחים בצורה אסינכרונית
                 var subGuests = await _subGuestRepository.GetSubGuestsForSeatingAsync(guest.guestId, eventId);
-                var subGuestDtos = subGuests.Select(sg => _mapper.Map<GuestInEventDto>(sg)).ToList();
-                groupGuestsWithSubGuests.AddRange(subGuestDtos);
+
+                foreach (var subGuest in subGuests)
+                {
+                    var subGuestDto = new GuestInEventDto
+                    {
+                        guestId = subGuest.guestId, // מזהה שונה
+                        eventId = guestDto.eventId,
+                        groupId = guestDto.groupId,
+                        ok = guestDto.ok
+                    };
+
+                    groupGuestsWithSubGuests.Add(subGuestDto);
+                }
             }
 
             int index = 0;

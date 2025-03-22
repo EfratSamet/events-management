@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Repository.Entity;
+﻿using Repository.Entity;
 using Repository.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -18,7 +18,6 @@ namespace Repository.Repositories
         public Seating Add(Seating item)
         {
             context.Seatings.Add(item);
-            context.save();
             return item;
         }
 
@@ -28,7 +27,6 @@ namespace Repository.Repositories
             if (seating != null)
             {
                 context.Seatings.Remove(seating);
-                context.save();
             }
         }
 
@@ -52,64 +50,34 @@ namespace Repository.Repositories
                 seating.seat = item.seat;
                 seating.subGuestId = item.subGuestId;
                 seating.table = item.table;
-                context.save();
             }
             return seating;
         }
 
         // ✅ חיפוש כל תתי האורחים לפי מזהה אורח
-        public List<SubGuest> GetSubGuestsByGuestId(int guestId)
+        public List<int> GetSubGuestsIdsByGuestId(int guestId)
         {
             return context.Seatings
-                .Where(s => s.subGuest.guestId == guestId)
-                .Select(s => s.subGuest)
+                .Where(s => s.subGuest.guestId == guestId) // סינון לפי מזהה אורח
+                .Select(s => s.subGuest.guestId) // מחזיר את המזהה של האורח בלבד
                 .ToList();
         }
 
-        // ✅ חיפוש כל תתי האורחים לפי שם (כולל חיפוש חלקי)
-        public List<SubGuest> GetSubGuestsByName(string name)
+        // ✅ מחזיר את כל תתי-האורחים שיושבים בשולחן מסוים, רק את המזהים שלהם
+        public List<int> GetSubGuestsIdsByTable(int tableNumber)
         {
             return context.Seatings
-                .Where(s => s.subGuest.name.Contains(name))
-                .Select(s => s.subGuest)
+                .Where(s => s.table == tableNumber) // סינון לפי מספר שולחן
+                .Select(s => s.subGuest.guestId) // מחזיר את המזהה של האורח בלבד
                 .ToList();
         }
-
-        // ✅ חיפוש כל תתי האורחים לפי מגדר
-        public List<SubGuest> GetSubGuestsByGender(Gender gender)
-        {
-            return context.Seatings
-                .Where(s => s.subGuest.gender == gender)
-                .Select(s => s.subGuest)
-                .ToList();
-        }
-
-        // ✅ מחזיר את כל תתי-האורחים שיושבים בשולחן מסוים
-        public List<SubGuest> GetSubGuestsByTable(int tableNumber)
-        {
-            return context.Seatings
-                .Where(s => s.table == tableNumber)
-                .Select(s => s.subGuest) // מחזיר את רשימת תתי-האורחים עצמם
-                .ToList();
-        }
-
-
-        // ✅ חיפוש תת-אורח לפי מספר שולחן ומספר כיסא
-        public SubGuest GetSubGuestByTableAndSeat(int tableNumber, int seatNumber)
-        {
-            return context.Seatings
-                .Where(s => s.table == tableNumber && s.seat == seatNumber)
-                .Select(s => s.subGuest) // מחזיר את תת-האורח עצמו
-                .FirstOrDefault();
-        }
-
 
         // ✅ חיפוש מספר שולחן לפי מזהה אורח
         public int? GetTableByGuestId(int guestId)
         {
             return context.Seatings
                 .Where(s => s.subGuest.guestId == guestId)
-                .Select(s => (int?)s.table)
+                .Select(s => (int?)s.table) // מחזיר את מספר השולחן
                 .FirstOrDefault();
         }
 
@@ -117,7 +85,6 @@ namespace Repository.Repositories
         public void AssignSeats(List<Seating> seatings)
         {
             context.Seatings.AddRange(seatings);
-            context.save();
         }
     }
 }

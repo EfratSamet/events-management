@@ -61,8 +61,8 @@ builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddScoped<IRepository<PhotosFromEvent>, PhotosFromEventRepository>();
 builder.Services.AddScoped<IService<PhotosFromEventDto>, PhotosFromEventService>();
 
-builder.Services.AddScoped<IRepository<Seating>, SeatingRepository>();
-builder.Services.AddScoped<IService<SeatingDto>, SeatingService>();
+builder.Services.AddScoped<ISeatingRepository, SeatingRepository>();
+builder.Services.AddScoped<ISeatingService, SeatingService>();
 
 builder.Services.AddScoped<ISubGuestRepository, SubGuestRepository>();
 builder.Services.AddScoped<ISubGuestService, SubGuestService>();

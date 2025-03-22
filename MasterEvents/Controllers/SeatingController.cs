@@ -2,19 +2,19 @@
 using Service.Dtos;
 using Service.Interfaces;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace MasterEvents.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class SeatingController : ControllerBase
     {
-        private readonly IService<SeatingDto> _seatingService;
-        public SeatingController(IService<SeatingDto> seatingService)
+        private readonly ISeatingService _seatingService;
+
+        public SeatingController(ISeatingService seatingService)
         {
             _seatingService = seatingService;
         }
+
         // GET: api/<SeatingController>
         [HttpGet]
         public List<SeatingDto> Get()
@@ -47,7 +47,39 @@ namespace MasterEvents.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _seatingService.Delete(id); 
+            _seatingService.Delete(id);
+        }
+
+        // GET api/<SeatingController>/subGuestsByGuestId/{guestId}
+        // מחזיר רשימת מזהי אורחים לפי מזהה אורח
+        [HttpGet("subGuestsByGuestId/{guestId}")]
+        public List<int> GetSubGuestsIdsByGuestId(int guestId)
+        {
+            return _seatingService.GetSubGuestsIdsByGuestId(guestId);
+        }
+
+        // GET api/<SeatingController>/subGuestsByTable/{tableNumber}
+        // מחזיר רשימת מזהי אורחים שיושבים בשולחן מסוים
+        [HttpGet("subGuestsByTable/{tableNumber}")]
+        public List<int> GetSubGuestsIdsByTable(int tableNumber)
+        {
+            return _seatingService.GetSubGuestsIdsByTable(tableNumber);
+        }
+
+        // GET api/<SeatingController>/tableByGuestId/{guestId}
+        // מחזיר את מספר השולחן לפי מזהה אורח
+        [HttpGet("tableByGuestId/{guestId}")]
+        public int? GetTableByGuestId(int guestId)
+        {
+            return _seatingService.GetTableByGuestId(guestId);
+        }
+
+        // POST api/<SeatingController>/assignSeats
+        // פונקציה חדשה שתשבץ את המיקומים
+        [HttpPost("assignSeats")]
+        public void AssignSeats([FromBody] List<SeatingDto> seatings)
+        {
+            _seatingService.AssignSeats(seatings);
         }
     }
 }
