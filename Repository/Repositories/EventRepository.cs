@@ -24,11 +24,36 @@ namespace Repository.Repositories
             return item;
         }
 
-        public void Delete(int id)
+        public void Delete(int eventId)
         {
-            context.Events.Remove(Get(id));
-            context.save();
+            using (var transaction = context.Database.BeginTransaction()) // שימוש ב-context הנכון
+            {
+                try
+                {
+                    // מחיקת כל האורחים מהאירוע
+                    var guestsInEvent = context.GuestInEvents.Where(g => g.eventId == eventId);
+                    context.GuestInEvents.RemoveRange(guestsInEvent);
+                    context.save(); // שמירת המחיקה של האורחים
+
+                    // מחיקת האירוע עצמו
+                    var eventToDelete = context.Events.Find(eventId);
+                    if (eventToDelete != null)
+                    {
+                        context.Events.Remove(eventToDelete);
+                        context.save(); // שמירת המחיקה של האירוע
+                    }
+
+                    transaction.Commit(); // אישור השינויים
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback(); // ביטול במקרה של שגיאה
+                    throw new Exception("שגיאה במחיקת האירוע", ex);
+                }
+            }
         }
+
+
 
         public Event Get(int id)
         {
@@ -68,7 +93,6 @@ namespace Repository.Repositories
                     guestId = guest.guestId,
                     eventId = guest.eventId,
                     ok = guest.ok,
-                    groupId = guest.groupId
                 });
             }
             context.save();

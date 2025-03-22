@@ -17,7 +17,7 @@ namespace Repository.Entity
         public int id { get; set; }
         public string name { get; set; }
         public string mail { get; set; }
-        public Gender gender { get; set; }
+        public Gender ?gender { get; set; }
         [ForeignKey("groupId")]
         public int groupId { get; set; }
 

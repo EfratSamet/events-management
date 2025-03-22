@@ -50,7 +50,6 @@ namespace Repository.Repositories
 
             existingGuestInEvent.guestId = item.guestId;
             existingGuestInEvent.eventId = item.eventId;
-            existingGuestInEvent.group_ = item.group_;
             existingGuestInEvent.ok = item.ok;
 
             if (item.guest != null)
@@ -62,20 +61,12 @@ namespace Repository.Repositories
             {
                 existingGuestInEvent.event_ = item.event_;
             }
-
             context.save();
             return existingGuestInEvent;
         }
 
-        public Dictionary<string, int> GetOKCountByGroups(int eventId)
-        {
-            return context.GuestInEvents
-                .Where(x => x.eventId == eventId && x.ok)
-                .GroupBy(x => x.group_.name)
-                .ToDictionary(g => g.Key, g => g.Count());
-        }
 
-        public List<GuestInEvent> GetGuestsByEventIdOk(int eventId)
+        public List<GuestInEvent> GuestCountOK(int eventId)
         {
             return context.GuestInEvents
                 .Where(x => x.eventId == eventId&& x.ok)
@@ -101,6 +92,12 @@ namespace Repository.Repositories
         {
             return context.GuestInEvents
                 .Where(x => x.eventId == eventId )
+                .ToList();
+        }
+        public List<GuestInEvent> GetGuestsByEventIdOK(int eventId)
+        {
+            return context.GuestInEvents
+                .Where(x => x.eventId == eventId)
                 .ToList();
         }
     }

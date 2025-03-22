@@ -47,11 +47,6 @@ namespace Service.Services
         {
             return _mapper.Map<GuestDto>(_repository.Update(id, _mapper.Map<Guest>(item)));
         }
-        public void SendEmails(int eventId, string subject, string body)
-        {
-            _repository.SendEmails(eventId, subject, body);
-
-        }
         public List<GuestDto> GetGuestsByGroup(int groupId)
         {
             return _mapper.Map<List<GuestDto>>(_repository.GetGuestsByGroup(groupId));

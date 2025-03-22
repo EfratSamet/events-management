@@ -14,7 +14,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 // טעינת appsettings.json
 builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-
 // בדיקה שהערכים של JWT לא ריקים
 var jwtIssuer = builder.Configuration["Jwt:Issuer"] ?? throw new ArgumentNullException("Jwt:Issuer is missing in configuration.");
 var jwtAudience = builder.Configuration["Jwt:Audience"] ?? throw new ArgumentNullException("Jwt:Audience is missing in configuration.");
@@ -34,6 +33,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
         };
     });
+builder.Services.AddScoped<IMailjetService, MailjetService>();
 
 builder.Services.AddScoped<ILoginService, LoginService>();
 

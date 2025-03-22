@@ -63,11 +63,16 @@ namespace Service.Services
 
         public async Task<Dictionary<int, List<GuestInEventDto>>> AssignGuestsToTablesWithSubGuestsAsync(int eventId, int seatsPerTable)
         {
+<<<<<<< HEAD
             var guests = _repository.GetGuestsByEventIdOk(eventId);
             var guestsByGroup = guests
                 .GroupBy(g => g.groupId)
                 .OrderByDescending(g => g.Count())  // מיון קבוצות מהגדולה לקטנה
                 .ToList();
+=======
+            // שליפת האורחים לפי אישורי הגעה ולפי הקטגוריה
+            var guestsByGroup = _repository.GuestCountOK(eventId);
+>>>>>>> 7ed94bba9db7b9245fce76a26dbbd7fab675585f
 
             Dictionary<int, List<GuestInEventDto>> tables = new Dictionary<int, List<GuestInEventDto>>();
             int tableNumber = 1;
@@ -75,7 +80,13 @@ namespace Service.Services
 
             foreach (var group in guestsByGroup)
             {
+<<<<<<< HEAD
                 List<GuestInEventDto> groupGuestsWithSubGuests = new List<GuestInEventDto>();
+=======
+                var groupGuests = _repository.GetAll()
+                    .Where(g => g.eventId == eventId && g.ok == true ) 
+                    .ToList();
+>>>>>>> 7ed94bba9db7b9245fce76a26dbbd7fab675585f
 
                 foreach (var guest in group)
                 {
