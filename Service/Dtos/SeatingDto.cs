@@ -12,9 +12,7 @@ namespace Service.Dtos
     {
         public int id { get; set; }
         public int eventId { get; set; }
-        public virtual Event event_ { get; set; }
         public int subGuestId { get; set; }
-        public virtual SubGuest subGuest { get; set; }
         public int table { get; set; }
         public int seat { get; set; }
     }

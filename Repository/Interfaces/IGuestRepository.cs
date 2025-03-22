@@ -9,7 +9,6 @@ namespace Repository.Interfaces
 {
     public interface IGuestRepository: IRepository<Guest>
     {
-        void SendEmails(int eventId, string subject, string body);
         List<Guest> GetGuestsByGroup(int groupId);
         List<Guest?> GetGuestsByEventId(int eventId);
         List<Guest> GetGuestsByOrganizerId(int organizerId);

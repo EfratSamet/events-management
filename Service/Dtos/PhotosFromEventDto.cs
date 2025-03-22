@@ -15,7 +15,6 @@ namespace Service.Dtos
         public int guestId { get; set; }
         public virtual Guest guest { get; set; }
         public int eventId { get; set; }
-        public virtual Event event_ { get; set; }
         public byte[]? Image { get; set; }
         public IFormFile? File { get; set; }
         public string blessing { get; set; }

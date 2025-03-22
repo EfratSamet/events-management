@@ -51,7 +51,7 @@ namespace Service.Services
         public Dictionary<int, List<GuestInEventDto>> AssignGuestsToTables(int eventId, int seatsPerTable)
         {
             // שליפת האורחים לפי אישורי הגעה ולפי הקטגוריה
-            var guestsByGroup = _repository.GetOKCountByGroups(eventId);
+            var guestsByGroup = _repository.GuestCountOK(eventId);
 
             Dictionary<int, List<GuestInEventDto>> tables = new Dictionary<int, List<GuestInEventDto>>();
             int tableNumber = 1;
@@ -61,7 +61,7 @@ namespace Service.Services
             foreach (var group in guestsByGroup)
             {
                 var groupGuests = _repository.GetAll()
-                    .Where(g => g.eventId == eventId && g.ok == true && g.groupId == group.Value) // סינון לפי קבוצת האורחים
+                    .Where(g => g.eventId == eventId && g.ok == true ) 
                     .ToList();
 
                 foreach (var guest in groupGuests)

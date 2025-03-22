@@ -10,11 +10,8 @@ namespace Service.Dtos
 {
     public class SubGuestDto
     {
-        public int id { get; set; }
         public int guestId { get; set; }
-        public virtual Guest guest { get; set; }
         public string name { get; set; }
         public Gender gender { get; set; }
-
     }
 }

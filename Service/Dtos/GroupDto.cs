@@ -13,7 +13,6 @@ namespace Service.Dtos
         public int id { get; set; }
         public string name { get; set; }
         public int organizerId { get; set; }
-        public ICollection<Guest>? guests { get; set; }
 
     }
 }

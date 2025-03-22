@@ -55,62 +55,14 @@ namespace Repository.Repositories
 
             return existingGuest;
         }
-        public void SendEmails(int eventId, string subject, string body)
-        {
-            List<Guest> guests = GetGuestsByEventId(eventId);
-            string smtpServer = "smtp.gmail.com"; // שרת SMTP של הספק שלך
-            int smtpPort = 587; // פורט SMTP (לרוב 587 או 465)
-            string senderEmail = "sametfamily21@gmail.com";
-            string senderPassword = "kcau xvtz srta iytm\r\n";
-            Console.WriteLine("Starting the email sending process...");
-
-            using (SmtpClient client = new SmtpClient(smtpServer, smtpPort))
-            {
-                // הגדרת פרטי החיבור ל-SMTP
-                client.Credentials = new NetworkCredential(senderEmail, senderPassword);
-                client.EnableSsl = true; // השתמש ב-SSL כדי לאבטח את החיבור
-
-                // עבור כל אורח ברשימה
-                foreach (var guest in guests)
-                {
-                    Console.WriteLine($"Preparing to send email to {guest.mail}...");
-
-                    try
-                    {
-                        // יצירת מייל חדש
-                        MailMessage mail = new MailMessage
-                        {
-                            From = new MailAddress(senderEmail),
-                            Subject = subject,
-                            Body = body,
-                            IsBodyHtml = true // אם הגוף של המייל הוא HTML
-                        };
-
-                        // הוספת כתובת המייל של הנמען
-                        mail.To.Add(guest.mail);
-
-                        // שליחת המייל
-                        Console.WriteLine($"Sending email to {guest.mail}...");
-                        client.Send(mail);
-
-                        Console.WriteLine($"Email sent successfully to {guest.mail}");
-                    }
-                    catch (Exception ex)
-                    {
-                        // הדפסת הודעת שגיאה אם משהו השתבש
-                        Console.WriteLine($"Failed to send email to {guest.mail}: {ex.Message}");
-                    }
-                }
-            }
-
-            Console.WriteLine("Email sending process completed.");
-        }
+       
         public List<Guest> GetGuestsByGroup(int groupId)
         {
             return context.Guests
-                .Where(g => context.GuestInEvents.Any(e => e.groupId == groupId))
+                .Where(g => g.groupId == groupId)    
                 .ToList();
         }
+
         public List<Guest> GetGuestsByOrganizerId(int organizerId)
         {
             return context.Guests

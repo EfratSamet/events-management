@@ -80,21 +80,6 @@ namespace MasterEvents.Controllers
                 return NotFound("No guests found for this event.");
             }
             return Ok(guests);
-        }
-        [HttpPost("sendemails")]
-        public IActionResult SendEmails([FromQuery] int eventId, [FromQuery] string subject, [FromQuery] string body)
-        {
-            try
-            {
-                // קריאה לפונקציה של שליחת המיילים מתוך ה-Service
-                _guestService.SendEmails(eventId, subject, body);
-                return Ok("Emails sent successfully!");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"Error: {ex.Message}");
-            }
-        }
-
+        }  
     }
 }
