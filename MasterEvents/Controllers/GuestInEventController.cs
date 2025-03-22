@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Service.Dtos;
 using Service.Interfaces;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MasterEvents.Controllers
 {
@@ -10,79 +11,80 @@ namespace MasterEvents.Controllers
     [ApiController]
     public class GuestInEventController : ControllerBase
     {
-        private readonly IService<GuestInEventDto> _guestInEventService;
-        public GuestInEventController(IService<GuestInEventDto> guestInEventService)
+        private readonly IGuestInEventService _guestInEventService;
+
+        public GuestInEventController(IGuestInEventService guestInEventService)
         {
             _guestInEventService = guestInEventService;
         }
 
-        // GET: api/<GuestInEventController>
         [HttpGet]
         public IEnumerable<GuestInEventDto> Get()
         {
             return _guestInEventService.GetAll();
         }
 
-        // GET api/<GuestInEventController>/5
         [HttpGet("{id}")]
-        public GuestInEventDto Get(int id)
+        public ActionResult<GuestInEventDto> Get(int id)
         {
-            return _guestInEventService.Get(id);
+            var guest = _guestInEventService.Get(id);
+            if (guest == null)
+                return NotFound();
+            return Ok(guest);
         }
 
-        // POST api/<GuestInEventController>
         [HttpPost]
-        public void Post([FromBody] GuestInEventDto value)
+        public IActionResult Post([FromBody] GuestInEventDto value)
         {
-            _guestInEventService.Add(value);
+            var addedGuest = _guestInEventService.Add(value);
+            return CreatedAtAction(nameof(Get), new { id = addedGuest.id }, addedGuest);
         }
 
-        // PUT api/<GuestInEventController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] GuestInEventDto value)
+        public IActionResult Put(int id, [FromBody] GuestInEventDto value)
         {
-            _guestInEventService.Update(id, value);
+            var updatedGuest = _guestInEventService.Update(id, value);
+            if (updatedGuest == null)
+                return NotFound();
+            return Ok(updatedGuest);
         }
 
-        // DELETE api/<GuestInEventController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            var existingGuest = _guestInEventService.Get(id);
+            if (existingGuest == null)
+                return NotFound();
+
             _guestInEventService.Delete(id);
+            return NoContent();
         }
-        //חיפוש כל האורחים באירוע מסוים
+
         [HttpGet("byEvent/{eventId}")]
         public IEnumerable<GuestInEventDto> GetGuestsByEvent(int eventId)
         {
-            return _guestInEventService.GetAll().Where(g => g.eventId == eventId);
+            return _guestInEventService.GetGuestsByEventId(eventId);
         }
-        //חיפוש אורח לפי שם באירוע מסוים
-        [HttpGet("byEvent/{eventId}/byName/{name}")]
-        public IEnumerable<GuestInEventDto> GetGuestsByName(int eventId, string name)
-        {
-            return _guestInEventService.GetAll();
-            //.Where(g => g.eventId == eventId && g.guest.name.Contains(name));
-        }
-        //חיפוש אורחים לפי מגדר
-        [HttpGet("byEvent/{eventId}/byGender/{gender}")]
-        public IEnumerable<GuestInEventDto> GetGuestsByGender(int eventId, int gender)
-        {
-            return _guestInEventService.GetAll();
-            //.Where(g => g.eventId == eventId && (int)g.guest.gender == gender);
-        }
-        //חיפוש אורחים שאישרו הגעב
-        [HttpGet("byEvent/{eventId}/confirmed")]
+
+        [HttpGet("confirmed/{eventId}")]
         public IEnumerable<GuestInEventDto> GetConfirmedGuests(int eventId)
         {
-            return _guestInEventService.GetAll();
-            //.Where(g => g.eventId == eventId && g.ok);
+            return _guestInEventService.GetGuestsByEventIdOk(eventId);
         }
-        //חיפוש אורחים באירועים בין התאריכים
-        [HttpGet("byDateRange")]
-        public IEnumerable<GuestInEventDto> GetGuestsByDateRange([FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
+
+        [HttpGet("assign-tables")]
+        public async Task<IActionResult> AssignGuestsToTables([FromQuery] int eventId, [FromQuery] int seatsPerTable)
         {
-            return _guestInEventService.GetAll();
-                //.Where(g => g.event_.eventDate >= startDate && g.event_.eventDate <= endDate);
+            try
+            {
+                var tables = await _guestInEventService.AssignGuestsToTablesWithSubGuestsAsync(eventId, seatsPerTable);
+                return Ok(tables);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error assigning guests to tables: {ex.Message}");
+            }
         }
+
     }
 }

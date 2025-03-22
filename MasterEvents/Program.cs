@@ -51,7 +51,7 @@ builder.Services.AddScoped<IGuestRepository, GuestRepository>();
 builder.Services.AddScoped<IGuestService, GuestService>();
 
 //builder.Services.AddScoped<IRepository<GuestInEvent>, GuestInEventRepository>();
-builder.Services.AddScoped<IService<GuestInEventDto>, GuestInEventService>();
+builder.Services.AddScoped<IGuestInEventService, GuestInEventService>();
 builder.Services.AddScoped<IGuestInEventRepository, GuestInEventRepository>();
 
 builder.Services.AddScoped<IOrganizerService, OrganizerService>();
@@ -64,8 +64,8 @@ builder.Services.AddScoped<IService<PhotosFromEventDto>, PhotosFromEventService>
 builder.Services.AddScoped<IRepository<Seating>, SeatingRepository>();
 builder.Services.AddScoped<IService<SeatingDto>, SeatingService>();
 
-builder.Services.AddScoped<IRepository<SubGuest>, SubGuestRepository>();
-builder.Services.AddScoped<IService<SubGuestDto>, SubGuestService>();
+builder.Services.AddScoped<ISubGuestRepository, SubGuestRepository>();
+builder.Services.AddScoped<ISubGuestService, SubGuestService>();
 
 builder.Services.AddScoped<IContext, MyDataBase>();
 builder.Services.AddAutoMapper(typeof(MyMapper));

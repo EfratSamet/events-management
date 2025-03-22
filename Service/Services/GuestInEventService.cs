@@ -4,22 +4,21 @@ using Repository.Interfaces;
 using Repository.Repositories;
 using Service.Dtos;
 using Service.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Service.Services
 {
-    public class GuestInEventService : IService<GuestInEventDto>
+    public class GuestInEventService : IGuestInEventService
     {
         private readonly IGuestInEventRepository _repository;
+        private readonly ISubGuestRepository _subGuestRepository;
         private readonly IMapper _mapper;
 
-        public GuestInEventService(IGuestInEventRepository repository, IMapper mapper)
+        public GuestInEventService(IGuestInEventRepository repository, ISubGuestRepository subGuestRepository, IMapper mapper)
         {
             _repository = repository;
+            _subGuestRepository = subGuestRepository;
             _mapper = mapper;
         }
 
@@ -43,44 +42,73 @@ namespace Service.Services
             return _mapper.Map<List<GuestInEventDto>>(_repository.GetAll());
         }
 
+        public List<GuestInEventDto> GetGuestsByEventId(int eventId)
+        {
+            return _mapper.Map<List<GuestInEventDto>>(_repository.GetGuestsByEventId(eventId));
+        }
+        
+        public List<GuestInEventDto> GetGuestsByEventIdOk(int eventId)
+        {
+            return _mapper.Map<List<GuestInEventDto>>(_repository.GetGuestsByEventIdOk(eventId));
+        }
         public GuestInEventDto Update(int id, GuestInEventDto item)
         {
             return _mapper.Map<GuestInEventDto>(_repository.Update(id, _mapper.Map<GuestInEvent>(item)));
         }
-             // פונקציה שמקבלת את מספר האירוע ומספר המושבים בשולחן ומחזירה מיפוי של אורחים לשולחנות
-        public Dictionary<int, List<GuestInEventDto>> AssignGuestsToTables(int eventId, int seatsPerTable)
+
+
+
+
+        //סידור אורחים לשולחנות
+
+        public async Task<Dictionary<int, List<GuestInEventDto>>> AssignGuestsToTablesWithSubGuestsAsync(int eventId, int seatsPerTable)
         {
-            // שליפת האורחים לפי אישורי הגעה ולפי הקטגוריה
-            var guestsByGroup = _repository.GetOKCountByGroups(eventId);
+            var guests = _repository.GetGuestsByEventIdOk(eventId);
+            var guestsByGroup = guests
+                .GroupBy(g => g.groupId)
+                .OrderByDescending(g => g.Count())  // מיון קבוצות מהגדולה לקטנה
+                .ToList();
 
             Dictionary<int, List<GuestInEventDto>> tables = new Dictionary<int, List<GuestInEventDto>>();
             int tableNumber = 1;
             List<GuestInEventDto> currentTable = new List<GuestInEventDto>();
 
-            // סידור האורחים בשולחנות
             foreach (var group in guestsByGroup)
             {
-                var groupGuests = _repository.GetAll()
-                    .Where(g => g.eventId == eventId && g.ok == true && g.groupId == group.Value) // סינון לפי קבוצת האורחים
-                    .ToList();
+                List<GuestInEventDto> groupGuestsWithSubGuests = new List<GuestInEventDto>();
 
-                foreach (var guest in groupGuests)
+                foreach (var guest in group)
                 {
-                    if (currentTable.Count < seatsPerTable)
+                    var guestDto = _mapper.Map<GuestInEventDto>(guest);
+                    groupGuestsWithSubGuests.Add(guestDto);
+
+                    // מחכים לתתי האורחים בצורה אסינכרונית
+                    var subGuests = await _subGuestRepository.GetSubGuestsForSeatingAsync(guest.guestId, eventId);
+                    var subGuestDtos = subGuests.Select(sg => _mapper.Map<GuestInEventDto>(sg)).ToList();
+                    groupGuestsWithSubGuests.AddRange(subGuestDtos);
+                }
+
+                int index = 0;
+                while (index < groupGuestsWithSubGuests.Count)
+                {
+                    int availableSeats = seatsPerTable - currentTable.Count;
+
+                    if (availableSeats > 0)
                     {
-                        currentTable.Add(_mapper.Map<GuestInEventDto>(guest));
+                        currentTable.AddRange(groupGuestsWithSubGuests.Skip(index).Take(availableSeats));
+                        index += availableSeats;
                     }
-                    else
+
+                    if (currentTable.Count == seatsPerTable)
                     {
                         tables[tableNumber] = new List<GuestInEventDto>(currentTable);
                         tableNumber++;
                         currentTable.Clear();
-                        currentTable.Add(_mapper.Map<GuestInEventDto>(guest));
                     }
                 }
             }
 
-            // אם נשארו אורחים בשולחן אחרון שלא הוזנו
+            // הוספת שולחן אחרון אם נשארו אורחים
             if (currentTable.Any())
             {
                 tables[tableNumber] = currentTable;
@@ -88,5 +116,7 @@ namespace Service.Services
 
             return tables;
         }
+
+
     }
 }

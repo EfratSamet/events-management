@@ -292,6 +292,27 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MasterEvents.Controllers.GroupController",
+    "Method": "GetGroupByName",
+    "RelativePath": "api/Group/organizer/{organizerId}/name/{name}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "organizerId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MasterEvents.Controllers.GuestController",
     "Method": "Get",
     "RelativePath": "api/Guest",
@@ -516,13 +537,7 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "MasterEvents.Controllers.GuestInEventController",
@@ -569,13 +584,7 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "MasterEvents.Controllers.GuestInEventController",
@@ -591,44 +600,28 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "MasterEvents.Controllers.GuestInEventController",
-    "Method": "GetGuestsByDateRange",
-    "RelativePath": "api/GuestInEvent/byDateRange",
+    "Method": "AssignGuestsToTables",
+    "RelativePath": "api/GuestInEvent/assign-tables",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "startDate",
-        "Type": "System.DateTime",
+        "Name": "eventId",
+        "Type": "System.Int32",
         "IsRequired": false
       },
       {
-        "Name": "endDate",
-        "Type": "System.DateTime",
+        "Name": "seatsPerTable",
+        "Type": "System.Int32",
         "IsRequired": false
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Service.Dtos.GuestInEventDto, Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "MasterEvents.Controllers.GuestInEventController",
@@ -658,70 +651,8 @@
   },
   {
     "ContainingType": "MasterEvents.Controllers.GuestInEventController",
-    "Method": "GetGuestsByGender",
-    "RelativePath": "api/GuestInEvent/byEvent/{eventId}/byGender/{gender}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "eventId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "gender",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Service.Dtos.GuestInEventDto, Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "MasterEvents.Controllers.GuestInEventController",
-    "Method": "GetGuestsByName",
-    "RelativePath": "api/GuestInEvent/byEvent/{eventId}/byName/{name}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "eventId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "name",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Service.Dtos.GuestInEventDto, Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "MasterEvents.Controllers.GuestInEventController",
     "Method": "GetConfirmedGuests",
-    "RelativePath": "api/GuestInEvent/byEvent/{eventId}/confirmed",
+    "RelativePath": "api/GuestInEvent/confirmed/{eventId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

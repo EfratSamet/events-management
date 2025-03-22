@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Repository.Entity;
 using Service.Dtos;
 using Service.Interfaces;
 using Service.Services;
@@ -75,12 +76,12 @@ namespace MasterEvents.Controllers
         public IActionResult GetGuestsByGroup(int groupId)
         {
             var guests = _guestService.GetGuestsByGroup(groupId);
-            if (guests == null || !guests.Any())
-            {
-                return NotFound("No guests found for this event.");
-            }
-            return Ok(guests);
+
+            // אם לא נמצאו אורחים, נחזיר מערך ריק מסוג List<GuestDto>
+            return Ok(guests ?? new List<GuestDto>());
         }
+
+
         [HttpPost("sendemails")]
         public IActionResult SendEmails([FromQuery] int eventId, [FromQuery] string subject, [FromQuery] string body)
         {
