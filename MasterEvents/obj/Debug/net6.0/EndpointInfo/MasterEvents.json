@@ -1001,7 +1001,37 @@
         }
       }
     },
-    "/api/GuestInEvent/assign-tables": {
+    "/api/GuestInEvent/assign-tables-by-gender": {
+      "get": {
+        "tags": [
+          "GuestInEvent"
+        ],
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "seatsPerTable",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/GuestInEvent/assign-tables-without-gender-separation": {
       "get": {
         "tags": [
           "GuestInEvent"

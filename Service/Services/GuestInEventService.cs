@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Repository.Entity;
 using Repository.Interfaces;
+using Repository.Repositories;
 using Service.Dtos;
 using Service.Interfaces;
 
@@ -8,12 +9,14 @@ public class GuestInEventService : IGuestInEventService
 {
     private readonly IGuestInEventRepository _repository;
     private readonly ISubGuestRepository _subGuestRepository;
+    private readonly IGuestRepository _guestRepository;
     private readonly IMapper _mapper;
 
-    public GuestInEventService(IGuestInEventRepository repository, ISubGuestRepository subGuestRepository, IMapper mapper)
+    public GuestInEventService(IGuestInEventRepository repository, ISubGuestRepository subGuestRepository, IGuestRepository guestRepository, IMapper mapper)
     {
         _repository = repository;
         _subGuestRepository = subGuestRepository;
+        _guestRepository = guestRepository;
         _mapper = mapper;
     }
 
@@ -54,9 +57,9 @@ public class GuestInEventService : IGuestInEventService
 
 
 
-    //סידור אורחים לשולחנות
+    //סידור אורחים לשולחנות ללא הפרדה
 
-    public async Task<Dictionary<int, List<GuestInEventDto>>> AssignGuestsToTablesWithSubGuestsAsync(int eventId, int seatsPerTable)
+    public async Task<Dictionary<int, List<GuestInEventDto>>> AssignGuestsToTablesWithoutGenderSeparationAsync(int eventId, int seatsPerTable)
     {
         var guests = _repository.GetGuestsByEventIdOK(eventId);
         var guestsByGroup = guests
@@ -77,14 +80,13 @@ public class GuestInEventService : IGuestInEventService
                 var guestDto = _mapper.Map<GuestInEventDto>(guest);
                 groupGuestsWithSubGuests.Add(guestDto);
 
-                // מחכים לתתי האורחים בצורה אסינכרונית
                 var subGuests = await _subGuestRepository.GetSubGuestsForSeatingAsync(guest.guestId, eventId);
 
                 foreach (var subGuest in subGuests)
                 {
                     var subGuestDto = new GuestInEventDto
                     {
-                        guestId = subGuest.guestId, // מזהה שונה
+                        guestId = subGuest.guestId,
                         eventId = guestDto.eventId,
                         groupId = guestDto.groupId,
                         ok = guestDto.ok
@@ -107,19 +109,135 @@ public class GuestInEventService : IGuestInEventService
 
                 if (currentTable.Count == seatsPerTable)
                 {
-                    tables[tableNumber] = new List<GuestInEventDto>(currentTable);
-                    tableNumber++;
+                    if (!tables.ContainsKey(tableNumber))
+                    {
+                        tables[tableNumber] = new List<GuestInEventDto>(currentTable);
+                        tableNumber++;
+                    }
                     currentTable.Clear();
                 }
             }
         }
 
-        // הוספת שולחן אחרון אם נשארו אורחים
         if (currentTable.Any())
         {
-            tables[tableNumber] = currentTable;
+            if (!tables.ContainsKey(tableNumber))
+            {
+                tables[tableNumber] = new List<GuestInEventDto>(currentTable);
+            }
         }
 
         return tables;
     }
+    //עם הפרדה
+
+    public async Task<Dictionary<int, List<GuestInEventDto>>> AssignGuestsToTablesWithGenderSeparationAsync(int eventId, int seatsPerTable)
+    {
+        var guests = _repository.GetGuestsByEventIdOK(eventId);
+
+        List<GuestInEventDto> maleGuests = new List<GuestInEventDto>();
+        List<GuestInEventDto> femaleGuests = new List<GuestInEventDto>();
+
+        Console.WriteLine($"🔍 מתחיל חלוקת אורחים לאירוע {eventId}, מקומות לכל שולחן: {seatsPerTable}");
+        Console.WriteLine($"📝 סה\"כ אורחים שנמשכו מהמערכת: {guests.Count}");
+
+        foreach (var guest in guests)
+        {
+            var guestDto = _mapper.Map<GuestInEventDto>(guest);
+            var guestGender = _guestRepository.Get(guest.guestId);
+
+            List<GuestInEventDto> guestWithSubGuests = new List<GuestInEventDto> { guestDto };
+
+            // מושך את תתי האורחים
+            var subGuests = await _subGuestRepository.GetSubGuestsForSeatingAsync(guest.guestId, eventId);
+
+            foreach (var subGuest in subGuests)
+            {
+                var subGuestDto = new GuestInEventDto
+                {
+                    guestId = subGuest.guestId,
+                    eventId = guestDto.eventId,
+                    groupId = guestDto.groupId,
+                    ok = guestDto.ok
+                };
+                guestWithSubGuests.Add(subGuestDto);
+            }
+
+            // מסווג את כל האורחים (כולל התתי אורחים) לפי מגדר
+            foreach (var fullGuest in guestWithSubGuests)
+            {
+                if (guestGender?.gender == Gender.male)
+                {
+                    maleGuests.Add(fullGuest);
+                    Console.WriteLine($"👨 גבר נוסף: {fullGuest.guestId}");
+                }
+                else if (guestGender?.gender == Gender.female)
+                {
+                    femaleGuests.Add(fullGuest);
+                    Console.WriteLine($"👩 אישה נוספה: {fullGuest.guestId}");
+                }
+                else
+                {
+                    Console.WriteLine($"⚠ אורח {fullGuest.guestId} לא קיבל מגדר ולכן לא נוסף לשום רשימה!");
+                }
+            }
+        }
+
+        Console.WriteLine($"👨‍🦰 גברים: {maleGuests.Count}, 👩 נשים: {femaleGuests.Count}");
+
+        int currentTableNumber = 1; // מתחילים משולחן 1
+
+        // מחלקים את הבנים וממשיכים במספור השולחנות
+        var maleTables = AssignGuestsToTablesByGender(maleGuests, seatsPerTable, ref currentTableNumber);
+
+        // מחלקים את הבנות, כשהמספור ממשיך מהנקודה בה נגמרו השולחנות לגברים
+        var femaleTables = AssignGuestsToTablesByGender(femaleGuests, seatsPerTable, ref currentTableNumber);
+
+        // מאחדים את טבלאות הגברים והנשים לתוך מילון אחד
+        var allTables = maleTables.Concat(femaleTables).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+
+        Console.WriteLine($"📊 סה\"כ שולחנות שהוקצו: {allTables.Count}");
+        return allTables;
+    }
+
+    private Dictionary<int, List<GuestInEventDto>> AssignGuestsToTablesByGender(List<GuestInEventDto> guests, int seatsPerTable, ref int tableNumber)
+    {
+        Dictionary<int, List<GuestInEventDto>> tables = new Dictionary<int, List<GuestInEventDto>>();
+        List<GuestInEventDto> currentTable = new List<GuestInEventDto>();
+
+        int index = 0;
+        while (index < guests.Count)
+        {
+            int availableSeats = seatsPerTable - currentTable.Count;
+            if (availableSeats > 0)
+            {
+                var guestsToAdd = guests.Skip(index).Take(availableSeats).ToList();
+                Console.WriteLine($"🪑 מוסיף {guestsToAdd.Count} אורחים לשולחן {tableNumber}");
+                foreach (var guest in guestsToAdd)
+                    Console.WriteLine($"➕ אורח {guest.guestId} נוסף לשולחן {tableNumber}");
+
+                currentTable.AddRange(guestsToAdd);
+                index += guestsToAdd.Count;
+            }
+
+            if (currentTable.Count == seatsPerTable)
+            {
+                tables[tableNumber] = new List<GuestInEventDto>(currentTable);
+                Console.WriteLine($"✅ שולחן {tableNumber} נוצר עם {currentTable.Count} אורחים");
+                tableNumber++;
+                currentTable.Clear();
+            }
+        }
+
+        if (currentTable.Any())
+        {
+            tables[tableNumber] = new List<GuestInEventDto>(currentTable);
+            Console.WriteLine($"✅ שולחן {tableNumber} (אחרון) נוצר עם {currentTable.Count} אורחים");
+            tableNumber++;
+        }
+
+        Console.WriteLine($"📊 סה\"כ שולחנות בקבוצה זו: {tables.Count}");
+        return tables;
+    }
+
 }

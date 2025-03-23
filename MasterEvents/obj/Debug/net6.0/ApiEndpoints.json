@@ -594,8 +594,29 @@
   },
   {
     "ContainingType": "MasterEvents.Controllers.GuestInEventController",
-    "Method": "AssignGuestsToTables",
-    "RelativePath": "api/GuestInEvent/assign-tables",
+    "Method": "AssignGuestsToTablesByGender",
+    "RelativePath": "api/GuestInEvent/assign-tables-by-gender",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "seatsPerTable",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MasterEvents.Controllers.GuestInEventController",
+    "Method": "AssignGuestsToTablesWithoutGenderSeparation",
+    "RelativePath": "api/GuestInEvent/assign-tables-without-gender-separation",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

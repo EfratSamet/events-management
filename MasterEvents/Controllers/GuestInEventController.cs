@@ -72,19 +72,35 @@ namespace MasterEvents.Controllers
             return _guestInEventService.GetGuestsByEventIdOk(eventId);
         }
 
-        [HttpGet("assign-tables")]
-        public async Task<IActionResult> AssignGuestsToTables([FromQuery] int eventId, [FromQuery] int seatsPerTable)
+        [HttpGet("assign-tables-by-gender")]
+        public async Task<IActionResult> AssignGuestsToTablesByGender([FromQuery] int eventId, [FromQuery] int seatsPerTable)
         {
             try
             {
-                var tables = await _guestInEventService.AssignGuestsToTablesWithSubGuestsAsync(eventId, seatsPerTable);
+                var tables = await _guestInEventService.AssignGuestsToTablesWithGenderSeparationAsync(eventId, seatsPerTable);
                 return Ok(tables);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Error assigning guests to tables: {ex.Message}");
+                return StatusCode(500, $"Error assigning guests to tables by gender: {ex.Message}");
             }
         }
+
+        [HttpGet("assign-tables-without-gender-separation")]
+        public async Task<IActionResult> AssignGuestsToTablesWithoutGenderSeparation([FromQuery] int eventId, [FromQuery] int seatsPerTable)
+        {
+            try
+            {
+                var tables = await _guestInEventService.AssignGuestsToTablesWithoutGenderSeparationAsync(eventId, seatsPerTable);
+                return Ok(tables);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error assigning guests to tables without gender separation: {ex.Message}");
+            }
+        }
+
+
 
     }
 }
