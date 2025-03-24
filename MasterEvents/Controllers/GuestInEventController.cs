@@ -65,6 +65,11 @@ namespace MasterEvents.Controllers
         {
             return _guestInEventService.GetGuestsByEventId(eventId);
         }
+        [HttpGet("byGuestId/{guestId}")]
+        public ActionResult<GuestInEventDto> GetGuestInEventByGuestId(int guestId)
+        {
+            return _guestInEventService.GetGuestInEventByGuestId(guestId);
+        }
 
         [HttpGet("confirmed/{eventId}")]
         public IEnumerable<GuestInEventDto> GetConfirmedGuests(int eventId)
@@ -77,7 +82,7 @@ namespace MasterEvents.Controllers
         {
             try
             {
-                var tables = await _guestInEventService.AssignGuestsToTablesWithGenderSeparationAsync(eventId, seatsPerTable);
+                var tables = await _guestInEventService.AssignSubGuestsToTablesWithGenderSeparationAsync(eventId, seatsPerTable);
                 return Ok(tables);
             }
             catch (Exception ex)
@@ -91,7 +96,7 @@ namespace MasterEvents.Controllers
         {
             try
             {
-                var tables = await _guestInEventService.AssignGuestsToTablesWithoutGenderSeparationAsync(eventId, seatsPerTable);
+                var tables = await _guestInEventService.AssignSubGuestsToTablesWithoutGenderSeparationAsync(eventId, seatsPerTable);
                 return Ok(tables);
             }
             catch (Exception ex)

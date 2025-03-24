@@ -92,7 +92,7 @@ namespace Mock.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
-                    b.Property<int>("gender")
+                    b.Property<int?>("gender")
                         .HasColumnType("int");
 
                     b.Property<int>("groupId")
@@ -124,6 +124,9 @@ namespace Mock.Migrations
                     b.Property<int>("eventId")
                         .HasColumnType("int");
 
+                    b.Property<int>("groupId")
+                        .HasColumnType("int");
+
                     b.Property<int>("guestId")
                         .HasColumnType("int");
 
@@ -133,6 +136,8 @@ namespace Mock.Migrations
                     b.HasKey("id");
 
                     b.HasIndex("eventId");
+
+                    b.HasIndex("groupId");
 
                     b.HasIndex("guestId");
 
@@ -291,6 +296,12 @@ namespace Mock.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Repository.Entity.Group", "group_")
+                        .WithMany()
+                        .HasForeignKey("groupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Repository.Entity.Guest", "guest")
                         .WithMany()
                         .HasForeignKey("guestId")
@@ -298,6 +309,8 @@ namespace Mock.Migrations
                         .IsRequired();
 
                     b.Navigation("event_");
+
+                    b.Navigation("group_");
 
                     b.Navigation("guest");
                 });

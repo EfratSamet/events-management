@@ -53,67 +53,61 @@ public class GuestInEventService : IGuestInEventService
     {
         return _mapper.Map<GuestInEventDto>(_repository.Update(id, _mapper.Map<GuestInEvent>(item)));
     }
-
+    public GuestInEventDto GetGuestInEventByGuestId(int guestId)
+    {
+        return _mapper.Map<GuestInEventDto>(_repository.GetGuestInEventByGuestId(guestId));
+    }
 
 
 
     //סידור אורחים לשולחנות ללא הפרדה
 
-    public async Task<Dictionary<int, List<GuestInEventDto>>> AssignGuestsToTablesWithoutGenderSeparationAsync(int eventId, int seatsPerTable)
+    public async Task<Dictionary<int, List<SubGuestDto>>> AssignSubGuestsToTablesWithoutGenderSeparationAsync(int eventId, int seatsPerTable)
     {
-        var guests = _repository.GetGuestsByEventIdOK(eventId);
-        var guestsByGroup = guests
-            .GroupBy(g => g.groupId)
-            .OrderByDescending(g => g.Count())  // מיון קבוצות מהגדולה לקטנה
-            .ToList();
+        var guests = _repository.GetGuestsByEventIdOK(eventId); // שולפים רק אורחים שאישרו הגעה
+        var subGuestsByGroup = new Dictionary<int, List<SubGuestDto>>(); // מילון לקבוצות
 
-        Dictionary<int, List<GuestInEventDto>> tables = new Dictionary<int, List<GuestInEventDto>>();
-        int tableNumber = 1;
-        List<GuestInEventDto> currentTable = new List<GuestInEventDto>();
-
-        foreach (var group in guestsByGroup)
+        foreach (var guest in guests)
         {
-            List<GuestInEventDto> groupGuestsWithSubGuests = new List<GuestInEventDto>();
-
-            foreach (var guest in group)
-            {
-                var guestDto = _mapper.Map<GuestInEventDto>(guest);
-                groupGuestsWithSubGuests.Add(guestDto);
-
-                var subGuests = await _subGuestRepository.GetSubGuestsForSeatingAsync(guest.guestId, eventId);
-
-                foreach (var subGuest in subGuests)
+            var subGuests = (await _subGuestRepository.GetSubGuestsForSeatingAsync(guest.guestId, eventId))
+                .Select(sg => new SubGuestDto
                 {
-                    var subGuestDto = new GuestInEventDto
-                    {
-                        guestId = subGuest.guestId,
-                        eventId = guestDto.eventId,
-                        groupId = guestDto.groupId,
-                        ok = guestDto.ok
-                    };
+                    guestId = sg.guestId,
+                    name = sg.name,
+                    gender = sg.gender
+                }).ToList();
 
-                    groupGuestsWithSubGuests.Add(subGuestDto);
-                }
+            if (!subGuestsByGroup.ContainsKey(guest.groupId))
+            {
+                subGuestsByGroup[guest.groupId] = new List<SubGuestDto>();
             }
 
+            subGuestsByGroup[guest.groupId].AddRange(subGuests);
+        }
+
+        var sortedGroups = subGuestsByGroup.OrderByDescending(g => g.Value.Count).ToList();
+
+        Dictionary<int, List<SubGuestDto>> tables = new Dictionary<int, List<SubGuestDto>>();
+        int tableNumber = 1;
+        List<SubGuestDto> currentTable = new List<SubGuestDto>();
+
+        foreach (var group in sortedGroups)
+        {
             int index = 0;
-            while (index < groupGuestsWithSubGuests.Count)
+            while (index < group.Value.Count)
             {
                 int availableSeats = seatsPerTable - currentTable.Count;
 
                 if (availableSeats > 0)
                 {
-                    currentTable.AddRange(groupGuestsWithSubGuests.Skip(index).Take(availableSeats));
+                    currentTable.AddRange(group.Value.Skip(index).Take(availableSeats));
                     index += availableSeats;
                 }
 
                 if (currentTable.Count == seatsPerTable)
                 {
-                    if (!tables.ContainsKey(tableNumber))
-                    {
-                        tables[tableNumber] = new List<GuestInEventDto>(currentTable);
-                        tableNumber++;
-                    }
+                    tables[tableNumber] = new List<SubGuestDto>(currentTable);
+                    tableNumber++;
                     currentTable.Clear();
                 }
             }
@@ -121,122 +115,94 @@ public class GuestInEventService : IGuestInEventService
 
         if (currentTable.Any())
         {
-            if (!tables.ContainsKey(tableNumber))
-            {
-                tables[tableNumber] = new List<GuestInEventDto>(currentTable);
-            }
+            tables[tableNumber] = new List<SubGuestDto>(currentTable);
         }
 
         return tables;
     }
+
+
     //עם הפרדה
 
-    public async Task<Dictionary<int, List<GuestInEventDto>>> AssignGuestsToTablesWithGenderSeparationAsync(int eventId, int seatsPerTable)
+    public async Task<Dictionary<int, List<SubGuestDto>>> AssignSubGuestsToTablesWithGenderSeparationAsync(int eventId, int seatsPerTable)
     {
         var guests = _repository.GetGuestsByEventIdOK(eventId);
-
-        List<GuestInEventDto> maleGuests = new List<GuestInEventDto>();
-        List<GuestInEventDto> femaleGuests = new List<GuestInEventDto>();
-
-        Console.WriteLine($"🔍 מתחיל חלוקת אורחים לאירוע {eventId}, מקומות לכל שולחן: {seatsPerTable}");
-        Console.WriteLine($"📝 סה\"כ אורחים שנמשכו מהמערכת: {guests.Count}");
+        var maleSubGuestsByGroup = new Dictionary<int, List<SubGuestDto>>();
+        var femaleSubGuestsByGroup = new Dictionary<int, List<SubGuestDto>>();
 
         foreach (var guest in guests)
         {
-            var guestDto = _mapper.Map<GuestInEventDto>(guest);
-            var guestGender = _guestRepository.Get(guest.guestId);
-
-            List<GuestInEventDto> guestWithSubGuests = new List<GuestInEventDto> { guestDto };
-
-            // מושך את תתי האורחים
-            var subGuests = await _subGuestRepository.GetSubGuestsForSeatingAsync(guest.guestId, eventId);
+            var subGuests = (await _subGuestRepository.GetSubGuestsForSeatingAsync(guest.guestId, eventId))
+                           .Select(sg => new SubGuestDto
+                           {
+                               guestId = sg.guestId,
+                               name = sg.name,
+                               gender = sg.gender
+                           }).ToList();
 
             foreach (var subGuest in subGuests)
             {
-                var subGuestDto = new GuestInEventDto
+                if (subGuest.gender == Gender.male)
                 {
-                    guestId = subGuest.guestId,
-                    eventId = guestDto.eventId,
-                    groupId = guestDto.groupId,
-                    ok = guestDto.ok
-                };
-                guestWithSubGuests.Add(subGuestDto);
-            }
-
-            // מסווג את כל האורחים (כולל התתי אורחים) לפי מגדר
-            foreach (var fullGuest in guestWithSubGuests)
-            {
-                if (guestGender?.gender == Gender.male)
-                {
-                    maleGuests.Add(fullGuest);
-                    Console.WriteLine($"👨 גבר נוסף: {fullGuest.guestId}");
-                }
-                else if (guestGender?.gender == Gender.female)
-                {
-                    femaleGuests.Add(fullGuest);
-                    Console.WriteLine($"👩 אישה נוספה: {fullGuest.guestId}");
+                    if (!maleSubGuestsByGroup.ContainsKey(guest.groupId))
+                    {
+                        maleSubGuestsByGroup[guest.groupId] = new List<SubGuestDto>();
+                    }
+                    maleSubGuestsByGroup[guest.groupId].Add(subGuest);
                 }
                 else
                 {
-                    Console.WriteLine($"⚠ אורח {fullGuest.guestId} לא קיבל מגדר ולכן לא נוסף לשום רשימה!");
+                    if (!femaleSubGuestsByGroup.ContainsKey(guest.groupId))
+                    {
+                        femaleSubGuestsByGroup[guest.groupId] = new List<SubGuestDto>();
+                    }
+                    femaleSubGuestsByGroup[guest.groupId].Add(subGuest);
                 }
             }
         }
 
-        Console.WriteLine($"👨‍🦰 גברים: {maleGuests.Count}, 👩 נשים: {femaleGuests.Count}");
+        int tableNumber = 1;
+        var maleTables = AssignSubGuestsToTablesByGroup(maleSubGuestsByGroup, seatsPerTable, ref tableNumber);
+        var femaleTables = AssignSubGuestsToTablesByGroup(femaleSubGuestsByGroup, seatsPerTable, ref tableNumber);
 
-        int currentTableNumber = 1; // מתחילים משולחן 1
-
-        // מחלקים את הבנים וממשיכים במספור השולחנות
-        var maleTables = AssignGuestsToTablesByGender(maleGuests, seatsPerTable, ref currentTableNumber);
-
-        // מחלקים את הבנות, כשהמספור ממשיך מהנקודה בה נגמרו השולחנות לגברים
-        var femaleTables = AssignGuestsToTablesByGender(femaleGuests, seatsPerTable, ref currentTableNumber);
-
-        // מאחדים את טבלאות הגברים והנשים לתוך מילון אחד
-        var allTables = maleTables.Concat(femaleTables).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
-
-        Console.WriteLine($"📊 סה\"כ שולחנות שהוקצו: {allTables.Count}");
-        return allTables;
+        return maleTables.Concat(femaleTables).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
     }
 
-    private Dictionary<int, List<GuestInEventDto>> AssignGuestsToTablesByGender(List<GuestInEventDto> guests, int seatsPerTable, ref int tableNumber)
+
+    private Dictionary<int, List<SubGuestDto>> AssignSubGuestsToTablesByGroup(Dictionary<int, List<SubGuestDto>> subGuestsByGroup, int seatsPerTable, ref int tableNumber)
     {
-        Dictionary<int, List<GuestInEventDto>> tables = new Dictionary<int, List<GuestInEventDto>>();
-        List<GuestInEventDto> currentTable = new List<GuestInEventDto>();
+        Dictionary<int, List<SubGuestDto>> tables = new Dictionary<int, List<SubGuestDto>>();
+        var sortedGroups = subGuestsByGroup.OrderByDescending(g => g.Value.Count).ToList();
+        List<SubGuestDto> currentTable = new List<SubGuestDto>();
 
-        int index = 0;
-        while (index < guests.Count)
+        foreach (var group in sortedGroups)
         {
-            int availableSeats = seatsPerTable - currentTable.Count;
-            if (availableSeats > 0)
+            int index = 0;
+            while (index < group.Value.Count)
             {
-                var guestsToAdd = guests.Skip(index).Take(availableSeats).ToList();
-                Console.WriteLine($"🪑 מוסיף {guestsToAdd.Count} אורחים לשולחן {tableNumber}");
-                foreach (var guest in guestsToAdd)
-                    Console.WriteLine($"➕ אורח {guest.guestId} נוסף לשולחן {tableNumber}");
+                int availableSeats = seatsPerTable - currentTable.Count;
 
-                currentTable.AddRange(guestsToAdd);
-                index += guestsToAdd.Count;
-            }
+                if (availableSeats > 0)
+                {
+                    currentTable.AddRange(group.Value.Skip(index).Take(availableSeats));
+                    index += availableSeats;
+                }
 
-            if (currentTable.Count == seatsPerTable)
-            {
-                tables[tableNumber] = new List<GuestInEventDto>(currentTable);
-                Console.WriteLine($"✅ שולחן {tableNumber} נוצר עם {currentTable.Count} אורחים");
-                tableNumber++;
-                currentTable.Clear();
+                if (currentTable.Count == seatsPerTable)
+                {
+                    tables[tableNumber] = new List<SubGuestDto>(currentTable);
+                    tableNumber++;
+                    currentTable.Clear();
+                }
             }
         }
 
         if (currentTable.Any())
         {
-            tables[tableNumber] = new List<GuestInEventDto>(currentTable);
-            Console.WriteLine($"✅ שולחן {tableNumber} (אחרון) נוצר עם {currentTable.Count} אורחים");
+            tables[tableNumber] = new List<SubGuestDto>(currentTable);
             tableNumber++;
         }
 
-        Console.WriteLine($"📊 סה\"כ שולחנות בקבוצה זו: {tables.Count}");
         return tables;
     }
 

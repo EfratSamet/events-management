@@ -12,8 +12,8 @@ using Mock;
 namespace Mock.Migrations
 {
     [DbContext(typeof(MyDataBase))]
-    [Migration("20250318211651_Perfect")]
-    partial class Perfect
+    [Migration("20250323083806_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -94,10 +94,10 @@ namespace Mock.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
-                    b.Property<int?>("Groupid")
+                    b.Property<int?>("gender")
                         .HasColumnType("int");
 
-                    b.Property<int>("gender")
+                    b.Property<int>("groupId")
                         .HasColumnType("int");
 
                     b.Property<string>("mail")
@@ -110,7 +110,7 @@ namespace Mock.Migrations
 
                     b.HasKey("id");
 
-                    b.HasIndex("Groupid");
+                    b.HasIndex("groupId");
 
                     b.ToTable("Guests");
                 });
@@ -285,7 +285,9 @@ namespace Mock.Migrations
                 {
                     b.HasOne("Repository.Entity.Group", null)
                         .WithMany("guests")
-                        .HasForeignKey("Groupid");
+                        .HasForeignKey("groupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Repository.Entity.GuestInEvent", b =>
@@ -293,13 +295,13 @@ namespace Mock.Migrations
                     b.HasOne("Repository.Entity.Event", "event_")
                         .WithMany("guests")
                         .HasForeignKey("eventId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Repository.Entity.Group", "group_")
                         .WithMany()
                         .HasForeignKey("groupId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Repository.Entity.Guest", "guest")
@@ -326,7 +328,7 @@ namespace Mock.Migrations
                     b.HasOne("Repository.Entity.Guest", "guest")
                         .WithMany()
                         .HasForeignKey("guestId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("event_");
@@ -345,7 +347,7 @@ namespace Mock.Migrations
                     b.HasOne("Repository.Entity.SubGuest", "subGuest")
                         .WithMany()
                         .HasForeignKey("subGuestId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("event_");
@@ -358,7 +360,7 @@ namespace Mock.Migrations
                     b.HasOne("Repository.Entity.Guest", "guest")
                         .WithMany()
                         .HasForeignKey("guestId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("guest");

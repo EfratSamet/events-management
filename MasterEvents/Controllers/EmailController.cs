@@ -24,40 +24,15 @@ namespace MasterEvents.Controllers
             await _emailService.SendEmailAsync(request.eventId, request.Subject, request.Body);
             return Ok(new { message = "Email sent successfully!" });
         }
-        //[Route("api/[controller]")]
-        //[ApiController]
-        //public class EmailController : ControllerBase
-        //{
-        //    // GET: api/<EmailController>
-        //    [HttpGet]
-        //    public IEnumerable<string> Get()
-        //    {
-        //        return new string[] { "value1", "value2" };
-        //    }
 
-        //    // GET api/<EmailController>/5
-        //    [HttpGet("{id}")]
-        //    public string Get(int id)
-        //    {
-        //        return "value";
-        //    }
-
-        //    // POST api/<EmailController>
-        //    [HttpPost]
-        //    public void Post([FromBody] string value)
-        //    {
-        //    }
-
-        //    // PUT api/<EmailController>/5
-        //    [HttpPut("{id}")]
-        //    public void Put(int id, [FromBody] string value)
-        //    {
-        //    }
-
-        //    // DELETE api/<EmailController>/5
-        //    [HttpDelete("{id}")]
-        //    public void Delete(int id)
-        //    {
-        //    }
+        [HttpPost("sendSingle")]
+        public async Task<IActionResult> SendSingleEmail([FromBody] EmailRequest request)
+        {
+            // קריאה לפונקציה SendSingleEmailAsync ששולחת מייל אחד
+            await _emailService.SendSingleEmailAsync(request.ToEmail, request.Subject, request.Body);
+            return Ok(new { message = "Single email sent successfully!" });
+        }
     }
+
+
 }

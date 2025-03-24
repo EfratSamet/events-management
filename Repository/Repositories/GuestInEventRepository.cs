@@ -100,5 +100,10 @@ namespace Repository.Repositories
                 .Where(x => x.eventId == eventId && x.ok)
                 .ToList();
         }
+        public GuestInEvent GetGuestInEventByGuestId(int guestId)
+        {
+            return context.GuestInEvents
+                .FirstOrDefault(x => x.guestId == guestId);
+        }
     }
 }

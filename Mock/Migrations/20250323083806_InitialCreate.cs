@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Mock.Migrations
 {
-    public partial class Perfect : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -77,17 +77,18 @@ namespace Mock.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     mail = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    gender = table.Column<int>(type: "int", nullable: false),
-                    Groupid = table.Column<int>(type: "int", nullable: true)
+                    gender = table.Column<int>(type: "int", nullable: true),
+                    groupId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Guests", x => x.id);
                     table.ForeignKey(
-                        name: "FK_Guests_Groups_Groupid",
-                        column: x => x.Groupid,
+                        name: "FK_Guests_Groups_groupId",
+                        column: x => x.groupId,
                         principalTable: "Groups",
-                        principalColumn: "id");
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -109,7 +110,7 @@ namespace Mock.Migrations
                         column: x => x.eventId,
                         principalTable: "Events",
                         principalColumn: "id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_GuestInEvents_Groups_groupId",
                         column: x => x.groupId,
@@ -148,8 +149,7 @@ namespace Mock.Migrations
                         name: "FK_PhotosFromEvents_Guests_guestId",
                         column: x => x.guestId,
                         principalTable: "Guests",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "id");
                 });
 
             migrationBuilder.CreateTable(
@@ -170,7 +170,7 @@ namespace Mock.Migrations
                         column: x => x.guestId,
                         principalTable: "Guests",
                         principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -198,7 +198,7 @@ namespace Mock.Migrations
                         column: x => x.subGuestId,
                         principalTable: "SubGuests",
                         principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -227,9 +227,9 @@ namespace Mock.Migrations
                 column: "guestId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Guests_Groupid",
+                name: "IX_Guests_groupId",
                 table: "Guests",
-                column: "Groupid");
+                column: "groupId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Organizers_mail",
