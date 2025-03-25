@@ -12,7 +12,7 @@ using System.Xml.Linq;
 
 namespace Repository.Repositories
 {
-    public class GuestRepository:IGuestRepository
+    public class GuestRepository : IGuestRepository
     {
         private readonly IContext context;
         public GuestRepository(IContext context)
@@ -55,11 +55,11 @@ namespace Repository.Repositories
 
             return existingGuest;
         }
-       
+
         public List<Guest> GetGuestsByGroup(int groupId)
         {
             return context.Guests
-                .Where(g => g.groupId == groupId)    
+                .Where(g => g.groupId == groupId)
                 .ToList();
         }
 
@@ -80,26 +80,8 @@ namespace Repository.Repositories
                 .Distinct()
                 .ToList();
         }
-        //חיפוש אורחים לפי חלק מהשם
-        public List<Guest> GetGuestsByName(string guestName)
-        {
-            return context.Guests
-                .Where(g => g.name.Contains(guestName))  // מסנן לפי שם (חלקי)
-                .ToList();
-        }
-        //חיפוש אורחים לפי מייל
-        public List<Guest> GetGuestsByMail(string mail)
-        {
-            return context.Guests
-                .Where(g => g.mail.Contains(mail))  // מסנן לפי מייל (חלקי)
-                .ToList();
-        }
-        //חיפוש אורחים לפי מין
-        public List<Guest> GetGuestsByGender(Gender gender)
-        {
-            return context.Guests
-                .Where(g => g.gender == gender)  // מסנן לפי מין
-                .ToList();
-        }
+
+
+
     }
 }

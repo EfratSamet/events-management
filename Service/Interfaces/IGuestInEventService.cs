@@ -9,7 +9,6 @@ namespace Service.Interfaces
         List<GuestInEventDto> GetGuestsByEventId(int eventId);
         List<GuestInEventDto> GetGuestsByEventIdOk(int eventId);
         GuestInEventDto GetGuestInEventByGuestId(int guestId);
-
         // נוספה פונקציה שמחלקת אורחים לשולחנות עם הפרדה לפי מגדר
         Task<Dictionary<int, List<SubGuestDto>>> AssignSubGuestsToTablesWithGenderSeparationAsync(int eventId, int seatsPerTable);
         // נוספה פונקציה שמחלקת אורחים לשולחנות בלי הפרדה לפי מגדר

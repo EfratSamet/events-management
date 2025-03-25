@@ -65,6 +65,8 @@ namespace MasterEvents.Controllers
         {
             return _guestInEventService.GetGuestsByEventId(eventId);
         }
+    
+        
         [HttpGet("byGuestId/{guestId}")]
         public ActionResult<GuestInEventDto> GetGuestInEventByGuestId(int guestId)
         {

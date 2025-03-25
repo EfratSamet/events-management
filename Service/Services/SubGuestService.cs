@@ -9,16 +9,16 @@ using System.Linq;
 
 namespace Service.Services
 {
-    public class SubGuestService :  ISubGuestService
+    public class SubGuestService : ISubGuestService
     {
         private readonly ISubGuestRepository _subGuestRepository;
-        private readonly IGuestRepository _guestRepository;
+        private readonly IGuestInEventRepository guestInEventRepository;
         private readonly IMapper _mapper;
 
-        public SubGuestService(ISubGuestRepository subGuestRepository, IGuestRepository guestRepository, IMapper mapper)
+        public SubGuestService(ISubGuestRepository subGuestRepository, IGuestInEventRepository _guestInEventRepository, IMapper mapper)
         {
             _subGuestRepository = subGuestRepository;
-            _guestRepository = guestRepository;
+            guestInEventRepository = _guestInEventRepository;
             _mapper = mapper;
         }
 
@@ -55,41 +55,14 @@ namespace Service.Services
             var updatedEntity = _subGuestRepository.Update(id, entity);
             return _mapper.Map<SubGuestDto>(updatedEntity);
         }
-
-        // פונקציה לסידור מקומות הישיבה
-        public List<SeatingDto> ArrangeSeating(int eventId)
+        public List<SubGuestDto> GetSubGuestsByGuestId(int guestId)
         {
-            var allGuests = _guestRepository.GetGuestsByEventId(eventId);
-            var seatings = new List<SeatingDto>();
-            int tableNumber = 1;
-            int seatNumber = 1;
-            int maxSeatsPerTable = 10;
-
-            foreach (var guest in allGuests)
-            {
-                var subGuests = _subGuestRepository.GetSubGuestsByGuestId(guest.id);
-                var group = new List<int> { guest.id };
-                group.AddRange(subGuests.Select(sg => sg.id));
-
-                foreach (var guestOrSubGuestId in group)
-                {
-                    seatings.Add(new SeatingDto
-                    {
-                        eventId = eventId,
-                        subGuestId = guestOrSubGuestId,
-                        table = tableNumber,
-                        seat = seatNumber++
-                    });
-
-                    if (seatNumber > maxSeatsPerTable)
-                    {
-                        seatNumber = 1;
-                        tableNumber++;
-                    }
-                }
-            }
-
-            return seatings;
+            return _mapper.Map<List<SubGuestDto>>(_subGuestRepository.GetSubGuestsByGuestId(guestId));
         }
+        public List<SubGuestDto> GetSubGuestByGuestUdAndEventId(int guestId, int eventId)
+        {
+            return _mapper.Map<List<SubGuestDto>>(_subGuestRepository.GetSubGuestsByEventIdAndGuestId(guestId, eventId));
+        }
+
     }
 }

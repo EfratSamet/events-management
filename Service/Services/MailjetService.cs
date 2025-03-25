@@ -23,6 +23,7 @@ namespace Service.Services
         public async Task SendEmailAsync(int eventId, string subject, string body)
         {
             var guests = _guestService.GetGuestsByEventId(eventId);
+            Console.WriteLine("1 - " + eventId);
             if (guests == null || guests.Count == 0)
             {
                 Console.WriteLine("No guests found for the event.");
@@ -32,6 +33,7 @@ namespace Service.Services
             var toEmails = new JArray();
             foreach (var guest in guests)
             {
+                Console.WriteLine("2 - " +guest);
                 if (!string.IsNullOrEmpty(guest?.mail))
                 {
                     toEmails.Add(new JObject { { "Email", guest.mail } });
@@ -46,6 +48,7 @@ namespace Service.Services
 
             var request = CreateEmailRequest(toEmails, subject, body);
             await SendMailjetRequest(request);
+            Console.WriteLine("שלח את המייל ");
         }
 
         public async Task SendSingleEmailAsync(string toEmail, string subject, string body)
@@ -57,8 +60,10 @@ namespace Service.Services
             }
 
             var toEmails = new JArray { new JObject { { "Email", toEmail } } };
+            Console.WriteLine("המייל הוא"+toEmails.Count);
             var request = CreateEmailRequest(toEmails, subject, body);
             await SendMailjetRequest(request);
+            Console.WriteLine("SendMailjetRequest");
         }
 
         private MailjetRequest CreateEmailRequest(JArray toEmails, string subject, string body)
@@ -86,7 +91,7 @@ namespace Service.Services
         {
             MailjetClient client = new MailjetClient(ApiKey, ApiSecret);
             MailjetResponse response = await client.PostAsync(request);
-
+            Console.WriteLine(response.Content);
             if (response.IsSuccessStatusCode)
             {
                 Console.WriteLine("Email(s) sent successfully!");

@@ -46,11 +46,11 @@ namespace Service.Services
         {
             return _mapper.Map<EventDto>(_repository.Update(id, _mapper.Map<Event>(item)));
         }
-        public List<GuestDto> GetGuestsByEventId(int eventId)
+     /*   public List<GuestDto> GetGuestsByEventId(int eventId)
         {
             var guests = _repository.GetGuestsByEventId(eventId);  // קריאה ל-Repository
             return _mapper.Map<List<GuestDto>>(guests);  // המרת אורחים ל-Dto
-        }
+        }*/
 
     }
 }

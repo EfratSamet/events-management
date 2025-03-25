@@ -9,6 +9,7 @@ namespace Service.Interfaces
 {
     public interface ISubGuestService : IService<SubGuestDto>
     {
-        List<SeatingDto> ArrangeSeating(int eventId);
+        List<SubGuestDto> GetSubGuestsByGuestId(int guestId);
+        List<SubGuestDto> GetSubGuestByGuestUdAndEventId(int guestId, int eventId);
     }
 }

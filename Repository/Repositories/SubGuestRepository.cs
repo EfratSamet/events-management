@@ -58,13 +58,7 @@ namespace Repository.Repositories
             return x;
         }
 
-        // חיפוש לפי חלק מהשם
-        public List<SubGuest> GetSubGuestsByName(string subGuestName)
-        {
-            return context.SubGuests
-                .Where(sg => sg.name.Contains(subGuestName))
-                .ToList();
-        }
+
 
         // מציאת כל התת-אורחים שיש להם אותו מזהה אורח
         public List<SubGuest> GetSubGuestsByGuestId(int guestId)
@@ -74,14 +68,7 @@ namespace Repository.Repositories
                 .ToList();
         }
 
-        // מציאת תת-אורחים לפי מזהה אורח ומגדר
-        public List<SubGuest> GetSubGuestsByGuestIdAndGender(int guestId, Gender gender)
-        {
-            return context.SubGuests
-                .Where(sg => sg.guestId == guestId && sg.gender == gender)
-                .ToList();
-        }
-
+    
         // מציאת כל התת-אורחים לפי מין
         public List<SubGuest> GetSubGuestsByGender(Gender gender)
         {
@@ -114,15 +101,13 @@ namespace Repository.Repositories
                 .Where(sg => sg.guestId == guestId)
                 .ToListAsync();
         }
-
-        public async Task<List<SubGuest>> GetSubGuestsByEventIdAsync(int eventId)
+        public async Task<List<SubGuest>> GetSubGuestsByEventIdAndGuestId(int eventId, int guestId)
         {
             return await context.SubGuests
-                .Include(sg => sg.guest)
-                .Where(sg => sg.guest != null &&
-                             context.GuestInEvents.Any(ge => ge.eventId == eventId && ge.guestId == sg.guestId && ge.ok))
-                .ToListAsync();
+                                .Where(sg => sg.guestId == guestId && sg.eventId == eventId)
+                                .ToListAsync();  // חפש באופן אסינכרוני
         }
+
 
         public async Task<List<SubGuest>> GetSubGuestsForSeatingAsync(int guestId, int eventId)
         {

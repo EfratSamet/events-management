@@ -49,12 +49,7 @@ namespace Mock
                 .WithMany()
                 .HasForeignKey(sg => sg.guestId)
                 .OnDelete(DeleteBehavior.Restrict); // השאר Restrict למניעת מחיקה של Guests
-            //modelBuilder.Entity<GuestInEvent>()
-            //    .HasOne(g => g.event_)
-            //    .WithMany(e => e.guests)
-            //    .HasForeignKey(g => g.eventId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
+          
             modelBuilder.Entity<GuestInEvent>()
                 .HasOne(g => g.guest)
                 .WithMany()

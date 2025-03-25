@@ -54,10 +54,6 @@ namespace Service.Services
         {
             return _mapper.Map<OrganizerDto>(_repository.Update(id, _mapper.Map<Organizer>(item)));
         }
-        public List<EventDto> GetEventsByOrganizerId(int id)
-        {
-            var events = _repository.GetEventsByOrganizerId(id);
-            return _mapper.Map<List<EventDto>>(events);
-        }
+     
     }
 }

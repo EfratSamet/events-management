@@ -66,28 +66,9 @@ namespace Repository.Repositories
         }
 
 
-        public List<GuestInEvent> GuestCountOK(int eventId)
-        {
-            return context.GuestInEvents
-                .Where(x => x.eventId == eventId && x.ok)
-                .ToList();
-        }
-
-        public int CountOK(int eventId)
-        {
-            return context.GuestInEvents.Count(x => x.eventId == eventId && x.ok);
-        }
-
-        public int CountOKByGroup(int groupId)
-        {
-            return context.GuestInEvents.Count(x => x.groupId == groupId && x.ok);
-        }
-        public List<GuestInEvent> GetGuestsByEventAndGroupId(int eventId, int groupId)
-        {
-            return context.GuestInEvents
-                .Where(x => x.eventId == eventId && x.groupId == groupId && x.ok)
-                .ToList();
-        }
+    
+       
+    
         public List<GuestInEvent> GetGuestsByEventId(int eventId)
         {
             return context.GuestInEvents

@@ -9,14 +9,12 @@ public class GuestInEventService : IGuestInEventService
 {
     private readonly IGuestInEventRepository _repository;
     private readonly ISubGuestRepository _subGuestRepository;
-    private readonly IGuestRepository _guestRepository;
     private readonly IMapper _mapper;
 
-    public GuestInEventService(IGuestInEventRepository repository, ISubGuestRepository subGuestRepository, IGuestRepository guestRepository, IMapper mapper)
+    public GuestInEventService(IGuestInEventRepository repository, ISubGuestRepository subGuestRepository,  IMapper mapper)
     {
         _repository = repository;
         _subGuestRepository = subGuestRepository;
-        _guestRepository = guestRepository;
         _mapper = mapper;
     }
 
@@ -44,7 +42,7 @@ public class GuestInEventService : IGuestInEventService
     {
         return _mapper.Map<List<GuestInEventDto>>(_repository.GetGuestsByEventId(eventId));
     }
-
+    
     public List<GuestInEventDto> GetGuestsByEventIdOk(int eventId)
     {
         return _mapper.Map<List<GuestInEventDto>>(_repository.GetGuestsByEventIdOK(eventId));

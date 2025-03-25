@@ -51,25 +51,7 @@ namespace Repository.Repositories
             return o;
         }
 
-        // שאילתת חיפוש - חיפוש קבוצות לפי מארגן
-        public List<Group> GetGroupsByName(string name)
-        {
-            return context.Groups.Where(g => g.name== name).ToList();
-        }
-        // שאילתת חיפוש - חיפוש אירועים לפי מארגן
-        public List<Event> GetEventsByOrganizerId(int organizerId)
-        {
-            return context.Events.Where(e => e.organizerId == organizerId).ToList();
-        }
-        public Organizer GetOrganizerByMail(string mail)
-        {
-            return context.Organizers.FirstOrDefault(x => x.mail == mail);
-        }
 
-        public List<Group> GetGroupsByOrganizerId(int organizerId)
-        {
-            throw new NotImplementedException();
-        }
         public bool ExistsByEmail(string email)
         {
             return context.Organizers.Any(x=>x.mail == email);

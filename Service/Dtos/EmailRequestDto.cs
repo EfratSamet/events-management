@@ -10,8 +10,8 @@ namespace Service.Dtos
     public class EmailRequestDto
     {
         public int eventId { get; set; }
-        public string Subject { get; set; }
-        public string Body { get; set; }
+        public string ?Subject { get; set; }
+        public string ?Body { get; set; }
         public string ToEmail { get; set; }
     }
 }

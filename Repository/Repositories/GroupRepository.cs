@@ -62,26 +62,6 @@ namespace Repository.Repositories
                 .Where(g => g.organizerId == organizerId)  // מסנן לפי מזהה המארגן
                 .ToList();
         }
-        //חיפוש קבוצות לפי שם הקבוצה(name)
-        public List<Group> GetGroupsByName(string name)
-        {
-            return context.Groups
-                .Where(g => g.name.Contains(name))  // מסנן לפי שם הקבוצה
-                .ToList();
-        }
-        //חיפוש קבוצות לפי מזהה אורח(guestId)
-        public List<Group> GetGroupsByGuestId(int guestId)
-        {
-            return context.Groups.ToList();
-                //.Where(g => g.guestId == guestId)  // מסנן לפי מזהה האורח
-                //.ToList();
-        }
-        // חיפוש קבוצות לפי מספר מוגבל של קבוצות (לדוגמה 5 קבוצות ראשונות)
-        public List<Group> GetTopGroups(int count)
-        {
-            return context.Groups
-                .Take(count)  // לוקח את כמות הקבוצות המבוקשת
-                .ToList();
-        }
+        
     }
 }

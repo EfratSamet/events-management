@@ -14,6 +14,9 @@ namespace Repository.Entity
         public int guestId { get; set; }
         [ForeignKey("guestId")]
         public virtual Guest guest { get; set; }
+        public int eventId { get; set; }
+        [ForeignKey("eventId")]
+        public virtual Event Event { get; set; }
         public string name { get; set; }
         public Gender gender { get; set; }
 

@@ -9,8 +9,6 @@ namespace Repository.Interfaces
 {
     public interface IOrganizerRepository:IRepository<Organizer>
     {
-        List<Event> GetEventsByOrganizerId(int organizerId);
-        List<Group> GetGroupsByOrganizerId(int organizerId);
         bool ExistsByEmail(string email);
     }
 }

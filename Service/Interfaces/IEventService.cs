@@ -10,6 +10,6 @@ namespace Service.Interfaces
 {
     public interface IEventService:IService<EventDto>
     {
-        List<GuestDto> GetGuestsByEventId(int eventId);
+       // List<GuestDto> GetGuestsByEventId(int eventId);
     }
 }

@@ -58,27 +58,10 @@ namespace MasterEvents.Controllers
         {
             _eventService.Delete(id);
         }
-        [HttpGet("guests/{eventId}")]
-
-        public IActionResult GetGuests(int eventId)
-        {
-            try
-            {
-                var guests = _eventService.GetGuestsByEventId(eventId);
-                if (guests == null || !guests.Any())
-                {
-                    return NotFound("No guests found for this event.");
-                }
-
-                return Ok(guests);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
-            }
+       
         }
 
 
 
-    }
+    
 }

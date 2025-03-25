@@ -983,6 +983,55 @@
         }
       }
     },
+    "/api/GuestInEvent/eventId/{eventId}/guestId/{guestId}": {
+      "get": {
+        "tags": [
+          "GuestInEvent"
+        ],
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "guestId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuestInEventDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuestInEventDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuestInEventDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/GuestInEvent/byGuestId/{guestId}": {
       "get": {
         "tags": [
@@ -1938,7 +1987,7 @@
         }
       }
     },
-    "/api/SubGuest/{id}": {
+    "/api/SubGuest/subguest/{id}": {
       "get": {
         "tags": [
           "SubGuest"
@@ -1976,7 +2025,58 @@
             }
           }
         }
-      },
+      }
+    },
+    "/api/SubGuest/guest/{guestId}": {
+      "get": {
+        "tags": [
+          "SubGuest"
+        ],
+        "parameters": [
+          {
+            "name": "guestId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SubGuestDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SubGuestDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SubGuestDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/SubGuest/{id}": {
       "put": {
         "tags": [
           "SubGuest"
@@ -2035,6 +2135,64 @@
         "responses": {
           "200": {
             "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/SubGuest/event/{eventId}/guest/{guestId}": {
+      "get": {
+        "tags": [
+          "SubGuest"
+        ],
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "guestId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SubGuestDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SubGuestDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SubGuestDto"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -2347,6 +2505,10 @@
             "format": "int32"
           },
           "guestId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "eventId": {
             "type": "integer",
             "format": "int32"
           },

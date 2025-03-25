@@ -13,6 +13,7 @@ namespace Service.Dtos
     {
         public int id { get; set; }
         public int guestId { get; set; }
+        public int eventId { get; set; }
         public string name { get; set; }
         public Gender gender { get; set; }
 
