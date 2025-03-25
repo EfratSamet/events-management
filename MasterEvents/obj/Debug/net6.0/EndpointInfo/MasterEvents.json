@@ -5,37 +5,6 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/email/send": {
-      "post": {
-        "tags": [
-          "Email"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/EmailRequest"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/EmailRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/EmailRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
     "/api/email/sendSingle": {
       "post": {
         "tags": [
@@ -280,29 +249,6 @@
                 }
               }
             }
-          }
-        }
-      }
-    },
-    "/api/Event/guests/{eventId}": {
-      "get": {
-        "tags": [
-          "Event"
-        ],
-        "parameters": [
-          {
-            "name": "eventId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
           }
         }
       }
@@ -976,55 +922,6 @@
                   "items": {
                     "$ref": "#/components/schemas/GuestInEventDto"
                   }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/GuestInEvent/eventId/{eventId}/guestId/{guestId}": {
-      "get": {
-        "tags": [
-          "GuestInEvent"
-        ],
-        "parameters": [
-          {
-            "name": "eventId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "guestId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/GuestInEventDto"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/GuestInEventDto"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/GuestInEventDto"
                 }
               }
             }

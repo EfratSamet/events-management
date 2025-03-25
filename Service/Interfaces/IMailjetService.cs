@@ -8,7 +8,7 @@ namespace Service.Interfaces
 {
     public interface IMailjetService
     {
-        public Task SendEmailAsync(int eventId, string subject, string body);
+        //public Task SendEmailAsync(int eventId, string subject, string body);
         Task SendSingleEmailAsync(string toEmail, string subject, string body);
 
     }

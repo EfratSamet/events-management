@@ -304,7 +304,7 @@ namespace Mock.Migrations
                     b.HasOne("Repository.Entity.Group", "group_")
                         .WithMany()
                         .HasForeignKey("groupId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Repository.Entity.Guest", "guest")
