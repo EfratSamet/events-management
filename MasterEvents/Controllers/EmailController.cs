@@ -18,12 +18,12 @@ namespace MasterEvents.Controllers
             _emailService = emailService;
         }
 
-        [HttpPost("send")]
-        public async Task<IActionResult> SendEmail([FromBody] EmailRequest request)
-        {
-            await _emailService.SendEmailAsync(request.eventId, request.Subject, request.Body);
-            return Ok(new { message = "Email sent successfully!" });
-        }
+        //[HttpPost("send")]
+        //public async Task<IActionResult> SendEmail([FromBody] EmailRequest request)
+        //{
+        //    await _emailService.SendEmailAsync(request.eventId, request.Subject, request.Body);
+        //    return Ok(new { message = "Email sent successfully!" });
+        //}
 
         [HttpPost("sendSingle")]
         public async Task<IActionResult> SendSingleEmail([FromBody] EmailRequest request)

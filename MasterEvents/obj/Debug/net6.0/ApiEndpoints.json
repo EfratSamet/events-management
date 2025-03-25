@@ -1,22 +1,6 @@
 [
   {
     "ContainingType": "MasterEvents.Controllers.EmailController",
-    "Method": "SendEmail",
-    "RelativePath": "api/email/send",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "Repository.Entity.EmailRequest",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MasterEvents.Controllers.EmailController",
     "Method": "SendSingleEmail",
     "RelativePath": "api/email/sendSingle",
     "HttpMethod": "POST",
@@ -147,22 +131,6 @@
         "StatusCode": 200
       }
     ]
-  },
-  {
-    "ContainingType": "MasterEvents.Controllers.EventController",
-    "Method": "GetGuests",
-    "RelativePath": "api/Event/guests/{eventId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "eventId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
   },
   {
     "ContainingType": "MasterEvents.Controllers.EventController",
@@ -719,37 +687,6 @@
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[Service.Dtos.GuestInEventDto, Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "MasterEvents.Controllers.GuestInEventController",
-    "Method": "GetGuestsByEventIdAndGuestId",
-    "RelativePath": "api/GuestInEvent/eventId/{eventId}/guestId/{guestId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "eventId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "guestId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Service.Dtos.GuestInEventDto",
         "MediaTypes": [
           "text/plain",
           "application/json",

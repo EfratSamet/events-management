@@ -10,8 +10,8 @@ namespace Service.Services
 {
     public class MailjetService : IMailjetService
     {
-        private const string ApiKey = "8efb34610befbe31c810ddc0d25d939c";
-        private const string ApiSecret = "7270a0984c8ac854aedd3157428523c9";
+        private const string ApiKey = "2fa9a9028f4fb3cf1b82ab5e7a9c33ca";
+        private const string ApiSecret = "65f6f478a3d83368f4b04c426517f76c";
 
         private readonly IGuestService _guestService;
 
@@ -20,36 +20,36 @@ namespace Service.Services
             _guestService = guestService;
         }
 
-        public async Task SendEmailAsync(int eventId, string subject, string body)
-        {
-            var guests = _guestService.GetGuestsByEventId(eventId);
-            Console.WriteLine("1 - " + eventId);
-            if (guests == null || guests.Count == 0)
-            {
-                Console.WriteLine("No guests found for the event.");
-                return;
-            }
+        //public async Task SendEmailAsync(int eventId, string subject, string body)
+        //{
+        //    var guests = _guestService.GetGuestsByEventId(eventId);
+        //    Console.WriteLine("1 - " + eventId);
+        //    if (guests == null || guests.Count == 0)
+        //    {
+        //        Console.WriteLine("No guests found for the event.");
+        //        return;
+        //    }
 
-            var toEmails = new JArray();
-            foreach (var guest in guests)
-            {
-                Console.WriteLine("2 - " +guest);
-                if (!string.IsNullOrEmpty(guest?.mail))
-                {
-                    toEmails.Add(new JObject { { "Email", guest.mail } });
-                }
-            }
+        //    var toEmails = new JArray();
+        //    foreach (var guest in guests)
+        //    {
+        //        Console.WriteLine("2 - " +guest);
+        //        if (!string.IsNullOrEmpty(guest?.mail))
+        //        {
+        //            toEmails.Add(new JObject { { "Email", guest.mail } });
+        //        }
+        //    }
 
-            if (toEmails.Count == 0)
-            {
-                Console.WriteLine("No valid email addresses found.");
-                return;
-            }
+        //    if (toEmails.Count == 0)
+        //    {
+        //        Console.WriteLine("No valid email addresses found.");
+        //        return;
+        //    }
 
-            var request = CreateEmailRequest(toEmails, subject, body);
-            await SendMailjetRequest(request);
-            Console.WriteLine("שלח את המייל ");
-        }
+        //    var request = CreateEmailRequest(toEmails, subject, body);
+        //    await SendMailjetRequest(request);
+        //    Console.WriteLine("שלח את המייל ");
+        //}
 
         public async Task SendSingleEmailAsync(string toEmail, string subject, string body)
         {
@@ -75,8 +75,8 @@ namespace Service.Services
                     {
                         { "From", new JObject
                             {
-                                { "Email", "sametfamily21@gmail.com" },
-                                { "Name", "Efrat Samet" }
+                                { "Email", "masterevent792@gmail.com" },
+                                { "Name", "master event" }
                             }
                         },
                         { "To", toEmails },
