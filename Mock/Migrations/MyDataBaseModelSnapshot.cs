@@ -59,7 +59,7 @@ namespace Mock.Migrations
 
                     b.HasIndex("organizerId");
 
-                    b.ToTable("Events");
+                    b.ToTable("Events", (string)null);
                 });
 
             modelBuilder.Entity("Repository.Entity.Group", b =>
@@ -81,7 +81,7 @@ namespace Mock.Migrations
 
                     b.HasIndex("organizerId");
 
-                    b.ToTable("Groups");
+                    b.ToTable("Groups", (string)null);
                 });
 
             modelBuilder.Entity("Repository.Entity.Guest", b =>
@@ -110,7 +110,7 @@ namespace Mock.Migrations
 
                     b.HasIndex("groupId");
 
-                    b.ToTable("Guests");
+                    b.ToTable("Guests", (string)null);
                 });
 
             modelBuilder.Entity("Repository.Entity.GuestInEvent", b =>
@@ -141,7 +141,7 @@ namespace Mock.Migrations
 
                     b.HasIndex("guestId");
 
-                    b.ToTable("GuestInEvents");
+                    b.ToTable("GuestInEvents", (string)null);
                 });
 
             modelBuilder.Entity("Repository.Entity.Organizer", b =>
@@ -169,7 +169,7 @@ namespace Mock.Migrations
                     b.HasIndex("mail")
                         .IsUnique();
 
-                    b.ToTable("Organizers");
+                    b.ToTable("Organizers", (string)null);
                 });
 
             modelBuilder.Entity("Repository.Entity.PhotosFromEvent", b =>
@@ -200,7 +200,7 @@ namespace Mock.Migrations
 
                     b.HasIndex("guestId");
 
-                    b.ToTable("PhotosFromEvents");
+                    b.ToTable("PhotosFromEvents", (string)null);
                 });
 
             modelBuilder.Entity("Repository.Entity.Seating", b =>
@@ -229,7 +229,7 @@ namespace Mock.Migrations
 
                     b.HasIndex("subGuestId");
 
-                    b.ToTable("Seatings");
+                    b.ToTable("Seatings", (string)null);
                 });
 
             modelBuilder.Entity("Repository.Entity.SubGuest", b =>
@@ -259,7 +259,7 @@ namespace Mock.Migrations
 
                     b.HasIndex("guestId");
 
-                    b.ToTable("SubGuests");
+                    b.ToTable("SubGuests", (string)null);
                 });
 
             modelBuilder.Entity("Repository.Entity.Event", b =>
@@ -304,7 +304,7 @@ namespace Mock.Migrations
                     b.HasOne("Repository.Entity.Group", "group_")
                         .WithMany()
                         .HasForeignKey("groupId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Repository.Entity.Guest", "guest")

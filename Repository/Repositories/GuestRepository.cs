@@ -29,9 +29,31 @@ namespace Repository.Repositories
 
         public void Delete(int id)
         {
-            context.Guests.Remove(Get(id));
-            context.save();
+            // טוען את כל ה-SubGuests של האורח
+            var subGuests = context.SubGuests
+                .Where(gie => gie.guestId == id)
+                .ToList();
+
+            context.SubGuests.RemoveRange(subGuests);
+            var guestInEvents = context.GuestInEvents
+                .Where(gie => gie.guestId == id)
+                .ToList();
+
+            context.GuestInEvents.RemoveRange(guestInEvents);
+
+            // טוען את האורח עצמו (טעינה מפורשת אם יש קשרים נוספים)
+            var guest = context.Guests
+                .FirstOrDefault(g => g.id == id);
+
+            if (guest != null)
+            {
+                context.Guests.Remove(guest);
+            }
+
+            context.save(); // שומר את השינויים
         }
+
+
 
         public Guest Get(int id)
         {
