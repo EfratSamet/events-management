@@ -8,5 +8,6 @@ namespace Repository.Interfaces
         List<GuestInEvent> GetGuestsByEventId(int eventId);
         List<GuestInEvent> GetGuestsByEventIdOK(int eventId);
         GuestInEvent GetGuestInEventByGuestId(int guestId);
+        GuestInEvent GetGuestInEventByGuestIdAndEventId(int guestId, int eventId);
     }
 }

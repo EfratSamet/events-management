@@ -880,6 +880,55 @@
         }
       }
     },
+    "/api/GuestInEvent/guestId/{guestId}/eventId/{eventId}": {
+      "get": {
+        "tags": [
+          "GuestInEvent"
+        ],
+        "parameters": [
+          {
+            "name": "guestId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuestInEventDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuestInEventDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuestInEventDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/GuestInEvent/byEvent/{eventId}": {
       "get": {
         "tags": [

@@ -66,9 +66,14 @@ namespace Repository.Repositories
         }
 
 
-    
-       
-    
+        public GuestInEvent GetGuestInEventByGuestIdAndEventId(int guestId, int eventId)
+        {
+            return context.GuestInEvents
+                .FirstOrDefault(x => x.guestId == guestId && x.eventId == eventId);
+        }
+
+
+
         public List<GuestInEvent> GetGuestsByEventId(int eventId)
         {
             return context.GuestInEvents

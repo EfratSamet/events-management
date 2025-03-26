@@ -697,6 +697,37 @@
     ]
   },
   {
+    "ContainingType": "MasterEvents.Controllers.GuestInEventController",
+    "Method": "GetGuestInEventByGuestIdAndEventId",
+    "RelativePath": "api/GuestInEvent/guestId/{guestId}/eventId/{eventId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "guestId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "eventId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Service.Dtos.GuestInEventDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "MasterEvents.Controllers.LoginController",
     "Method": "Post",
     "RelativePath": "api/Login",

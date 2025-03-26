@@ -9,13 +9,15 @@ public class GuestInEventService : IGuestInEventService
 {
     private readonly IGuestInEventRepository _repository;
     private readonly ISubGuestRepository _subGuestRepository;
+    private readonly ISeatingRepository _seatingRepository;
     private readonly IMapper _mapper;
 
-    public GuestInEventService(IGuestInEventRepository repository, ISubGuestRepository subGuestRepository,  IMapper mapper)
+    public GuestInEventService(IGuestInEventRepository repository, ISubGuestRepository subGuestRepository,  IMapper mapper, ISeatingRepository seatingRepository)
     {
         _repository = repository;
         _subGuestRepository = subGuestRepository;
         _mapper = mapper;
+        _seatingRepository = seatingRepository;
     }
 
     public GuestInEventDto Add(GuestInEventDto item)
@@ -55,7 +57,10 @@ public class GuestInEventService : IGuestInEventService
     {
         return _mapper.Map<GuestInEventDto>(_repository.GetGuestInEventByGuestId(guestId));
     }
-
+    public GuestInEventDto GetGuestInEventByGuestIdAndEventId(int guestId , int eventId)
+    {
+        return _mapper.Map<GuestInEventDto>(_repository.GetGuestInEventByGuestIdAndEventId(guestId, eventId));
+    }
 
 
     //סידור אורחים לשולחנות ללא הפרדה
@@ -114,6 +119,8 @@ public class GuestInEventService : IGuestInEventService
         if (currentTable.Any())
         {
             tables[tableNumber] = new List<SubGuestDto>(currentTable);
+            // Save remaining seats to the database
+            SaveSeatingArrangement(currentTable, eventId, tableNumber);
         }
 
         return tables;
@@ -202,6 +209,23 @@ public class GuestInEventService : IGuestInEventService
         }
 
         return tables;
+    }
+    private void SaveSeatingArrangement(List<SubGuestDto> subGuests, int eventId, int tableNumber)
+    {
+        foreach (var subGuest in subGuests)
+        {
+            // Create a new Seating record
+            var seating = new Seating
+            {
+                eventId = eventId,
+                subGuestId = subGuest.guestId,
+                table = tableNumber,
+                seat = subGuests.IndexOf(subGuest) + 1 // Seat number starts from 1
+            };
+
+            // Save the seating arrangement to the database
+            _seatingRepository.Add(seating); // Assuming you have an AddSeating method in your repository
+        }
     }
 
 }

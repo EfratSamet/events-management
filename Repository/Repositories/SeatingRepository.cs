@@ -18,6 +18,7 @@ namespace Repository.Repositories
         public Seating Add(Seating item)
         {
             context.Seatings.Add(item);
+            context.save();
             return item;
         }
 
@@ -39,8 +40,10 @@ namespace Repository.Repositories
 
         public List<Seating> GetAll()
         {
-            return context.Seatings.Include(s => s.subGuest).ToList();
+            return context.Seatings.ToList();
+
         }
+
 
         public Seating Update(int id, Seating item)
         {

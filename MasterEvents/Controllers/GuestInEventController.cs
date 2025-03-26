@@ -59,7 +59,11 @@ namespace MasterEvents.Controllers
             _guestInEventService.Delete(id);
             return NoContent();
         }
-
+        [HttpGet("guestId/{guestId}/eventId/{eventId}")]
+        public ActionResult<GuestInEventDto> GetGuestInEventByGuestIdAndEventId(int guestId, int eventId)
+        {
+            return _guestInEventService.GetGuestInEventByGuestIdAndEventId(guestId, eventId);
+        }
         [HttpGet("byEvent/{eventId}")]
         public IEnumerable<GuestInEventDto> GetGuestsByEvent(int eventId)
         {
