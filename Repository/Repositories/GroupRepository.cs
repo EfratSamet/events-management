@@ -25,8 +25,16 @@ namespace Repository.Repositories
 
         public void Delete(int id)
         {
-            context.Groups.Remove(Get(id));
-            context.save();
+            var guests = context.Guests.Where(g => g.groupId == id).ToList();
+            context.Guests.RemoveRange(guests); // מוחק את כל האורחים השייכים לקבוצה
+
+            var group = Get(id);
+            if (group != null)
+            {
+                context.Groups.Remove(group); // מוחק את הקבוצה עצמה
+            }
+
+            context.save(); // שמירת השינויים במסד הנתונים
         }
 
         public Group Get(int id)

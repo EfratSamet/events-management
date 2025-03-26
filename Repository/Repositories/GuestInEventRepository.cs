@@ -24,6 +24,10 @@ namespace Repository.Repositories
 
         public void Delete(int id)
         {
+            var groups = context.Groups
+                .Where(gie => gie.id == id)
+                .ToList();
+            context.Groups.RemoveRange(groups);
             var guest = Get(id);
             if (guest != null)
             {
