@@ -26,6 +26,7 @@ namespace Service.Services
         public string GenerateToken(OrganizerDto organizer)
         {
             var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+
             var signingCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
 
             var claims = new[]
