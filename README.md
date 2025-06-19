@@ -1,7 +1,7 @@
 # 🎉 Event Management System
 
 A full-stack event management system developed as part of my practical software engineering training.  
-The system allows event organizers to manage guest registration, seating arrangements, and invitation emails.
+The system allows event organizers to manage guest registration, seating arrangements, and email invitations.
 
 ---
 
